@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 요소를 얻을 때 사용하는 함수 querySelector와 getElementById에 대해 알아보자! -->
+
+    <!-- 1. getElementById -->
+
+    <!-- getElementByName 와 getElementByClassName 는 HTMLColletion 형태의 반환 값을 가진다. -->
+
+    HTMLCollection 이란?
+    -> 유사 배열
+
+    <p id="a">getElementID</p>
+    <p class="a1">getElementByClassName</p>
+    <p class="a1">getElementByClassName</p>
+    <p class="a1">getElementByClassName</p>
+
+    <script>
+        var test = document.getElementById("a");
+        test.style.color = "red";
+
+        var test2 = document.getElementsByClassName("a1");
+        for(var i=0; i<test2.length; i++){
+            test2[i].style.color = "red";
+        }
+
+        // getElementByClassName 함수는 HTMLCollection을 반환한다. 
+        // nodeList와는 달리 forEach 함수가 없기 떄문에 사용 불가하다.
+        test2.forEach( a => a.style.color = "blue");
+
+    </script>
+
+    <!-- 2. querySelector / querySelectorAll -->
+
+    <!-- 
+    querySelector : 첫번째 값 하나만 가져 온다.
+    querySelectorAll : 모두 가져온다 (NodeList 형태로)
+ -->
+
+    <p class="b">querySelector</p>
+    <p class="b">querySelector</p>
+    <p class="b">querySelector</p>
+
+    <p class="c">querySelectorAll</p>
+    <p class="c">querySelectorAll</p>
+    <p class="c">querySelectorAll</p>
+
+    <script>
+        var test = document.querySelector(".b");
+        test.style.color = "blue";
+
+        var test2 = document.querySelectorAll(".c");
+
+        for(var i=0; i<test2.length; i++){
+            test2[i].style.color = "green";
+        }
+
+        // 내장함수 forEach 사용하기
+
+        test2.forEach( a => a.style.color = "orange");
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="var1"></p>
+    <p id="var2"></p>
+    <p id="var3"></p>
+
+    <p id="var4"></p>
+    <p id="var5"></p>
+    <p id="var6"></p>
+
+<!-- 
+    [자바스크립트 함수를 생성하는 방법] 
+    1. 객체 변수를 이용하여 생성한다.
+-->
+    <script>
+        console.clear();
+        console.group("자바스크립트 함수를 생성하는 법");
+
+        var car = {
+            name: 'Sonata',
+            speed: 100,
+            color: 'white',
+
+            start: function() {
+                return this.speed+10;
+            }
+        };
+
+        document.querySelector("#var1").innerHTML = "자동차 이름 : " + car.name;
+        document.querySelector("#var2").innerHTML = "자동차 속도 : " + car.speed;
+
+        car.start();
+
+        document.querySelector("#var3").innerHTML = "자동차 증가 속도 : " + car.start();
+    </script>
+
+
+    <!-- 
+        2. 생성자를 이용한 생성 방법 (Object 함수를 이용한다.) 
+    -->
+    <script>
+        var car = new Object();
+
+        car.name = 'Sonata';
+        car.speed = 100;
+        car.color = 'blue';
+        car.speedUp = function() {
+            return this.speed + 10;
+        } // speedUp
+
+        document.querySelector("#var4").textContent = "자동차 이름 : " + car.name;
+        document.querySelector("#var5").textContent = "자동차 색상 : " + car.color;
+        document.querySelector("#var6").innerText = "자동차 증가 속도 : " + car.speedUp();
+    </script>
+</body>
+</html>
