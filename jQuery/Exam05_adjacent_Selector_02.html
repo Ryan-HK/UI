@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>인접관계 선택자</title>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+    <script>
+        // (6) 형 요소 선택자 prev()
+        // -> 선택한 요소의 바로 이전 요소를 선택한다.
+
+        // (7) 동생 요소 선택자 next()
+        // -> 선택한 요소의 다음 요소를 선택한다.
+
+        $( () => {
+
+            let style_1 = {
+                backgroundColor: "red"
+            };
+
+            let style_2 = {
+                backgroundColor: "blue"
+            };
+
+            $(".txt3").prev().css(style_1);
+            $(".txt3").next().css(style_2);
+        });
+
+        // (8) 모든 형 요소 선택자 prevAll()
+        // -> 선택한 요소의 모든 형을 선택한다.
+        // (9) 모든 동생 요소 선택자 nextAll()
+        // -> 선택한 요소의 모든 동생을 선택한다.
+
+        $( () => {
+            let style_1 = {
+                backgroundColor: "green"
+            };
+
+            let style_2 = {
+                backgroundColor: "yellow"
+            };
+
+            $(".txt4").prevAll().css(style_1);
+            $(".txt4").nextAll().css(style_2);
+        });
+
+        // (10) 모든 형태 선택자 siblings()
+        // -> 선택한 요소를 기준으로 모든 형제들을 선택
+        $(function () {
+            let style_1 = {
+                backgroundColor: "brown"
+            };
+
+            $(".txt5").siblings().css(style_1);
+        });
+
+        // (11) 지정 형 이전 요소들 선택자 prevUntil("요소명")
+        // -> 형 요소를 선택하여, 그 이전 요소까지 모두 선택한다.
+        // (12) 지정 동생 이전 요소들 선택자 nextUntil("요소명")
+        // -> 동생 요소를 선택하여, 그 이전 요소까지 모두 선택한다.
+
+        // ** 이때 지정한 요소와 기준 요소는 선택되지 않는다.
+        $(function () {
+            let style_1 = {
+                backgroundColor: "red"
+            };
+
+            let style_2 = {
+                backgroundColor: "blue"
+            };
+
+            $(".txt6").prevUntil(".title6").css(style_1);
+            $(".txt6").nextUntil(".txt7").css(style_2);
+        })
+    </script>
+</head>
+<body>
+ 
+<!-- --------------------------------------------------------------- -->
+    <h5>---형 / 동생 요소 선택자---</h5>
+    <div id="wrap3">
+        <h1>인접 관계 선택자</h1>
+        <p>내용1</p>
+        <p class="txt3">기준</p>
+        <p>내용3</p>
+        <p>내용4</p>
+    </div>
+<!-- --------------------------------------------------------------- -->
+    <h5>---모든 형 / 모든 동생 요소 선택자---</h5>
+    <div id="wrap4">
+        <h1>인접 관계 선택자</h1>
+        <p>내용1</p>
+        <p class="txt4">기준</p>
+        <p>내용3</p>
+        <p>내용4</p>
+    </div>
+<!-- --------------------------------------------------------------- -->
+    <h5>---모든 형제 선택자---</h5>
+    <div id="wrap5">
+        <h1>인접 관계 선택자</h1>
+        <p>내용1</p>
+        <p class="txt5">기준</p>
+        <p>내용3</p>
+        <p>내용4</p>
+    </div>
+ <!-- --------------------------------------------------------------- -->
+    <h5>---지정 형/동생 이전 선택자---</h5>
+    <div id="wrap6">
+        <h1 class="title6">선택자</h1>
+
+        <p>내용1</p>
+        <p>내용1</p>
+
+        <p class="txt6">내용3</p>
+        <p>내용4</p>
+        <p>내용5</p>
+
+        <p class="txt7">내용6</p>
+    </div>
+
+
+</body>
+
+</html>

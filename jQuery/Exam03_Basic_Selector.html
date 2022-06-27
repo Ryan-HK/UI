@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>직접 선택자!</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+</head>
+
+<script>
+    // (1) 전체 선택자 *
+    $(function () {
+        $("*").css("border", "1px solid red");
+    })
+
+    // (2) 아이디 선택자 #
+    $( () => {
+        $("#tit").css("background-color", "#0ff");
+    });
+
+    // (3) 클래스 선택자 .
+    $( () => {
+        $(".tit").css("background-color", "#ff0");
+    });
+
+    // (4) 요소선택자 (요소명을 적어준다.)
+    $(function () {
+        $("p").css("background-color", "green");
+    })
+
+    // (5) 그룹 선택자 ,
+    $( () => {
+        $("#a, .b").css("background-color", "brown");
+    })
+
+    // (6) 소속(종속) 선택자 
+    // -> 아래와 같이 붙여 쓴다.
+    // -> h3태그 중에서 id명이 c인 요소를 골라라! 라는 의미이다.
+    $( () => {
+        $("h3#c").css("background-color", "black");
+    })
+
+</script>
+<body>
+
+    <h1 id="title">제목</h1>
+
+    <h1>제이쿼리</h1>
+    <h2 id="tit">선택자</h2>
+    <h3 id="a">직접 선택자</h3>
+    
+    <h1 class="b">제이쿼리</h1>
+    <h2 class="tit">선택자</h2>
+    <h3 id="c">직접 선택자</h3>
+
+    <p>직접 요소 선택자</p>
+    
+</body>
+</html>

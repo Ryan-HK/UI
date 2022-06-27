@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery와 $의 정체!</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+    <script>
+        console.clear();
+
+        console.log("1. jQuery : " + jQuery);
+
+        // jQuery의 타입은 function 이다.
+        console.log("2. typeof jQuery :",typeof jQuery);
+
+        // $의 정체는 jQuery와 같다.
+        console.log("4. $ :", $);
+        // $의 타입은 function이다.
+        console.log("5. typeof $ :", typeof $);
+
+        // $과 function은 같은 타입이다!
+        console.log("6. $ instanceof Function :", $ instanceof Function);
+
+        // $과 jQuery는 타입과 값이 모두 같다!
+        // -> 즉 같은 녀석이다.
+        console.log("7. jQuery == $ :", jQuery == $);
+        console.log("8. jQuery === $ :", jQuery === $);
+
+        $(document).ready(function (params){
+            console.log("- document.onload event handler invoked.");
+
+            // jQuery의 익명구현객체의 매개변수는 jQuery이다.            
+            console.log("- params :", params, params === jQuery, params === $);
+
+            // 전역객체 window를 이용한 jQuery와 $ 비교
+            // -> 같다.
+            console.log(window.jQuery === window.$, window.$ === jQuery, jQuery === $);
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>인접관계 선택자</title>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+    <script>
+        // (1) 부모 요소 선택자 parent(), parents()
+        // -> #list1의 부모요소인 ul태그가 선택된다.
+        // parent() : 선택한 요소의 부모 요소를 선택한다.
+        // parents() : 선택한 요소의 모든 부모 요소를 선택한다.
+        $( () => {
+            $("#list1").parent().css("border", "2px solid red")
+        })
+
+        // (2) 가까운 상위 요소 선택자 closest("요소a")
+        // -> 선택한 요소의 상위 요소 중, 요소a인 요소를 골라라!
+        $( function () {
+            $(".txt1").closest("div").css("border", "2px solid blue");
+        })
+
+        // (3) 하위 요소 선택자 (후손선택자 : 공백으로 선택자를 구분)
+        $( function () {
+            $("#wrap2 h1").css({
+                backgroundColor: "yellow",
+                border: "1px solid red"
+            });
+        });
+
+        // (4) 자식 요소 선택자 (선택한 요소를 기준으로, 자식 관계에 지정한 요소를 선택한다.)
+
+        $( () => {
+            $("#wrap2 > p").css({
+                backgroundColor: "blue",
+                border: "2px solid black"
+            });
+        });
+
+        // (5) 자식 요소들 선택자 children()
+        // -> 선택한 요소의 모든 자식 요소를 선택한다.
+        // -> 자식 요소선택자와는 달리, 모든 손자들까지 모두 선택한다.
+        $( () => {
+            $("#wrap2 > section").children().css({
+                backgroundColor: "green"
+            });
+        });
+
+        // (6) 형 요소 선택자 prev()
+        // -> 선택한 요소의 바로 이전 요소를 선택한다.
+
+        // (7) 동생 요소 선택자 next()
+        // -> 선택한 요소의 다음 요소를 선택한다.
+
+        $( () => {
+
+            let style_1 = {
+                backgroundColor: "red"
+            };
+
+            let style_2 = {
+                backgroundColor: "blue"
+            };
+
+            $(".txt3").prev().css(style_1);
+            $(".txt3").next().css(style_2);
+        });
+
+        // (8) 모든 형 요소 선택자 prevAll()
+        // -> 선택한 요소의 모든 형을 선택한다.
+        // (9) 모든 동생 요소 선택자 nextAll()
+        // -> 선택한 요소의 모든 동생을 선택한다.
+
+        $( () => {
+            let style_1 = {
+                backgroundColor: "green"
+            };
+
+            let style_2 = {
+                backgroundColor: "yellow"
+            };
+
+            $(".txt4").prevAll().css(style_1);
+            $(".txt4").nextAll().css(style_2);
+        });
+
+        // (10) 모든 형태 선택자 siblings()
+        // -> 선택한 요소를 기준으로 모든 형제들을 선택
+        $(function () {
+            let style_1 = {
+                backgroundColor: "brown"
+            };
+
+            $(".txt5").siblings().css(style_1);
+        });
+
+        
+    </script>
+</head>
+<body>
+    <h1>인접 관계 선택자</h1>
+    <ul id="wrap1">
+        <li>리스트1
+            <ul>
+                <li id="list1">리스트1-1
+                    <p>리스트1-1의 후손!</p>
+                </li>
+                <li>리스트1-2</li>
+            </ul>
+        </li>
+        <li>리스트2</li>
+        <li>리스트3</li>
+    </ul>
+
+    <div>
+        <div>
+            <p class="txt1">내용</p>
+        </div>
+    </div>
+<!-- --------------------------------------------------------------- -->
+    <h5>---하위 요소 및 자식요소 선택자---</h5>
+    <div id="wrap2">
+        <h1>인접 관계 선택자</h1>
+        <p>내용1</p>
+
+        <section>
+            <h1>하위 요소 선택자</h1>
+            <p>자식 요소들 선택자</p>
+            <div>
+                <p>내용1</p>
+                <p>내용2</p>
+
+                <div>
+                   <p>내용3</p>
+                </div>
+            </div>
+        </section>
+    </div>
+<!-- --------------------------------------------------------------- -->
+    <h5>---형 / 동생 요소 선택자---</h5>
+    <div id="wrap3">
+        <h1>인접 관계 선택자</h1>
+        <p>내용1</p>
+        <p class="txt3">기준</p>
+        <p>내용3</p>
+        <p>내용4</p>
+    </div>
+<!-- --------------------------------------------------------------- -->
+    <h5>---모든 형 / 모든 동생 요소 선택자---</h5>
+    <div id="wrap4">
+        <h1>인접 관계 선택자</h1>
+        <p>내용1</p>
+        <p class="txt4">기준</p>
+        <p>내용3</p>
+        <p>내용4</p>
+    </div>
+<!-- --------------------------------------------------------------- -->
+    <h5>---모든 형제 선택자---</h5>
+    <div id="wrap5">
+        <h1>인접 관계 선택자</h1>
+        <p>내용1</p>
+        <p class="txt5">기준</p>
+        <p>내용3</p>
+        <p>내용4</p>
+    </div>
+
+</body>
+
+</html>
