@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+    <script>
+        console.clear();
+
+        $( () => {
+
+            let arr1 = [
+                { area: "서울", name: "무대리"},
+                { area: "서울", name: "홍과장"},
+                { area: "서울", name: "박사장"}
+            ]; // 객체를 원소로 가지는 배열
+
+
+            // $.map() : 배열에 저장 된 데이터 수 만큼 메소드가 반복 실행 왼다.
+            // 이때 반환 된 데이터는 새로운 배열에 저장이 된다. (즉 return 값이 새로운 배열에 저장 된 다는 뜻이다.)
+            // 즉 리턴 값은 배열객체를 반환한다는 뜻이다.
+            let arr2 = $.map(arr1, function (element, index){
+                if(element.area == "서울"){
+                    return element.area + element.name;
+                } // if
+            }) // $.map
+
+            console.log(arr2);
+
+            // index("요소선택(제이쿼리형태")
+            // 요소를 선택 (li) 하고, 지정한 요소 (#list3)의 인덱스 정보를 가져온다.
+            var idxNum = $("li").index($("#list3"));
+
+            console.log(idxNum);
+
+        })
+    </script>
+</head>
+
+<body>
+
+    <h1>배열 관련 메소드</h1>
+
+    <ul>
+        <li>내용1</li>
+        <li>내용2</li>
+        <li id="list3">내용3</li>
+        <li>내용4</li>
+    </ul>
+    
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+    <script>
+        $(function () {
+            // contains(text) : 선택한 요소 중 text를 포함하는 요소를 선택하라!
+            $("#inner_1 p:contains(내용1)").css({backgroundColor: "#ff0"});
+
+            // has(요소명) : 선택한 요소 중, 요소를 포함하는 요소를 선택하라!
+            $("#inner_1 p:has(strong)").css({backgroundColor: "#0ff"});
+
+            // contents() : 선택한 요소의 자손 요소들을 선택한다.
+            // 이 때, 모든 요소들을 리턴한다. (text 노트까지 포함!!)
+            $("#outer_wrap").contents().css({
+                border: "5px solid #F00",
+                color: "#0F0"
+            });
+
+            // not() : 선택한 요소만 제외하고 선택하라!!
+            // *** end() : 필더링 (여기서는 eq(1))이 시작되기 전 요소를 선택하라!
+            //              -> 즉 #inner_2 p를 반환한다.
+        
+            $("#inner_2 p").not(":first").css({backgroundColor: "#f0f"});
+            $("#inner_2 p").eq(1).end().css({backgroundColor: "#00f"});
+        })
+
+    </script>
+
+</head>
+<body>
+    <div id="outer_wrap">
+        안녕1
+        <h1>안녕</h1>
+        안녕2
+        <section id="inner_1">
+            안녕3
+            <h1>contains(), contents(), has( )</h1>
+            <p><span>내용1</span></p>
+            <p><strong>내용2</strong></p>
+            <p><span>내용3</span></p>
+        </section>
+        안녕4
+        <section id="inner_2">
+            <h1>not( ), end( )</h1> 
+            <p>내용4</p>
+            <p>내용5</p>
+            <p>내용6</p>
+        </section>
+    </div>
+</body>
+</html>

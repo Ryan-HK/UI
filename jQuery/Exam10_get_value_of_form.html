@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+    <!-- form 태그의 value 값들을 얻는 메소드 val(); -->
+
+    <script>
+        $(function (){
+
+            // radio와 checkbox의 value값 구하기 (** 단! 단일한 값만 불러올 수 있다.)
+            var z1 = $("#zone1 :selected").val();
+            console.log(z1);
+
+            var z2 = $("#zone2 :checked").val();
+            console.log(z2);
+
+            var z3 = $("#zone3 :checked").val();
+            console.log(z3);
+
+            // 복수 선택에 대한 value값 출력하기
+            $("#zone2 :checked").each(function(element, index) {          
+                console.log($(this).val());   
+            })
+
+            // .map 을 이용하여, value값을 배열에 담기
+
+            var arr = $("#zone2 :checked").map( function (element, index) {
+                return $(this).val();
+            })
+
+            console.log(arr);
+        })
+
+    </script>
+
+
+
+</head>
+<body>
+    <div id="wrap">
+        <p>내용1</p>
+        <p style="display:none">내용2</p>
+        <p>내용3</p>
+    </div>
+
+    <form action="#">
+        <p id="zone1">
+            <select name="course" id="course" multiple>
+                <option value="opt1">옵션1</option>
+                <option value="opt2" selected>옵션2</option>
+                <option value="opt3">옵션3</option>
+            </select>
+        </p>
+
+        <p id="zone2">
+            <input type="checkbox" name="hobby" value="독서"> 독서
+            <input type="checkbox" name="hobby" value="자전거" checked> 자전거
+            <input type="checkbox" name="hobby" value="등산" checked> 등산
+        </p>
+
+        <p id="zone3">
+            <input type="radio" name="gender" id="male" checked> 남성
+            <input type="radio" name="gender" id="female"> 여성
+        </p>
+
+        <p>&nbsp;</p>
+
+        <p id="zone4">
+            아이디 : <input type="text" name="user_id" id="user_id"><br>
+            비밀번호 : <input type="password" name="user_pw" id="user_pw" autocomplete>
+        </p>
+</body>
+</html>

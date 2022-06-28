@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+    <script>
+
+
+        $(function() {
+            // 1. :even 짝수번째 요소(element)만 선택하라!
+            $("#menu1 li:even").css({
+                backgroundColor: "red",
+                color: "white"
+            });
+
+            // 2. :odd 홀수번째 요소만 선택하라!
+            $("#menu1 li:odd").css({
+                backgroundColor: "blue",
+                color: "white"
+            });
+
+            // 3. :first 첫번째 요소만 선택
+            $("#menu2 li:first").css({
+                backgroundColor: "#ff0"
+            });
+            
+            // 4. :last 마지막 요소만 선택
+            $("#menu2 li:last").css({
+                backgroundColor: "#0ff"
+            });
+
+            // 5. eq(n) 지정 된 인덱스번호와 일치하는 요소노드(element node)를 선택
+            $("#menu3 li").eq(2).css({
+                backgroundColor: "#F00"
+            });
+
+            // 6. lt(n) : 지정 된 인덱스 번호보다 작은 요소노드를 선택한다.
+            $("#menu3 li:lt(2)").css({
+                backgroundColor: "#0F0"
+            });
+
+            // 7. gt(n) : 지정 된 인덱스 번호보다 큰 요소노드를 선택한다.
+            $("#menu3 li:gt(2)").css({
+                backgroundColor: "#00F"
+            });
+
+            // 8. first-of-type : 지정된 요소의 무리 중 첫번째 요소만 선택하라!
+            $("#menu4 li:first-of-type").css({
+                backgroundColor: "#E1e"
+            });
+
+            // 9. last-of-type : 지정된 요소의 무리 중 마지막 요소만 선택하라!
+            $("#menu4 li:last-of-type").css({
+                backgroundColor: "#bca"
+            });
+
+            // 10. :nth-child(n) -> 요소 무리 중, 지정한 번째에 있는 요소를 선택
+            $("#menu5 li:nth-child(1)").css({
+                backgroundColor: "#F00"
+            });
+
+            // 11. :nth-child(2n) -> 요소 무리 중, 짝수 번째 요소 선택
+            // 11. :nth-child(2n+1) -> 홀수 번째 요소 선택
+            $("#menu5 li:nth-child(2n)").css({
+                backgroundColor: "#0F0"
+            });
+
+            // 12. :nth-last-child(n) -> 요소 무리 중, 마지막 위치로 부터 지정한 번째에 있는 요소 선택
+            $("#menu6 li:nth-last-child(2)").css({
+                backgroundColor: "#FF0"
+            });
+
+            // 13. :only-child -> 요소가 1개인 요소만 선택!
+            $(".menu7 li:only-child").css({
+                backgroundColor: "#0FF"
+            })
+
+
+
+
+        });
+    </script>
+</head>
+<body>
+
+    <!-- ------------------------------------- -->
+    <h1>:even과 :odd</h1>
+
+    <ul id="menu1">
+        <li>메뉴1</li>
+        <li>메뉴2</li>
+        <li>메뉴3</li>
+        <li>메뉴4</li>
+    </ul>
+
+    <!-- ------------------------------------- -->
+    <h1>:first 와 :last</h1>
+
+    <ul id="menu2">
+        <li>메뉴1</li>
+        <li>메뉴2</li>
+        <li>메뉴3</li>
+        <li>메뉴4</li>
+    </ul>
+
+    <!-- ------------------------------------- -->
+    <h1>eq(n), lt(n), gt(n) 요소노드 선택자</h1>
+
+    <ul id="menu3">
+        <li>메뉴1</li>
+        <li>메뉴2</li>
+        <li>메뉴3</li>
+        <li>메뉴4</li>
+        <li>메뉴5</li>
+    </ul>
+
+    <!-- ------------------------------------- -->
+    <h1>first-of-type 과 last-of-type</h1>
+
+    <ul id="menu4">
+        <li>메뉴1</li>
+        <li>메뉴2</li>
+        <li>메뉴3</li>
+        <li>메뉴4</li>
+        <li>메뉴5</li>
+    </ul>
+
+    <!-- ------------------------------------- -->
+    <h1>nth-child(n), nth-last-child(n)</h1>
+
+    <ul id="menu5">
+        <li>메뉴1</li>
+        <li>메뉴2</li>
+        <li>메뉴3</li>
+        <li>메뉴4</li>
+        <li>메뉴5</li>
+        <li>메뉴6</li>
+    </ul>
+
+    <!-- ------------------------------------- -->
+    <h1>slice(start, end) / only-child</h1>
+
+    <ul id="menu6">
+        <li>메뉴1</li>
+        <li>메뉴2</li>
+        <li>메뉴3</li>
+        <li>메뉴4</li>
+        <li>메뉴5</li>
+        <li>메뉴6</li>
+    </ul>
+
+    <ul class="menu7">
+        <li>메뉴1</li>
+    </ul>
+
+    <ul class="menu7">
+        <li>메뉴1</li>
+        <li>메뉴2</li>
+    </ul>
+
+
+    
+
+</html>
