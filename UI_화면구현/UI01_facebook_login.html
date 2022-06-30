@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        body{
+            background-color: rgb(240, 242, 245);
+            margin: 20px auto;
+            padding: 20px;
+            
+        }
+
+        /* section에 가운데 정렬  */
+        section {
+            margin-top: 100px;
+            margin-bottom: 100px;
+            text-align: center;
+        }
+
+        /* 로고이미지와 설명 */
+        .div1{
+            display: inline-block;
+            text-align: left;
+            width: 500px;
+            height: 270px;
+
+           
+        }
+
+        /* 로그인 정보 입력 부분 */
+        .div2{
+            display: inline-block;
+            
+            border-radius: 10px;
+            
+            
+            width: 400px;
+            height: 400px;
+            margin: 0 0 0 50px;
+        }
+
+        .div3 {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px 1px gainsboro;
+
+            height: 400px;
+        }
+
+        /* div2태그의 자식 - 아이디입력칸 */
+        .userid{
+            margin-top: 20px;
+            padding: 14px 16px;
+            font-size: 17px;
+            width: 330px;
+        }
+
+        /* div2태그의 자식 - 패스워드 입력칸 */
+        .pwd{
+            width: 330px;
+            padding: 14px 16px;
+            font-size: 17px;
+        }
+
+        /* footer 영역 */
+        footer{
+            font-size: 15px;
+            background-color: white;
+            padding: 10px;
+        }
+
+        footer ul {
+            list-style: none;
+            display: inline;
+        }
+
+        footer li {
+            margin: 10px;
+            float: left;
+        }
+
+        #float_clear{
+            clear: both;
+        }
+
+        @media only screen and (max-width: 966.1px) {
+
+        .div2 {
+                display:inline-block;
+                text-align: center;
+        }
+
+        .div1 {
+                text-align: center;
+            }
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="div1">
+            <img src="https://static.xx.fbcdn.net/rsrc.php/y8/r/dF5SId3UHWd.svg" alt="facebook" width="301.06">
+            <h2>Facebook에서 전세계에 있는 친구, 가족, 지인들과 함께 이야기를 나눠보세요.</h2>
+        </div>
+
+        <div class="div2">
+            <div class="div3">
+                <form action="">
+                    <input type="text" name="email" id="email" placeholder="이메일 또는 전화번호" class="userid"> <br>
+                    <input type="password" name="pwd" id="pwd" placeholder="비밀번호" class="pwd"><br>
+                    <input type="submit" value="로그인">
+                </form>
+
+                <a href="#">비밀번호를 잊으셨나요?</a><br>
+                <a href="#">새 계정 만들기</a>
+               
+            </div>
+                <div id="float_clear"></div>
+                <p>유명인, 브랜드 또는 비즈니스를 위한 <span> 페이지 만들기</span></p>
+        </div>
+    </section>
+
+
+
+    <footer>
+        <ul>
+            <li>한국어</li>
+            <li>English (US)</li>
+            <li>Tiếng Việt</li>
+            <li>Bahasa Indonesia</li>
+            <li>ภาษาไทย</li>
+            <li>Español</li>
+            <li>中文(简体)</li>
+            <li>日本語</li>
+            <li>Português (Brasil)</li>
+            <li>Français (France)</li>
+            <li>Deutsch</li>
+            <div id="float_clear"></div>
+        </ul>
+
+        <hr>
+
+        <ul>
+            <li>가입하기</li>
+            <li>로그인</li>
+            <li>Messenger</li>
+            <li>Facebook Lite</li>
+            <li>Watch</li>
+            <li>장소</li>
+            <li>게임</li>
+            <li>Marketplace</li>
+            <li>FacebookPay</li>
+            <li>Oculus</li>
+            <li>Portal</li>
+            <li>Instagram</li>
+            <li>Bulletin</li>
+            <li>지역</li>
+            <li>기부 캠페인</li>
+            <li>서비스</li>
+            <li>투표 정보 센터</li>
+            <li>그룹</li>
+            <li>정보</li>
+            <li>광고 만들기</li>
+            <li>페이지 만들기</li>
+            <li>개발자</li>
+            <li>채용 정보</li>
+            <li>개인정보처리방침</li>
+            <li>쿠키</li>
+            <li>AdChoices</li>
+            <li>이용 약관</li>
+            <li>고객 센터</li>
+            <li>연락처 업로드 및 비사용자</li>
+            <div id="float_clear"></div>
+        </ul>
+
+        <br>
+
+        <p>Meta © 2022</p>
+    </footer>
+</body>
+</html>

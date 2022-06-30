@@ -1,0 +1,2298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>spring</title>
+
+    <script src="https://kit.fontawesome.com/556efa47d7.js" crossorigin="anonymous"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Fascinate&family=Josefin+Sans:ital,wght@1,700&family=Lobster&family=Open+Sans:wght@300&family=Pacifico&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+
+            text-decoration: none;
+            list-style: none;
+            box-sizing: border-box;
+        }
+
+        body {
+
+            margin: 0 auto;
+            text-align: center;
+            /* width: 1500px; */
+
+            /* border: 10px solid yellowgreen */
+        }
+
+
+        header {
+            width: 100%;
+            /* border: 5px solid blue;  */
+            /* display:inline-block; */
+
+        }
+
+
+        nav {
+
+
+            padding-top: 8px;
+            padding-bottom: 8px;
+            padding: 8px auto;
+
+            position: relative;
+
+            /* border: 5px solid green;         */
+        }
+
+        .inner_nav {
+
+            padding: 0 100px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            position: relative;
+
+            /* border: 5px solid purple; */
+
+        }
+
+        /* Spring logo */
+        .inner_nav_wrap_logo {
+            display: block;
+            position: relative;
+        }
+
+        /* 스프링 로고 이미지 */
+        .inner_nav_wrap_logo_img {
+            height: 48px;
+            width: 100%;
+            max-width: 250px;
+        }
+
+        .inner_nav_tabmenu {
+            margin-left: auto;
+
+        }
+
+        /* Tab Menu */
+        .inner_nav_tabmenu_wrap_btn {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            color: #191e1e;
+            width: 705px;
+
+            /* border: 1px solid green; */
+        }
+
+        /*투명 메뉴 버튼*/
+        .invisible_tab_btn ul {
+            position: absolute;
+            top: 0px;
+            right: 160px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            width: 650px;
+
+            opacity: 0;
+
+
+
+            border: 5px solid red;
+        }
+
+        .invisible_tab_btn ul li {
+            display: block;
+            border: 1px solid black;
+        }
+
+        /* 투명 메뉴 버튼 (개별 조정) */
+        #invisible_btn1,
+        #invisible_btn2,
+        #invisible_btn3,
+        #invisible_btn6 {
+            height: 60px;
+        }
+
+        #invisible_btn4,
+        #invisible_btn5 {
+            margin-bottom: 19px;
+        }
+
+
+
+        /* Drop Menu */
+        .drop_menu {
+            width: 100%;
+            /* max-width: 1140px; */
+            position: relative;
+            z-index: 6;
+            /* border: 10px solid hotpink; */
+        }
+
+        /* Drop Menu (메뉴리스트 초기상태) */
+        .wrap_drop_menu ul {
+            visibility: hidden;
+            opacity: 0;
+            width: 230px;
+            position: absolute;
+            top: 8px;
+            right:0px;
+
+            background-color: #FFF;
+            box-shadow: 0px 0px 5px 5px rgba(224, 224, 224, 0.486);
+
+            transition: 0.5s;
+            z-index: 3;
+
+            border-radius: 20px;
+
+            /* border: 1px solid grey; */
+        }
+
+        .wrap_drop_menu ul li {
+            margin-top: 15px;
+        }
+
+        /* Drop Menu (항목별 메뉴리스트 초기상태) */
+        .wrap_drop_menu ul[id=drop_menu_btn1] {
+            right: 575px;
+
+
+            height: auto;
+            padding: 37px 30px;
+        }
+
+        .wrap_drop_menu ul[id=drop_menu_btn2] {
+            right: 435px;
+
+            height: auto;
+            padding: 37px 30px;
+        }
+
+        .wrap_drop_menu ul[id=drop_menu_btn3] {
+            right: 330px;
+
+            height: auto;
+            padding: 37px 30px;
+        }
+
+        .wrap_drop_menu ul[id=drop_menu_btn6] {
+            right: 50px;
+
+            height: auto;
+            padding: 37px 30px;
+        }
+
+        /* 토글버튼(다크모드 변경 버튼) */
+        #togle1 {
+            display: none;
+        }
+
+        /* 토글버튼(배경) */
+        input[id=togle1]~label {
+            display: flex;
+            width: 36px;
+            height: 10px;
+
+            border-radius: 5px;
+            background-color: #d7e7e7;
+
+            position: relative;
+
+            margin-top: 5px;
+        }
+
+        /* 토글버튼(unchecked) */
+        #label_togle1::before {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            content: "\f185";
+            font-family: "Font Awesome 5 Free";
+            color: white;
+            background-color: black;
+            border-radius: 100%;
+
+            width: 22px;
+            height: 22px;
+
+            position: absolute;
+            top: -6px;
+            right: 16px;
+
+            transition: 0.5s;
+        }
+
+        /* 토글버튼(checked) */
+        #togle1:checked~label::before {
+            content: "\f186";
+            transform: translateX(25px);
+            color: black;
+            background-color: white;
+        }
+
+        /* 링크 커서  */
+        a {
+            cursor: pointer;
+        }
+
+
+        /* Main */
+        /* .main {
+            height: 4000px;
+            background-color: grey;
+        } */
+
+        /* 헤더영역 */
+
+        /* 헤더 도형부분 */
+        .rec1 {
+            width: 600px;
+            height: 600px;
+            
+            position: absolute;
+            top: -100px;
+            left: -160px;
+            /* background-color: #191e1e; */
+
+            display: flex;;
+            flex-wrap:wrap;
+
+            transform: rotate(45deg);
+        }
+
+        .rec1_1 {
+            width: 600px;
+            height: 300px;
+            background-color: #FFFFFF;
+            border-top-left-radius: 300px;
+            border-top-right-radius: 300px;;
+        }
+
+        .rec1_2 {
+            width: 300px;
+            height: 300px;
+            background-color: #6DB33F;
+            display: inline-block;
+        }
+
+        .rec1_3 {
+            width: 299px;
+            height: 300px;
+            background-color: #80EA62;
+            display: inline-block;
+        }
+
+        .rec2 {
+            width: 600px;
+            height: 600px;
+            
+            position: absolute;
+            top: -100px;
+            right: -160px;
+            /* background-color: #191e1e; */
+
+            display: flex;;
+            flex-wrap:wrap;     
+        }
+
+        .rec2_1 {
+            width: 300px;
+            height: 300px;
+            background-color: #80EA62;
+            display: inline-block;
+        }
+
+        .rec2_2 {
+            width: 300px;
+            height: 300px;
+            background-color: #6DB33F;
+            display: inline-block;
+        }
+
+        .rec2_3 {
+            width: 300px;
+            height: 300px;
+            display: inline-block;
+        }
+
+        .rec2_4 {
+            width: 300px;
+            height: 300px;
+            background-color: #FFFFFF;
+            display: inline-block;
+        }
+
+        .main_header {
+            width: 100%;
+            height: 403px;
+            background-color: #ebf2f2;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+
+            overflow: hidden;
+            /* border: 5px solid red; */
+        }
+
+        .main_header_center {
+            z-index: 5;
+        }
+
+        .center_text {
+            /* border: 1px solid blue; */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* 텍스트 애니메이션 효과 */
+        #move_text,
+        .fixed_text {
+            color: #191e1e;
+            font-size: 60px;
+            font-weight: bold;
+            width: 100%;
+        }
+
+        #flip {
+            height: 82px;
+            width: 540px;
+            overflow: hidden;
+        }
+
+        .wrap_ani {
+            display: flex;
+            justify-content: center;
+            /* border: 1px solid red; */
+        }
+
+        .wrap_ani span {
+            position: relative;
+        }
+
+        #flip div span:nth-of-type(n) {
+            animation: show 8s infinite;
+        }
+
+        #flip div span:nth-of-type(1) {
+            animation-delay: 0s;
+        }
+
+        #flip div span:nth-of-type(2) {
+            animation-delay: 0.05s;
+        }
+
+        #flip div span:nth-of-type(3) {
+            animation-delay: 0.1s;
+        }
+
+        #flip div span:nth-of-type(4) {
+            animation-delay: 0.15s;
+        }
+
+        #flip div span:nth-of-type(5) {
+            animation-delay: 0.2s;
+        }
+
+        #flip div span:nth-of-type(6) {
+            animation-delay: 0.25s;
+        }
+
+        #flip div span:nth-of-type(7) {
+            animation-delay: 0.3s;
+        }
+
+        #flip div span:nth-of-type(8) {
+            animation-delay: 0.35s;
+        }
+
+        #flip div span:nth-of-type(9) {
+            animation-delay: 0.40s;
+        }
+
+        #flip div span:nth-of-type(10) {
+            animation-delay: 0.45s;
+        }
+
+        #flip div span:nth-of-type(11) {
+            animation-delay: 0.50s;
+        }
+
+        #flip div span:nth-of-type(12) {
+            animation-delay: 0.55s;
+        }
+
+
+        @keyframes show {
+            0% {
+                top: 0px;
+            }
+
+            2% {
+                top: -82px;
+            }
+
+            20% {
+                top: -82px;
+            }
+
+            22% {
+                top: -164px;
+            }
+
+            40% {
+                top: -164px;
+            }
+
+            42% {
+                top: -246px;
+            }
+
+            60% {
+                top: -246px;
+            }
+
+            62% {
+                top: -328px;
+            }
+
+            80% {
+                top: -328px;
+            }
+
+            82% {
+                top: -410px;
+            }
+
+            99.99% {
+                top: -410px
+            }
+
+            100% {
+                top: 0px;
+            }
+        }
+        @keyframes riseUp {
+            0% {transform: translateY(100px)}
+            100% {transform: translateY(0);}
+        }
+
+        @keyframes fadeIn {
+            0% {opacity: 0}
+            100% {opacity: 1}
+        }
+         /* @keyframes show { 
+            0% {top:6px;} 
+            2% {top: 6px;} 
+            20% {top: 6px;}
+            22% {top: -70px;} 
+            40% {top:-70px;} 
+            42% {top: -140px;} 
+            60% {top: -140px;}
+            62% {top: -210px;}
+            80% {top:-210px;}
+            82% {top:-280px;}
+            99.99% {top:-280px} 
+            100% {top: 6px;}
+        } */
+
+        /* 상단 WHY SPRING / QUICK START 버튼 */
+
+        .btn_slide {
+            margin-top: 5px;;
+            width: 158.85px;
+            height: 51.99px;
+
+            font-size: 15px;
+            font-weight: bold;
+            background-color: #ebf2f2;
+
+            position: relative;
+        }
+        
+
+
+       .btn1:before, .btn2:before {
+            position: absolute;
+            top:-1px;
+            left:-1px;
+
+            content: "";
+            /* border: 1px solid red; */
+            height: 51.99px;
+
+            width: 0px;
+            background-color: #191e1e;
+            transition: 0.1s;
+       }
+
+       .btn1:hover:before {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            content: "WHY SPRING";
+            width:158px;
+       }
+
+       .btn2:hover:before {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            content: "QUICK START";
+            width:158px;
+       }
+
+
+
+
+        /* 컨텐츠 영역 */
+        /* 컨텐츠 영역 */
+        /* 컨텐츠 영역 */
+        /* 컨텐츠 영역 */
+        /* 컨텐츠 영역 */
+        /* 컨텐츠 영역 */
+        /* 컨텐츠 영역 */
+        /* 컨텐츠 영역 */
+
+        /* 컨텐츠 - 헤더 부 */
+        .main_contents_top {
+            max-width: 1140px;
+            width: 100%;
+            height: 83px;
+            padding: 0 20px;
+            margin: 0 auto;
+            /* background-color: yellow; */
+        }
+
+        a.link_animate {
+            display: inline-block;
+        }
+
+        a.link_animate:before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #086dc3;
+            visibility: hidden;
+            transform-origin: top left;
+            transform: scaleX(0);
+            transition: all .3s ease-in-out 0s;
+
+        }
+
+        a.link_animate:hover:before {
+            visibility:visible;
+            transform:scaleX(1);
+        }
+
+        .news {
+            max-width: 725px;
+            padding: 30px 0;
+            display: flex;
+            margin-left: auto;
+            margin-right: auto;
+            justify-content: space-between;
+
+        }
+
+        .subnews {
+            flex-grow: 1;
+            max-width: 630px;
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        .news_tag {
+            display: inline-block;
+            border-radius: 20px;
+            color: white;
+            font-weight: 700;
+            background-color: #06bc;
+            padding: 2px 15px;
+        }
+
+        .news_item {
+            flex-grow: 0;
+            color: #086dc3;
+            display: inline-block;
+            text-decoration: none;
+            position: relative;
+            transition: all .2s;
+        }
+
+        .news_divider {
+            width: 2px;
+            background: #b6d8d1;
+
+        }
+
+        .main_contents_middle_1 {
+            height: 100%;
+            margin-bottom: 80px;
+        }
+
+        .main_contents_middle_1_header h2 {
+            font-size: 2.375rem;
+            margin-block-start: 0.83em;
+            margin-block-end: 0.83em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            /* text-align: left; */
+
+        }
+
+        /* 컨텐츠 카드 외부 블럭 */
+        .container1_contents:nth-last-of-type(n){
+            animation: riseUp 1s, fadeIn 1s;
+        }
+
+        .container1_contents:nth-last-of-type(7){
+            animation-delay: .1s;
+        }
+        .container1_contents:nth-last-of-type(6){
+            animation-delay: .2s;
+        }
+        .container1_contents:nth-last-of-type(5){
+            animation-delay: .3s;
+        }
+        .container1_contents:nth-last-of-type(4){
+            animation-delay: .4s
+        }
+        .container1_contents:nth-last-of-type(3){
+            animation-delay: .5s;
+        }
+        .container1_contents:nth-last-of-type(2){
+            animation-delay: .6s;
+        }
+        .container1_contents:nth-last-of-type(1){
+            animation-delay: .7s;
+        }
+        .main_contents_middle_1_container1 {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            margin: 0 auto;
+            max-width: 1180px;
+            width: 100%;
+        }
+
+        .main_contents_middle_1_container2 {
+            display: flex;
+            
+            justify-content: space-between;
+            padding: 0 20px;
+            margin: 0 auto;
+            max-width: 950px;
+        }
+
+        /* 컨텐츠 카드 */
+        .container1_contents {
+            width: 23.5%;
+            height: 356.53px;
+            margin-bottom: 20px;
+            text-align: center;
+
+            border: 1px solid #ebf2f2;
+            border-radius: 5px;
+
+
+            padding: 20px 25px;
+
+            box-sizing: border-box;
+
+            /* animation: riseUp .5s ,fadeIn .7s; */
+
+        }
+
+        .container1_contents2 {
+            width: 32.5%;
+        }
+
+
+        .container1_contents:hover{
+            transition: all .2s;
+            transform: translateY(-3px);
+
+            position: relative;
+            box-shadow: 0 10px 20px 0 rgb(108 135 135 / 20%);
+            top: 0;
+        }
+        .container1_contents:hover h3{
+           color:yellowgreen;
+        }
+
+        /* 컨텐츠 블록 텍스트 */
+        .container1_contents h3{
+            transition: color .1s;
+
+            margin-top: 0.4em;
+            margin-bottom: 0.4em;
+        }
+        .container1_contents p{
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 1em;
+            margin-inline-end: 1em;
+        }
+
+        /* 컨텐츠 카드블록 이미지 컨테이너 */
+        .wrap_card_img {
+            max-width: 100%;
+            overflow: hidden;
+        }
+
+        .icon-microservices, .icon-reactive, .icon-cloud, .icon-webapps, .icon-serverless, .icon-streams, .icon-batch {
+            width: 97px;
+            object-fit: cover;
+        }
+
+        /*Start == 두번째 컨텐츠 코드블럭 */
+        .main_contents_middle_2{
+            display: flex;
+            justify-content: space-evenly;
+            padding: 0 20px;
+            margin: 0 auto;
+            margin-bottom: 80px;
+            /* background-color:greenyellow */
+        }
+
+        .code_block {
+            width: 752.09px;
+            height: 333px;
+            background-color: #191e1e;
+
+            padding: 70px 55px;
+        }
+
+        code {
+            display:block;
+            /* border: 1px solid red; */
+            text-align: left;;
+        }
+
+        .code_indent {
+            margin-left: 20px;
+        }
+
+        .code_ani {
+            /* border: 1px solid blue; */
+            position: relative;
+        }
+
+        .code_ani::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 20px;
+
+            /* border: 1px solid red; */
+            width: 200px;
+            height: 15px;
+
+            animation: show2 3s infinite;
+            background-color: #191e1e;
+        }
+
+        /* 코드블럭 keyFrames */
+        @keyframes show2 {
+            0% {left:20px;}
+            4% {left:27px;}
+            8% {left:34px;}
+            12% {left:41px;}
+            16% {left:48px;}
+            20% {left:55px;}
+            24% {left:62px;}
+            28% {left:69px;}
+            32% {left:76px;}
+            36% {left:85px;}
+            40% {left:92px;}
+            44% {left:99px;}
+            48% {left:106px;}
+            52% {left:113px;}
+            56% {left:120px;}
+            60% {left:127px;}
+            64% {left:134px;}
+            68% {left:142px;}
+            72% {left:149px;}
+            76% {left:156px;}
+            80% {left:163px;}
+            84% {left:170px;}
+            88% {left:177px;}
+            90% {left:184px;}
+            92% {left:191px;}
+            94% {left:198px;}
+            99.99% {left:198px;}
+            100% {left:20px;}
+        }
+
+
+
+        
+        /* 코드블럭 텍스트 색상 */
+        .code_blue {
+            color:#85d9eb;
+        }
+        
+        .code_green1 {
+            color: #56e27a;
+        }
+
+        .code_green2 {
+            color: #d4f088;
+        }
+
+        .code_white {
+            color: white;
+        }
+
+        .code_block_aside {
+            width: 272.5px;
+            height: 333px;
+            /* background-color: grey;    */
+        }
+
+        .code_block_aside p {
+            margin: 16px 0;
+            text-align: left;
+        }
+
+        .code_block_aside h2 {
+            margin: 31.54px 0px;
+            font-size: 2.375em;
+        }
+
+        .code_blck_aside p {
+            color: #333333;
+            margin: 16px;
+        }
+         /*End == 두번째 컨텐츠 코드블럭 */
+
+        /* 컨텐츠 하단 영역 */
+        .main_contents_bottom {
+            height: 263px;
+            margin-bottom: 120px;
+
+
+            background-color: white;
+        }
+
+        .main_contents_bottom_img{
+            width: 58px;
+            height: 50px;
+        }
+
+        .main_contents_bottom_para{
+            max-width: 760px;
+            margin: 1.875rem auto;
+            
+            text-align: center;
+            color: #6db33f;
+
+            font-size: 1.5rem;
+            line-height: 1.5em;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: 500;
+        }
+
+        .main_contents_bottom_para2{
+            align-items: center;
+            justify-content: center;
+            display: flex;
+        }
+        
+        .main_contents_bottom_img2{
+            width: 45px;
+            height: 45px;
+           
+            margin-right: 15px;
+
+            border-radius: 50%;
+        }
+
+
+        .TAYLOR{
+            text-transform: uppercase;
+           
+            font-size: 0.875rem;
+            font-weight: 700;
+
+        }
+
+        .link_animate{
+            color: #086dc3;
+            text-decoration: none;
+            position: relative;
+     
+        }
+
+        .link_animate {
+            display: inline-block;
+        }
+
+        .link_animate:before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #086dc3;
+            visibility: hidden;
+            transform-origin: top left;
+            transform: scaleX(0);
+            transition: all .3s ease-in-out 0s;
+
+        }
+
+        .link_animate:hover:before {
+            visibility:visible;
+            transform:scaleX(1);
+        }
+
+
+
+
+
+        /* footer 영역  */
+        /* footer 영역  */
+        /* footer 영역  */
+        /* footer 영역  */
+        /* footer 영역  */
+        /* footer 영역  */
+        /* footer 영역  */
+        /* footer 영역  */
+        footer {
+            position: relative;
+            overflow: hidden;
+        }
+        .footer_top {
+            background-color: #ebf2f2;
+            padding: 80px 0;
+
+            /* overflow: hidden; */
+            /* z-index: 3; */
+        }
+
+        .container{
+            padding: 0 120px;
+            margin: 0 50px;
+            
+            display : flex;
+            justify-content: space-between;
+
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .third{
+            display: inline-block;
+            width: 313.5px;
+        }
+
+        .footer_top_h2{
+            margin: 9.6px 0px;             
+        }
+        
+    
+        .footer_top_p{
+            margin: 7px 0px;
+            line-height: 1.7em;
+
+            font-family: 'Open Sans', sans-serif;
+            font-size: 18px;
+        }
+
+        .txt_left{
+            text-align: left;
+        }
+
+        .circle_grid{
+            height: 80px;
+            width: 80px;
+            /* opacity: 0.3; */
+           
+            position: absolute;
+            right: 100px;
+            top: 60px;
+
+            z-index: 1;
+        }
+
+        .green_circle{
+            background-color: #6db33f;
+            border-radius: 50%;
+
+            position: absolute;
+            display: block;
+
+            height: 345px;
+            width: 345px;
+            right: -150px;
+            top: 50px;
+            
+            z-index: 0;
+        }
+
+         /* -----------footer bottom--------------- */
+
+         footer #footer_bottom-top {
+                text-align: left;
+        }
+
+        .flex {
+                display: flex;
+        }
+
+        .jc-between {
+                font-size: 16px;
+                font-family: Open Sans, sans-serif
+        }
+
+               
+        .mx-auto {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        footer #footer-over {
+            padding: 50px 0 40px;
+            /* max-width: 1500px; */
+            position: relative;
+            background: #fff;
+            
+        }
+
+        .mktoForm .mktoButtonWrap.mktoSimple .mktoButton:hover {
+            border: 1px solid ;
+            background-color: #447f19;
+            
+        }
+
+        .mktoForm .mktoButtonWrap.mktoSimple .mktoButton:focus {
+            outline: none;
+            border: 1px solid #447f19;
+        }
+
+        .footer-column a:hover {
+            color: #447f19;
+        }
+
+        .h2 {
+            font-family: Metropolis, sans-serif;
+            font-weight: 500;
+            
+            margin-top: 0.4em;
+            display: block;
+            
+            margin-block-start: 0.83em;
+            margin-block-end: 0.83em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            font-size: 25px;
+        }
+
+        .mb-2 {
+            margin-bottom: 20px;
+        }
+
+        .footer-column p {
+            margin-bottom: 10px;
+        }
+        .mktoButton {
+            display: inline-block;
+            overflow: hidden;
+            font-size: .9375rem;
+            text-transform: uppercase;
+            background: #191e1e;
+            color: #fff;
+            padding: 10px 40px;
+            font-weight: 700;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            box-sizing: border-box;
+            border: none !important;
+            height: 48px;
+            float: right;
+            transition: all 0.3s;
+
+        }
+
+        .container,
+        .container-fluid,
+        .main-body--wrapper {
+            max-width: 1140px;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+
+    
+        
+
+
+
+        footer .mktoForm .mktoCheckboxList {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            color: #999;
+            font-size: 14px;
+            line-height: 1.5em;
+            float: left;
+            padding: 0.3em;
+            width: 100% !important;
+            max-width: 410px;
+            font-family: Open Sans, sans-serif !important;
+
+        }
+
+        footer .footer-column {
+            margin-right: 70px;
+        }
+
+        .jc-between {
+            justify-content: space-between;
+        }
+
+        
+
+        .footer-column a {
+            color: inherit;
+            text-decoration: none;
+            position: relative;
+            transition: all .2s;
+        }
+
+        #blog-sidebar-newsletter form input#Email,
+        footer form input#Email {
+            width: 250px !important;
+            height: 48px;
+            border: 3px solid #191e1e;
+            font-size: 1rem;
+            font-family: Open Sans, sans-serif !important;
+            padding: 15px;
+            box-sizing: border-box;
+            float: left;
+            margin-top: 15px;
+            margin-left: 0.5px;
+        }
+
+        .footer-column ul {
+            display: block;
+            list-style-type: disc;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+
+        }
+
+        .footer_bottom_bottom {
+            height: 323.5px;
+            padding: 35px 0 60px;
+
+            /* background-color: brown; */
+        }
+
+        .flexcontainer {
+            max-width: 1140px;
+            display: flex;
+            padding: 0 20px;
+            margin: 0 auto;
+            justify-content: space-between;
+        }
+
+        .copyright {
+            text-align: left;
+        }
+
+        #springlogo-foot {
+            height: 30px;   
+        }
+
+        .footer_left {
+            font-size: 13px;
+            color: #999;
+            max-width: 925px;
+            text-align: left;
+        }
+        
+        .footer_left a {
+            color: #999;
+        }
+
+        .footer_left a:hover {
+            color: #086dc3;
+            text-decoration: underline;
+        }
+
+        .social_container {
+            display: flex;
+        }
+
+        .social_link {
+
+            width: 40px;
+            height: 40px;
+            border-radius: 100%;
+            padding-left: 6px;
+            background-color: #191e1e;     
+        }
+
+        .social_icon {
+            display: flex;
+            justify-content: center;
+            
+            width: 22px;
+            border-radius: 70%;
+            background-color: #FFFFFF;
+        }
+
+
+        /* 미디어쿼리 부분 */
+
+        /* 헤더부분 */
+        @media screen and (max-width:800px) {
+
+            .inner_nav_wrap_logo {
+                width: 100px;
+            }
+
+            .inner_nav_tabmenu,
+            .drop_menu {
+                display: none;
+            }
+
+        }
+        
+        @media screen and (max-width:1500px) {
+
+            body {
+                width: 100%;
+            }
+
+        }
+
+        /* 컨텐츠 카드 부 + code블럭 */
+        @media screen and (max-width:1050px){
+            .main_contents_middle_1_container1, .main_contents_middle_1_container2, .container{
+                flex-wrap: wrap;
+            }
+
+            .container1_contents, .container1_contents2 {
+                width: 49%;
+            }
+
+            .main_contents_middle_2, .container{
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .code_block {
+                width: 80%;
+            }
+        }
+
+
+
+        
+    </style>
+</head>
+
+<body id="body">
+    <!-- ------ 헤더 영역 ------ -->
+    <header>
+        <nav>
+            <div class="inner_nav">
+                <!-- ------ 로고영역 ------ -->
+                <a href="https://spring.io/" class="inner_nav_wrap_logo">
+                    <img src="img/spring_logo.svg" class="inner_nav_wrap_logo_img">
+                </a>
+
+                <div class="inner_nav_tabmenu">
+                    <ul class="inner_nav_tabmenu_wrap_btn" , id="inner_nav_tabmenu_wrap_btn">
+                        <li class="inner_nav_tabmenu_btn" id="inner_nav_tabmenu_btn_1">
+                            <span id="tabmenu_btn1">Why Spring <i class="fas fa-angle-down"></i></span>
+                        </li>
+
+                        <li class="inner_nav_tabmenu_btn" id="inner_nav_tabmenu_btn_2">
+                            <span id="tabmenu_btn2">Learn <i class="fas fa-angle-down"></i></span>
+                        </li>
+
+                        <li class="inner_nav_tabmenu_btn" id="inner_nav_tabmenu_btn_3">
+                            <span href="" id="tabmenu_btn3">Projects <i class="fas fa-angle-down"></i></span>
+                        </li>
+
+                        <li class="inner_nav_tabmenu_btn" id="inner_nav_tabmenu_btn_4">
+                            <span href="" id="tabmenu_btn4">Training</span>
+                        </li>
+
+                        <li class="inner_nav_tabmenu_btn" id="inner_nav_tabmenu_btn_5">
+                            <span id="tabmenu_btn5">Support</span>
+                        </li>
+
+                        <li class="inner_nav_tabmenu_btn" id="inner_nav_tabmenu_btn_6">
+                            <span href="" id="tabmenu_btn6">Community <i class="fas fa-angle-down"></i></span>
+
+                        <li class="inner_nav_tabmenu_btn" id="inner_nav_tabmenu_btn_7">
+                            <input type="checkbox" name="" id="togle1">
+                            <label for="togle1" id="label_togle1">
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="invisible_tab_btn">
+                    <ul>
+                        <li id="invisible_btn1">Why Sprinaag</li>
+                        <li id="invisible_btn2">Learnaaa</li>
+                        <li id="invisible_btn3">Projectsaaa</li>
+                        <li id="invisible_btn4"><a href="#">Training</a></li>
+                        <li id="invisible_btn5"><a href="#">Support</a></li>
+
+                        <li id="invisible_btn6">Communityaaaa</li>
+
+                    </ul>
+                </div>
+            </div> <!-- inner_nav -->
+
+            <!-- Drop_Menu for Tab -->
+            <div class="drop_menu">
+
+                <div class="wrap_drop_menu" id="wrap_drop_menu_1">
+                    <ul id="drop_menu_btn1">
+                        <li>Overview</li>
+                        <li>Microservices</li>
+                        <li>Reactive</li>
+                        <li>Event Driven</li>
+                        <li>Cloud</li>
+                        <li>Web Applications</li>
+                        <li>Serverless</li>
+                        <li>Batch</li>
+                    </ul>
+                </div>
+
+                <div class="wrap_drop_menu" id="wrap_drop_menu_2">
+
+                    <ul id="drop_menu_btn2">
+                        <li>Overview</li>
+                        <li>Quickstart</li>
+                        <li>Guides</li>
+                        <li>Blog</li>
+                    </ul>
+
+                </div>
+
+                <div class="wrap_drop_menu" id="wrap_drop_menu_3">
+
+                    <ul id="drop_menu_btn3">
+                        <li>Overview</li>
+                        <li>Spring Boot</li>
+                        <li>Spring Framework</li>
+                        <li>Spring Cloud</li>
+                        <li>Spring Cloud Data Flow</li>
+                        <li>Spring Data</li>
+                        <li>Spring Integration</li>
+                        <li>Spring Batch</li>
+                        <li>Spring Security</li>
+                        <li>View all projects</li>
+                        <li><br></li>
+                        <li>DEVELPMENT TOOLS</li>
+                        <li>Spring Tools4</li>
+                        <li>Spring Initializr</li>
+                    </ul>
+
+                </div>
+
+                <div class="wrap_drop_menu" id="wrap_drop_menu_6">
+
+                    <ul id="drop_menu_btn6">
+                        <li>Overview</li>
+                        <li>Microservices</li>
+                        <li>Reactive</li>
+                        <li>Event Driven</li>
+                        <li>Cloud</li>
+                        <li>Web Applications</li>
+                        <li>Serverless</li>
+                        <li>Batch</li>
+                    </ul>
+
+                </div>
+
+
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- ------ main 영역 ------ -->
+    <div class="main">
+
+        <!-- main의 헤더 영역 -->
+        <div class="main_header">
+            <div class="main_header_center">
+                <div class="center_text ">
+                    <div class="fixed_text">
+                        Spring makes Java
+                    </div>
+
+                    <div id="move_text">
+                        <div id="flip">
+                            <div class="wrap_ani">
+                                <span>s</span>
+                                <span>i</span>
+                                <span>m</span>
+                                <span>p</span>
+                                <span>l</span>
+                                <span>e</span>
+                                <span>.</span>
+                            </div>
+
+                            <div class="wrap_ani">
+                                <span>m</span>
+                                <span>o</span>
+                                <span>d</span>
+                                <span>e</span>
+                                <span>r</span>
+                                <span>n</span>
+                                <span>.</span>
+                            </div>
+
+                            <div class="wrap_ani">
+                                <span>p</span>
+                                <span>r</span>
+                                <span>o</span>
+                                <span>d</span>
+                                <span>u</span>
+                                <span>c</span>
+                                <span>t</span>
+                                <span>i</span>
+                                <span>v</span>
+                                <span>e</span>
+                                <span>.</span>
+                            </div>
+
+                            <div class="wrap_ani">
+                                <span>r</span>
+                                <span>e</span>
+                                <span>a</span>
+                                <span>c</span>
+                                <span>t</span>
+                                <span>i</span>
+                                <span>v</span>
+                                <span>e</span>
+                                <span>.</span>
+                            </div>
+
+                            <div class="wrap_ani">
+                                <span>c</span>
+                                <span>l</span>
+                                <span>o</span>
+                                <span>u</span>
+                                <span>d</span>
+                                <span>-</span>
+                                <span>r</span>
+                                <span>e</span>
+                                <span>a</span>
+                                <span>d</span>
+                                <span>y</span>
+                                <span>.</span>
+                            </div>
+
+                            <div class="wrap_ani">
+                                <span>s</span>
+                                <span>i</span>
+                                <span>m</span>
+                                <span>p</span>
+                                <span>l</span>
+                                <span>e</span>
+                                <span>.</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="center_btn">
+                    <button class="btn_slide btn1">WHY SPRING
+                        </button>
+                    <button class="btn_slide btn2">QUICK START
+                        </button>
+                </div>
+            </div>
+
+            <div class="rec1">
+                <div class="rec1_1"></div>
+                <div class="rec1_2"></div>
+                <div class="rec1_3"></div>
+            </div>
+
+            <div class="rec2">
+                <div class="rec2_1"></div>
+                <div class="rec2_2"></div>
+                <div class="rec2_3"></div>
+                <div class="rec2_4"></div>
+            </div>
+        </div>
+
+       <!-- main의 컨텐츠 영역 -->
+       <div class="main_contents">
+
+        <div class="main_contents_top">
+            <div class="news">
+                <div class="news_tag">NEWS</div>
+
+                <div class="subnews">
+                    <a href="#" class="news_item link_animate">Spring Cloud Gateway - commercial updates</a>
+                    
+                    <div class="news_divider"></div>
+                    
+                    <a href="#" class="news_item link_animate">Spring Framework CVE-2022-22965</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="main_contents_middle_1">
+            <div class="main_contents_middle_1_header">
+                <h2>What Spring Can Do?</h2>
+            </div>
+
+            <div class="main_contents_middle_1_container1">
+
+                <div class="container1_contents">
+                    <div class="wrap_card_img">
+                        <svg class="icon-microservices" aria-hidden="true" focusable="false" data-icon="icon-microservices" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                            <path d="M98.5,57.1L73.6,42.7l6-3.5c0.2-0.1,0.4-0.4,0.4-0.7V23.3c0-0.3-0.1-0.5-0.4-0.6c-0.1,0-0.1,0-0.2,0L66.3,15
+                                c-0.2-0.1-0.5-0.1-0.8,0l-13.2,7.7c-0.1,0-0.1,0.1-0.2,0.2c0,0-0.1,0.1-0.1,0.1c0,0.1,0,0.1,0,0.2c0,0.1,0,0.1,0,0.2v6.9L49.8,29
+                                l-11.4,6.6V31c0-0.3-0.1-0.5-0.4-0.6c-0.1,0-0.1,0-0.2,0l-13.2-7.6c-0.2-0.1-0.5-0.1-0.8,0l-13.2,7.6c-0.1,0-0.1,0.1-0.2,0.2
+                                c0,0-0.1,0-0.1,0.1c0,0.1,0,0.1-0.1,0.2c0,0,0,0.1,0,0.1v15.2c0,0.3,0.1,0.5,0.4,0.7l4.1,2.4L1.5,57.1l25.5,14.7v1.8
+                                c0,0.3,0.1,0.5,0.4,0.7l13.2,7.6c0.1,0.1,0.2,0.1,0.4,0.1H41c0.1,0,0.3,0,0.4-0.1l1.5-0.9l7.3,4.2L65.9,76l6.8,4l24-14l-6.8-3.9
+                                L98.5,57.1z M54.3,23.3l11.7-6.8l11.8,6.8L66,30.1l-6.3-3.7C59.7,26.5,54.3,23.3,54.3,23.3z M53.5,31.1v-6.4l5.5,3.1l6.3,3.6v6.4v7
+                                l-11.8-6.7v-5.3L53.5,31.1z M12.7,31l11.7-6.8L36.1,31l-11.7,6.8l-6.3-3.7L12.7,31z M12,32.3l6.9,4l4.9,2.8v6.8v6.7l-5.8-3.3
+                                l-1.5-0.9L12,45.8L12,32.3z M28.4,72.6v-1.7V59.7l2.4,1.3l9.4,5.4v11.2v2.2l-11.8-6.8V72.6z M29.2,58.3l11.7-6.8l11.7,6.8l-11.7,6.8
+                                l-9.8-5.6L29.2,58.3L29.2,58.3z M54.9,64l17.6-10.2L87,62.1L66,74.3L55,68L54.9,64z M50.2,83.4l-5.8-3.3l10.2-5.9
+                                c0.2-0.1,0.4-0.4,0.4-0.7v-3.9l9.5,5.5L50.2,83.4z M93.8,66l-21,12.2l-5.3-3.1l21-12.2L93.8,66z M72.6,52L54.9,62.3v-4
+                                c0-0.3-0.1-0.5-0.4-0.7c-0.1,0-0.1,0-0.2,0l-13.2-7.6c-0.2-0.1-0.5-0.1-0.8,0l-13.2,7.6l0,0c-0.1,0-0.1,0.1-0.1,0.1
+                                c0,0-0.1,0.1-0.1,0.1c0,0.1-0.1,0.1-0.1,0.2c0,0.1,0,0.1,0,0.2V70L4.5,57l11.9-6.9l7.5,4.5c0.1,0.1,0.2,0.1,0.4,0.1h0.1
+                                c0.1,0,0.3,0,0.4-0.1l13.2-7.7c0.2-0.1,0.4-0.4,0.4-0.7v-8.9l11.4-6.6l2.1,1.2v6.6c0,0.3,0.1,0.5,0.4,0.7l13.2,7.6
+                                c0.1,0.1,0.2,0.1,0.4,0.1h0.1c0.1,0,0.3,0,0.4-0.1l5.7-3.3l23.4,13.5l-7.1,4.1L72.6,52z" fill="currentColor"></path>
+                            <rect fill="none" width="100" height="100"></rect>
+                        </svg>
+                    </div>
+
+                    <h3>Microservices</h3>
+                    <p>Quickly deliver production-grade features with independently evolvable microservices.</p>
+                </div>
+
+                <div class="container1_contents">
+                    <div class="wrap_card_img">
+                        <svg class="icon-reactive" aria-hidden="true" focusable="false" data-icon="icon-reactive" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                            <g>
+                            <path fill="currentColor" d="M92.5,38.3c0-0.9-0.2-1.7-0.6-2.5C91,34,89.4,32.3,87,30.9c-2.8-1.6-6.6-2.9-11.2-3.8
+                                  c-1.6-2.7-3.8-4.9-6.6-6.5c-2.4-1.4-5.1-2.3-8.1-2.8c-6.6-1-13.8,0.3-20.5,3.8c-8.8-1.1-16.3-0.1-21.1,2.7
+                                  c-4.8,2.8-6.6,7.3-4.9,12.4c-4.4,3-6.8,6.1-6.9,9.2c0,0.1-0.1,0.2-0.1,0.3c0,0,0,0,0,0l0,15c0,1,0.2,1.9,0.6,2.8
+                                  c0.9,1.8,2.5,3.5,5,4.9c2.8,1.6,6.6,2.9,11.2,3.8c1.6,2.7,3.8,4.9,6.7,6.5c2.4,1.4,5.1,2.3,8.1,2.8c1.4,0.2,2.9,0.3,4.4,0.3
+                                  c4.1,0,8.3-0.8,12.4-2.4c0.1-0.1,0.3-0.1,0.4-0.2c0.5-0.2,1-0.4,1.6-0.7c0.4-0.2,0.7-0.4,1.1-0.5c0.2-0.1,0.4-0.2,0.7-0.3
+                                  c1.1,0.1,2.2,0.2,3.3,0.3c1.2,0.1,2.3,0.1,3.4,0.1c1,0,1.9,0,2.8-0.1c0.1,0,0.2,0,0.3,0c0.7,0,1.3-0.1,2-0.2c0.1,0,0.2,0,0.3,0
+                                  c0.6-0.1,1.1-0.2,1.7-0.3c0.1,0,0.1,0,0.2,0c2.8-0.5,5.2-1.3,7.2-2.5c3.6-2.1,5.5-5.1,5.6-8.7l0-4.2c4.1-2.9,6.3-6.1,6.3-9.1l0-15
+                                  C92.6,38.5,92.6,38.4,92.5,38.3z M77.5,75.4V62.1c1.1-0.4,2.2-0.9,3.2-1.4c1.2-0.7,2.3-1.6,3.1-2.5c0.3-0.3,0.5-0.6,0.8-1
+                                  c0,0,0,0,0,0c0-0.1,0.1-0.1,0.1-0.2l0,5.9l0,0.5l0,0.3l0,3.3c0,3-1.7,5.6-4.8,7.4C79.2,74.7,78.4,75.1,77.5,75.4z M38.2,23
+                                  c-0.1,0.1-0.2,0.1-0.3,0.2c-0.7,0.4-1.4,0.9-2.1,1.4c0,0,0,0,0,0c-0.7,0.5-1.4,1-2,1.5c-0.1,0.1-0.3,0.2-0.4,0.3
+                                  c-0.6,0.5-1.2,1.1-1.8,1.6c-0.1,0.1-0.2,0.2-0.3,0.3c-0.5,0.5-1.1,1.1-1.6,1.6c-0.1,0.1-0.1,0.1-0.2,0.2c-0.6,0.2-1.2,0.4-1.7,0.5
+                                  c-0.1,0-0.1,0-0.2,0.1c-0.7,0.2-1.3,0.5-2,0.7c-0.2,0.1-0.4,0.1-0.6,0.2c-0.5,0.2-0.9,0.3-1.4,0.5c-0.2,0.1-0.5,0.2-0.7,0.3
+                                  c-0.4,0.2-0.8,0.3-1.1,0.5c-0.2,0.1-0.5,0.2-0.7,0.3c-0.3,0.2-0.7,0.3-1,0.5c-0.2,0.1-0.5,0.2-0.7,0.3c-0.3,0.2-0.6,0.3-0.9,0.5
+                                  c-0.2,0.1-0.4,0.2-0.7,0.4c-0.3,0.2-0.6,0.3-0.9,0.5c-0.2,0.1-0.4,0.2-0.6,0.4c-0.1,0.1-0.2,0.1-0.4,0.2c-1.3-4.3,0.2-7.9,4.3-10.3
+                                  c3.3-1.9,8-2.9,13.6-2.9C35.2,22.8,36.7,22.8,38.2,23z M43.2,22c5.8-2.6,12-3.5,17.6-2.7c2.8,0.4,5.3,1.3,7.5,2.6
+                                  c2.2,1.3,4,2.9,5.4,4.8c0,0-0.1,0-0.1,0c-0.9-0.1-1.8-0.3-2.8-0.4c-0.2,0-0.4,0-0.7-0.1c-0.8-0.1-1.7-0.2-2.5-0.2
+                                  c-0.2,0-0.3,0-0.5,0c-1-0.1-2-0.1-3.1-0.2c-0.2,0-0.4,0-0.7,0c-0.9,0-1.8,0-2.7,0c-0.1,0-0.3,0-0.4,0c-0.1,0-0.1,0-0.2,0
+                                  c-0.7,0-1.3,0-2,0c-0.2,0-0.4,0-0.6,0c-0.1,0-0.1,0-0.2-0.1c-1-0.4-2-0.7-3-1c-0.2-0.1-0.4-0.1-0.5-0.2c-1-0.3-2.1-0.6-3.1-0.9
+                                  c-0.2-0.1-0.4-0.1-0.6-0.2c-1-0.3-2.1-0.5-3.1-0.8c-0.1,0-0.2,0-0.3-0.1c-1-0.2-2-0.4-3-0.6C43.5,22.1,43.4,22.1,43.2,22z
+                                   M76.7,28.9c3.8,0.8,7.1,2,9.5,3.4c2.1,1.2,3.6,2.6,4.3,4.2c0.7,1.6,0.6,3.1,0,4.5c-0.1,0.2-0.2,0.4-0.3,0.6c0,0,0,0.1-0.1,0.1
+                                  c-0.1,0.1-0.2,0.3-0.3,0.4c-0.1,0.1-0.2,0.3-0.3,0.4c-0.1,0.1-0.1,0.2-0.2,0.2c-1.2,1.6-2.9,2.9-4.3,3.9c0,0,0-0.1,0-0.1
+                                  c0,0,0-0.1-0.1-0.1c-0.1-0.1-0.1-0.3-0.2-0.4c-0.1-0.2-0.2-0.5-0.4-0.7c-0.1-0.2-0.2-0.3-0.3-0.5c-0.1-0.2-0.3-0.5-0.4-0.7
+                                  c-0.1-0.2-0.2-0.3-0.3-0.5c-0.2-0.3-0.3-0.5-0.5-0.8c-0.1-0.1-0.2-0.3-0.3-0.4c-0.2-0.3-0.4-0.5-0.6-0.8c-0.1-0.1-0.2-0.3-0.3-0.4
+                                  c-0.3-0.4-0.6-0.7-0.9-1c0,0-0.1-0.1-0.1-0.1c-0.4-0.4-0.7-0.8-1.1-1.2c-0.1-0.1-0.2-0.2-0.4-0.3c-0.2-0.2-0.5-0.5-0.7-0.7
+                                  c0-0.3,0-0.5,0-0.8c0-0.1,0-0.2,0-0.4c0-0.4,0-0.9,0-1.3c0-0.1,0-0.3,0-0.4c0-0.3-0.1-0.6-0.1-0.9c0-0.2,0-0.3-0.1-0.5
+                                  c0-0.3-0.1-0.5-0.1-0.8c0-0.2-0.1-0.3-0.1-0.5c-0.1-0.3-0.1-0.5-0.2-0.8c0-0.1-0.1-0.3-0.1-0.4c-0.1-0.4-0.2-0.8-0.4-1.1
+                                  c0,0,0-0.1,0-0.1C77,29.6,76.8,29.2,76.7,28.9z M58.7,63.8l0,9.2l0,4.1c-0.7,0.4-1.4,0.7-2.1,1c-0.2,0.1-0.5,0.2-0.7,0.3
+                                  c-0.5,0.2-1,0.4-1.5,0.6c-0.3,0.1-0.5,0.2-0.8,0.3c-0.7,0.2-1.3,0.4-2,0.6c-0.3,0.1-0.7,0.2-1,0.2c-0.3,0.1-0.7,0.2-1,0.2
+                                  c-0.4,0.1-0.8,0.2-1.2,0.2c-0.3,0-0.5,0.1-0.8,0.1c-1,0.1-2.1,0.2-3.1,0.3V67.4v0c0.1,0,0.1,0,0.2,0c0.9,0,1.9-0.1,2.9-0.2
+                                  c0.3,0,0.5-0.1,0.8-0.1c0.4-0.1,0.8-0.1,1.2-0.2c0.3-0.1,0.7-0.1,1-0.2c0.4-0.1,0.7-0.2,1.1-0.2c0.7-0.2,1.3-0.4,2-0.6
+                                  c0.3-0.1,0.5-0.2,0.8-0.3c0.2-0.1,0.4-0.1,0.6-0.2c0.1,0,0.2-0.1,0.3-0.1c0.2-0.1,0.4-0.1,0.5-0.2c0.2-0.1,0.5-0.2,0.7-0.3
+                                  c0,0,0,0,0,0c0.2-0.1,0.4-0.2,0.6-0.3c0.4-0.2,0.8-0.3,1.1-0.5C58.4,63.9,58.5,63.8,58.7,63.8C58.6,63.8,58.6,63.8,58.7,63.8
+                                  C58.6,63.8,58.6,63.8,58.7,63.8L58.7,63.8z M40.6,23.4c0.1,0,0.1-0.1,0.2-0.1c0,0,0,0,0,0c0,0,0,0,0,0c0.1,0,0.2,0,0.3,0
+                                  c0.8,0.1,1.6,0.2,2.4,0.4c0.2,0,0.4,0.1,0.6,0.1c0.9,0.2,1.8,0.3,2.7,0.5c0.1,0,0.3,0.1,0.4,0.1c0.8,0.2,1.6,0.4,2.4,0.6
+                                  c0.2,0.1,0.4,0.1,0.6,0.2c0.9,0.3,1.8,0.5,2.8,0.8c0,0,0.1,0,0.1,0c0,0,0,0,0,0c-0.9,0.1-1.9,0.1-2.8,0.2c-0.2,0-0.5,0-0.7,0.1
+                                  c-0.8,0.1-1.7,0.2-2.5,0.3c-0.3,0-0.6,0.1-0.9,0.1c-1.1,0.1-2.1,0.3-3.2,0.4c-1.1,0.2-2.1,0.4-3.2,0.5c-0.3,0.1-0.7,0.1-1,0.2
+                                  c-0.7,0.1-1.5,0.3-2.2,0.4c-0.3,0.1-0.7,0.2-1,0.2c-0.8,0.2-1.5,0.4-2.2,0.5c-0.3,0.1-0.5,0.1-0.8,0.2c-0.1,0-0.2,0-0.3,0.1
+                                  c0,0,0,0,0,0c0,0,0.1-0.1,0.2-0.1c0.5-0.5,1.1-1,1.7-1.5c0.1-0.1,0.2-0.2,0.4-0.3c0.5-0.4,1-0.8,1.6-1.2c0.1-0.1,0.2-0.2,0.4-0.3
+                                  c0.6-0.4,1.2-0.9,1.9-1.3c0.1-0.1,0.3-0.2,0.4-0.3C39.4,24,40,23.7,40.6,23.4z M16.3,37.4C16.4,37.4,16.4,37.4,16.3,37.4
+                                  c0.2-0.1,0.4-0.2,0.6-0.4c0.1-0.1,0.3-0.2,0.4-0.2c0.9-0.5,1.9-1,2.9-1.5c0.2-0.1,0.3-0.1,0.5-0.2c0.4-0.2,0.8-0.4,1.2-0.5
+                                  c0.2-0.1,0.4-0.2,0.5-0.2c0.4-0.2,0.8-0.3,1.2-0.5c0.2-0.1,0.3-0.1,0.5-0.2c0.5-0.2,1.1-0.4,1.7-0.6c0,0,0.1,0,0.1,0
+                                  c0.5-0.2,1.1-0.4,1.7-0.6c0,0,0,0,0,0c-0.4,0.5-0.8,1.1-1.2,1.7c-0.1,0.2-0.2,0.3-0.3,0.5c-0.3,0.5-0.6,0.9-0.8,1.4
+                                  c-0.1,0.2-0.2,0.3-0.3,0.5c-0.3,0.6-0.7,1.2-0.9,1.9c-0.3,0.6-0.6,1.3-0.8,1.9c-0.1,0.2-0.1,0.4-0.2,0.6c-0.2,0.4-0.3,0.9-0.4,1.3
+                                  c-0.1,0.2-0.1,0.5-0.2,0.7c-0.1,0.4-0.2,0.9-0.3,1.3c0,0.2-0.1,0.5-0.1,0.7c0,0.1,0,0.2-0.1,0.3c0,0,0,0,0,0c0,0,0,0-0.1-0.1
+                                  c-0.1-0.1-0.2-0.2-0.3-0.3c-0.3-0.3-0.5-0.5-0.8-0.8c-0.1-0.1-0.2-0.3-0.4-0.4c-0.2-0.2-0.4-0.5-0.6-0.7c-0.1-0.1-0.2-0.3-0.3-0.4
+                                  c-0.2-0.2-0.4-0.5-0.6-0.7c-0.1-0.1-0.2-0.2-0.3-0.4c-0.2-0.3-0.5-0.7-0.7-1c0,0,0-0.1-0.1-0.1c-0.2-0.4-0.5-0.7-0.7-1.1
+                                  c-0.1-0.1-0.1-0.2-0.2-0.4c-0.1-0.2-0.3-0.5-0.4-0.7c-0.1-0.1-0.1-0.3-0.2-0.4C16.5,37.6,16.4,37.5,16.3,37.4
+                                  C16.4,37.4,16.3,37.4,16.3,37.4z M33.3,30.7c0.7-0.2,1.4-0.3,2.1-0.5c0.4-0.1,0.8-0.2,1.1-0.3c0.8-0.2,1.5-0.3,2.3-0.5
+                                  c0.3-0.1,0.7-0.1,1-0.2c1.1-0.2,2.3-0.4,3.4-0.6c1.2-0.2,2.3-0.3,3.5-0.5c0.4-0.1,0.9-0.1,1.3-0.1c0.7-0.1,1.4-0.2,2.2-0.2
+                                  c0.5,0,1-0.1,1.5-0.1c0.7-0.1,1.3-0.1,2-0.1c0.5,0,1.1,0,1.6-0.1c0.6,0,1.2-0.1,1.8-0.1c0,0,0,0,0,0c0,0,0,0,0,0
+                                  c0.5,0.2,1,0.4,1.5,0.6c0.4,0.2,0.9,0.3,1.3,0.5c0.6,0.2,1.2,0.5,1.7,0.8c0.3,0.2,0.7,0.3,1.1,0.5c0.7,0.3,1.3,0.6,1.9,1
+                                  c0.3,0.1,0.5,0.2,0.8,0.4c0.9,0.5,1.8,0.9,2.6,1.4c0.8,0.5,1.7,1,2.4,1.5c0.2,0.1,0.4,0.3,0.7,0.5c0.5,0.4,1.1,0.7,1.6,1.1
+                                  c0.3,0.2,0.5,0.4,0.8,0.6c0.4,0.3,0.9,0.7,1.3,1c0.3,0.2,0.6,0.5,0.8,0.7c0.3,0.3,0.6,0.5,1,0.8c0,0,0,0,0,0c0,0,0,0,0,0
+                                  c0,0.3-0.1,0.6-0.1,0.9c0,0.3-0.1,0.5-0.1,0.8c-0.1,0.4-0.2,0.8-0.3,1.2c-0.1,0.2-0.1,0.5-0.2,0.7c-0.1,0.4-0.3,0.9-0.4,1.3
+                                  c-0.1,0.2-0.1,0.4-0.2,0.6c-0.2,0.6-0.5,1.3-0.8,1.9c-0.3,0.7-0.6,1.3-1,2c-0.1,0.2-0.2,0.4-0.3,0.6c-0.3,0.4-0.5,0.9-0.8,1.3
+                                  c-0.2,0.2-0.3,0.5-0.5,0.7c-0.3,0.4-0.5,0.8-0.8,1.1c-0.2,0.2-0.4,0.5-0.6,0.7c-0.3,0.3-0.5,0.6-0.8,1c0,0,0,0,0,0c0,0,0,0,0,0
+                                  c-0.6,0.2-1.2,0.3-1.8,0.5c-0.4,0.1-0.8,0.2-1.2,0.3c-0.7,0.2-1.4,0.3-2.1,0.5c-0.4,0.1-0.8,0.2-1.1,0.3c-0.8,0.2-1.5,0.3-2.3,0.5
+                                  c-0.3,0.1-0.7,0.1-1,0.2c-1.1,0.2-2.3,0.4-3.4,0.6c-1.2,0.2-2.3,0.3-3.5,0.5c-0.3,0-0.6,0.1-1,0.1c-0.8,0.1-1.7,0.2-2.5,0.3
+                                  c-0.5,0-0.9,0.1-1.4,0.1c-0.7,0.1-1.4,0.1-2.1,0.2c-0.5,0-1,0-1.6,0.1c-0.6,0-1.2,0.1-1.8,0.1c0,0,0,0,0,0c0,0,0,0,0,0
+                                  c-0.5-0.2-1-0.4-1.5-0.6c-0.4-0.2-0.8-0.3-1.3-0.5c-0.6-0.2-1.2-0.5-1.7-0.8c-0.3-0.2-0.7-0.3-1-0.5c-0.7-0.3-1.3-0.6-1.9-1
+                                  c-0.3-0.1-0.5-0.2-0.8-0.4c-0.9-0.5-1.8-0.9-2.6-1.4c-0.8-0.5-1.7-1-2.4-1.5c-0.2-0.2-0.5-0.3-0.7-0.5c-0.5-0.3-1.1-0.7-1.6-1.1
+                                  c-0.3-0.2-0.6-0.4-0.8-0.6c-0.4-0.3-0.9-0.6-1.3-1c-0.3-0.2-0.6-0.5-0.9-0.7c-0.3-0.3-0.6-0.5-0.9-0.8c0,0,0,0,0,0c0,0,0,0,0,0
+                                  c0-0.3,0.1-0.6,0.1-0.9c0-0.3,0.1-0.5,0.1-0.8c0.1-0.4,0.2-0.8,0.3-1.2c0.1-0.3,0.1-0.5,0.2-0.8c0.1-0.4,0.3-0.8,0.4-1.3
+                                  c0.1-0.2,0.1-0.5,0.2-0.7c0.2-0.6,0.5-1.3,0.8-1.9c0.3-0.7,0.6-1.3,1-1.9c0.1-0.2,0.3-0.4,0.4-0.7c0.2-0.4,0.5-0.8,0.7-1.2
+                                  c0.2-0.2,0.3-0.5,0.5-0.7c0.3-0.4,0.5-0.8,0.8-1.1c0.2-0.2,0.4-0.5,0.6-0.7c0.3-0.3,0.5-0.6,0.8-1c0,0,0,0,0,0c0,0,0,0,0,0
+                                  c0.6-0.2,1.2-0.3,1.8-0.5C32.5,30.9,32.9,30.8,33.3,30.7z M39.9,59.2c0.1,0,0.2,0,0.3,0c0.8,0,1.7,0,2.5,0c0.1,0,0.1,0,0.2,0.1
+                                  c1,0.4,2,0.7,3,1c0.2,0.1,0.4,0.1,0.5,0.2c1,0.3,2.1,0.6,3.1,0.9c0.2,0.1,0.4,0.1,0.6,0.2c1,0.3,2.1,0.5,3.1,0.8
+                                  c0.1,0,0.2,0,0.3,0.1c1,0.2,2,0.4,3,0.6c0.1,0,0.2,0,0.3,0.1c-0.2,0.1-0.5,0.2-0.7,0.3c-0.1,0-0.2,0.1-0.4,0.2
+                                  c-0.2,0.1-0.4,0.2-0.6,0.3c-0.2,0.1-0.3,0.1-0.5,0.2c-0.3,0.1-0.6,0.2-0.9,0.3c0,0-0.1,0-0.1,0c-0.2,0.1-0.3,0.1-0.5,0.2
+                                  c-0.3,0.1-0.5,0.2-0.8,0.2c-0.3,0.1-0.6,0.2-0.8,0.2c-0.1,0-0.2,0-0.2,0.1c0,0,0,0,0,0c-0.6,0.2-1.2,0.3-1.9,0.4
+                                  c-0.5,0.1-0.9,0.2-1.4,0.2c-0.3,0-0.5,0.1-0.8,0.1c-0.5,0.1-1,0.1-1.5,0.2c-0.2,0-0.4,0-0.6,0c-0.5,0-1.1,0.1-1.6,0.1
+                                  c-0.8,0-1.5,0-2.2-0.1c-0.7,0-1.4-0.1-2.1-0.2c-0.1,0-0.2,0-0.3-0.1c-2.7-0.4-5.1-1.3-7.2-2.5c-2.2-1.3-4-2.9-5.4-4.8c0,0,0,0,0,0
+                                  c0.6,0.1,1.2,0.2,1.8,0.3c0.2,0,0.4,0,0.6,0.1c0.4,0.1,0.9,0.1,1.3,0.2c0.2,0,0.5,0,0.7,0.1c0.4,0,0.8,0.1,1.2,0.1
+                                  c0.3,0,0.5,0,0.8,0.1c0.4,0,0.8,0.1,1.2,0.1c0.3,0,0.5,0,0.8,0c0.4,0,0.8,0,1.2,0.1c0.3,0,0.6,0,0.9,0c0.4,0,0.8,0,1.2,0
+                                  c0.3,0,0.6,0,0.9,0C39.3,59.2,39.6,59.2,39.9,59.2z M67.7,55.6C67.7,55.6,67.7,55.6,67.7,55.6c0,0-0.1,0.1-0.1,0.1
+                                  c-0.5,0.5-1.1,1-1.7,1.5c-0.1,0.1-0.2,0.2-0.3,0.3c-0.5,0.4-1,0.8-1.6,1.2c-0.1,0.1-0.2,0.2-0.4,0.3c-0.6,0.4-1.2,0.9-1.9,1.3
+                                  c-0.1,0.1-0.3,0.2-0.4,0.3c-0.6,0.4-1.2,0.7-1.8,1c-0.1,0-0.1,0.1-0.2,0.1c0,0,0,0,0,0c0,0,0,0,0,0c0,0,0,0,0,0c0,0-0.1,0-0.1,0
+                                  c-0.1,0-0.1,0-0.2,0c-0.8-0.1-1.6-0.2-2.4-0.4c-0.2,0-0.4-0.1-0.6-0.1c-0.9-0.2-1.8-0.3-2.7-0.5c-0.1,0-0.3-0.1-0.4-0.1
+                                  c-0.8-0.2-1.6-0.4-2.5-0.6c-0.2-0.1-0.4-0.1-0.6-0.2c-0.9-0.3-1.8-0.5-2.8-0.8c0,0-0.1,0-0.1,0c0,0,0,0,0,0
+                                  c0.9-0.1,1.9-0.1,2.8-0.2c0.2,0,0.5,0,0.7-0.1c0.8-0.1,1.7-0.2,2.5-0.3c0.3,0,0.6-0.1,0.9-0.1c1.1-0.1,2.1-0.3,3.2-0.4
+                                  c1.1-0.2,2.1-0.4,3.2-0.5c0.3-0.1,0.7-0.1,1-0.2c0.7-0.1,1.5-0.3,2.2-0.4c0.4-0.1,0.7-0.2,1.1-0.2c0.7-0.2,1.5-0.3,2.2-0.5
+                                  c0.3-0.1,0.6-0.1,0.9-0.2C67.5,55.7,67.6,55.7,67.7,55.6z M79.9,59.3c-0.9,0.5-1.9,1-3,1.3c-4,1.4-9.1,1.9-15,1.4
+                                  c0,0,0.1,0,0.1-0.1c0,0,0,0,0,0c0,0,0.1-0.1,0.1-0.1c0.7-0.4,1.4-0.9,2.1-1.4c0,0,0,0,0,0c0.7-0.5,1.4-1,2-1.5
+                                  c0.1-0.1,0.3-0.2,0.4-0.3c0.6-0.5,1.2-1.1,1.8-1.6c0.1-0.1,0.2-0.2,0.3-0.3c0.6-0.5,1.1-1.1,1.6-1.7c0,0,0.1-0.1,0.1-0.1
+                                  c0.5-0.2,1.1-0.3,1.6-0.5c0.1,0,0.3-0.1,0.4-0.1c0.7-0.2,1.3-0.4,2-0.7c0.2-0.1,0.4-0.2,0.6-0.2c0.4-0.2,0.9-0.3,1.3-0.5
+                                  c0.2-0.1,0.5-0.2,0.7-0.3c0.4-0.2,0.8-0.3,1.1-0.5c0.2-0.1,0.5-0.2,0.7-0.3c0.3-0.2,0.7-0.3,1-0.5c0.2-0.1,0.5-0.2,0.7-0.3
+                                  c0.3-0.2,0.6-0.3,0.9-0.5c0.2-0.1,0.5-0.2,0.7-0.4c0.3-0.2,0.6-0.3,0.9-0.5c0.2-0.1,0.4-0.2,0.6-0.3c0,0,0,0,0.1,0
+                                  c0.1-0.1,0.2-0.1,0.4-0.2c0.1,0.5,0.2,1,0.3,1.4c0,0,0,0.1,0,0.1c0,0.3,0.1,0.7,0.1,1c0,0.6,0,1.2-0.1,1.7c0,0,0,0.1,0,0.1
+                                  c-0.1,0.8-0.4,1.5-0.8,2.2C83,57,81.7,58.3,79.9,59.3z M83.7,47.6C83.7,47.6,83.7,47.6,83.7,47.6c-0.2,0.1-0.4,0.2-0.6,0.4
+                                  c-0.1,0.1-0.3,0.2-0.4,0.3c-0.5,0.3-0.9,0.5-1.4,0.8c0,0,0,0,0,0c-0.5,0.3-1,0.5-1.5,0.7c-0.2,0.1-0.3,0.2-0.5,0.2
+                                  c-0.4,0.2-0.7,0.3-1.1,0.5c-0.2,0.1-0.4,0.2-0.6,0.3c-0.4,0.2-0.8,0.3-1.2,0.5c-0.2,0.1-0.4,0.2-0.6,0.2c-0.5,0.2-1,0.4-1.6,0.6
+                                  c-0.1,0-0.1,0.1-0.2,0.1c-0.5,0.2-1.1,0.4-1.7,0.6c0,0,0,0,0,0c0.4-0.5,0.8-1.1,1.2-1.7c0.1-0.2,0.2-0.3,0.3-0.5
+                                  c0.3-0.5,0.6-0.9,0.8-1.4c0.1-0.2,0.2-0.3,0.3-0.5c0.3-0.6,0.7-1.2,0.9-1.9c0.3-0.6,0.6-1.3,0.8-1.9c0.1-0.2,0.1-0.4,0.2-0.6
+                                  c0.2-0.4,0.3-0.9,0.4-1.3c0.1-0.2,0.1-0.5,0.2-0.7c0.1-0.4,0.2-0.9,0.3-1.3c0-0.2,0.1-0.4,0.1-0.7c0-0.1,0-0.2,0.1-0.3c0,0,0,0,0,0
+                                  c0,0,0.1,0.1,0.1,0.1c0.1,0.1,0.2,0.2,0.3,0.3c0.3,0.3,0.5,0.5,0.8,0.8c0.1,0.1,0.2,0.3,0.4,0.4c0.2,0.2,0.4,0.5,0.6,0.7
+                                  c0.1,0.1,0.2,0.3,0.3,0.4c0.2,0.2,0.4,0.5,0.6,0.7c0.1,0.1,0.2,0.3,0.3,0.4c0.2,0.3,0.5,0.6,0.7,0.9c0,0.1,0.1,0.1,0.1,0.2
+                                  c0.2,0.4,0.4,0.7,0.7,1.1c0.1,0.1,0.1,0.2,0.2,0.4c0.1,0.2,0.3,0.5,0.4,0.7c0.1,0.1,0.1,0.3,0.2,0.4C83.6,47.3,83.7,47.4,83.7,47.6
+                                  C83.7,47.5,83.7,47.6,83.7,47.6z M23.3,48.4c0.1,0.1,0.3,0.2,0.5,0.4c0.3,0.2,0.5,0.4,0.8,0.6c0.4,0.3,0.9,0.7,1.3,1
+                                  c0.3,0.2,0.5,0.4,0.8,0.6c0.5,0.3,1,0.7,1.5,1c0.2,0.2,0.5,0.3,0.7,0.5c0.8,0.5,1.6,1,2.4,1.4c1.1,0.6,2.2,1.2,3.3,1.8
+                                  c0.3,0.2,0.7,0.3,1,0.5c0.9,0.4,1.8,0.9,2.7,1.3c0.2,0.1,0.4,0.2,0.6,0.3c0,0,0,0,0,0c-0.1,0-0.2,0-0.3,0c-1.1,0-2.1,0-3.2-0.1
+                                  c-0.2,0-0.3,0-0.5,0c-0.9,0-1.8-0.1-2.7-0.2c-0.2,0-0.4,0-0.6-0.1c-1-0.1-2-0.2-2.9-0.3c-0.2,0-0.4-0.1-0.6-0.1
+                                  c-0.8-0.1-1.6-0.2-2.4-0.4c-0.1,0-0.2,0-0.4-0.1c0,0,0,0,0,0c0,0,0,0,0,0c-0.1-0.2-0.2-0.4-0.3-0.6c0-0.1-0.1-0.2-0.1-0.3
+                                  c-0.2-0.3-0.3-0.7-0.4-1.1c0-0.1-0.1-0.2-0.1-0.3c-0.1-0.3-0.2-0.6-0.3-0.9c0-0.1-0.1-0.3-0.1-0.4c-0.1-0.3-0.1-0.5-0.2-0.8
+                                  c0-0.1-0.1-0.3-0.1-0.4c-0.1-0.3-0.1-0.5-0.1-0.8c0-0.1,0-0.2-0.1-0.4c0-0.4-0.1-0.7-0.1-1.1c0,0,0-0.1,0-0.1
+                                  C23.3,49.1,23.3,48.7,23.3,48.4C23.3,48.4,23.3,48.4,23.3,48.4z M76.8,36.6c-0.2-0.1-0.3-0.2-0.5-0.4c-0.2-0.2-0.5-0.4-0.7-0.6
+                                  c-0.4-0.3-0.9-0.7-1.3-1c-0.3-0.2-0.5-0.4-0.8-0.6c-0.5-0.3-1-0.7-1.5-1c-0.2-0.2-0.5-0.3-0.7-0.5c-0.8-0.5-1.6-1-2.4-1.4
+                                  c-1.1-0.6-2.2-1.2-3.3-1.8c-0.3-0.2-0.7-0.3-1-0.5c-0.9-0.4-1.8-0.9-2.7-1.3c-0.2-0.1-0.4-0.2-0.6-0.3c0,0,0,0,0,0
+                                  c0.1,0,0.2,0,0.3,0c1.1,0,2.2,0,3.2,0.1c0.1,0,0.2,0,0.4,0c1,0,1.9,0.1,2.9,0.2c0.2,0,0.4,0,0.5,0c1,0.1,2,0.2,3,0.3
+                                  c0.2,0,0.4,0.1,0.5,0.1c0.8,0.1,1.7,0.2,2.5,0.4c0.1,0,0.2,0,0.3,0c0,0,0,0,0,0c0,0,0,0,0,0c0.1,0.2,0.2,0.4,0.3,0.6
+                                  c0,0.1,0.1,0.2,0.1,0.3c0.2,0.3,0.3,0.7,0.4,1.1c0,0.1,0.1,0.2,0.1,0.3c0.1,0.3,0.2,0.6,0.3,0.8c0,0.1,0.1,0.3,0.1,0.4
+                                  c0.1,0.3,0.1,0.5,0.2,0.8c0,0.1,0.1,0.3,0.1,0.4c0.1,0.3,0.1,0.5,0.1,0.8c0,0.1,0,0.2,0.1,0.4c0,0.4,0.1,0.8,0.1,1.2c0,0,0,0,0,0
+                                  C76.8,35.9,76.8,36.2,76.8,36.6C76.8,36.6,76.8,36.6,76.8,36.6z M15,38.3c0,0.1,0.1,0.1,0.1,0.2c0.1,0.1,0.1,0.3,0.2,0.5
+                                  c0.1,0.2,0.2,0.5,0.4,0.7c0.1,0.2,0.2,0.3,0.3,0.5c0.1,0.2,0.3,0.5,0.4,0.7c0.1,0.2,0.2,0.3,0.3,0.5c0.2,0.2,0.3,0.5,0.5,0.7
+                                  c0.1,0.2,0.2,0.3,0.3,0.5c0.2,0.3,0.4,0.5,0.6,0.8c0.1,0.1,0.2,0.3,0.3,0.4c0.3,0.3,0.6,0.6,0.9,1c0.1,0.1,0.1,0.1,0.2,0.2
+                                  c0.4,0.4,0.7,0.8,1.1,1.2c0.1,0.1,0.3,0.2,0.4,0.4c0.2,0.2,0.5,0.4,0.7,0.7c0,0.3,0,0.5,0,0.8c0,0.1,0,0.2,0,0.4c0,0.4,0,0.9,0,1.3
+                                  c0,0.1,0,0.3,0,0.4c0,0.3,0.1,0.6,0.1,0.9c0,0.2,0,0.3,0.1,0.5c0,0.3,0.1,0.6,0.1,0.8c0,0.2,0.1,0.3,0.1,0.5
+                                  c0.1,0.3,0.1,0.6,0.2,0.9c0,0.1,0.1,0.3,0.1,0.4c0.1,0.4,0.2,0.8,0.4,1.2c0,0,0,0,0,0c0.1,0.4,0.3,0.7,0.4,1c0,0,0,0,0,0
+                                  c-0.1,0-0.1,0-0.2,0c-0.1,0-0.1,0-0.2,0c-0.4-0.1-0.8-0.2-1.2-0.3c-0.3-0.1-0.6-0.2-1-0.3c-0.1,0-0.2-0.1-0.3-0.1
+                                  c-2.6-0.7-4.9-1.6-6.7-2.7c-2.1-1.2-3.6-2.6-4.3-4.2C7.6,44.4,11.8,40.5,15,38.3z"></path>
+                            <path fill="currentColor" d="M44.6,44.2c1.2,0.7,2.7,1.1,4.3,1.3c1,0.1,2,0.1,3,0c1.6-0.2,3.1-0.6,4.3-1.3c1.2-0.7,2-1.6,2.2-2.5
+                                  c0.2-0.6,0.2-1.1,0-1.7c-0.3-0.9-1-1.8-2.3-2.5c-1.2-0.7-2.7-1.1-4.3-1.3c-1-0.1-2-0.1-3,0c-1.6,0.2-3.1,0.6-4.3,1.3
+                                  c-1.2,0.7-2,1.6-2.2,2.5c-0.2,0.6-0.2,1.1,0,1.7C42.6,42.7,43.3,43.5,44.6,44.2z"></path>
+                            </g>
+                            <rect fill="none" width="100" height="100"></rect>
+                        </svg>
+                    </div>
+
+                    <h3>Reactive</h3>
+                    <p>Spring's asynchronous, nonblocking architecture means you can get more from your computing resources.</p>
+                </div>
+
+                <div class="container1_contents">
+                    <div class="wrap_card_img">
+                        <svg class="icon-cloud" aria-hidden="true" focusable="false" data-icon="icon-cloud" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                            <path fill="currentColor" d="M81.7,43.2c-3-11.1-10.9-21.9-19.6-26.9c-5.6-3.2-10.9-3.8-15-1.7c-0.9-1-1.9-1.8-3.1-2.5
+                               c-2.3-1.4-4.6-1.5-6.3-0.5l-8.9,5.2l0,0l-0.1,0.1L28.7,17c-1.6,1.1-2.5,3-2.4,5l-4,2.3l0,0h-0.1c-0.8,0.5-1.6,1.2-2.2,2
+                               c-1.6-0.8-3.5-0.7-5.1,0.1c-1.6,1-2.4,3-2.4,5.5c0,0.3,0,0.7,0.1,1c-1.9,0-3.8,0.7-5.2,2c-2,1.9-2.9,4.8-2.8,8.5
+                               c0.3,8.8,6.8,19.2,14.6,23.3l41,21.5c1.3,0.5,2.7,0.8,4.1,0.8c1.6,0,3.2-0.5,4.5-1.4c1.9-1.5,3.2-3.7,3.4-6.2l0.5,0.3H73
+                               c1.4,0.6,2.8,0.8,4.3,0.9c1.4,0,2.7-0.3,3.9-1l0.2-0.1l0,0l8.9-5.2c2.8-1.7,4.4-5,4.4-9.5C94.7,58.5,89,48.1,81.7,43.2z M87.2,50.7
+                               l-8,4.6c-1.7-2.4-3.8-4.4-6.2-6.1l8-4.6C83.4,46.2,85.5,48.3,87.2,50.7z M61.4,17.6c5,3.1,9.3,7.3,12.5,12.3l-8,4.6
+                               c-3.2-5-7.6-9.2-12.6-12.4c-4.4-2.5-8.6-3.4-12.2-2.5l5.8-3.3c0.2,0.1,0.4,0.1,0.6,0C51.1,14,56,14.5,61.4,17.6z M71.1,79L32.8,57.1
+                               c-7.4-4.3-13.5-14.7-13.4-23.2c0-1.9,0.4-3.8,1.2-5.6c1.1,0.6,2.1,1.5,2.9,2.4c0.3,0.3,0.7,0.3,1,0.1c3.5-2.3,8.4-2.1,13.8,0.8
+                               c8.5,4.5,16.3,14.6,19.4,25.1c0.1,0.2,0.2,0.3,0.3,0.4c7.1,4.2,12.8,13.6,13.1,21.6C71.1,78.8,71.1,78.9,71.1,79z M68.1,86.5
+                               c-1.8,1.3-4.4,1.5-7.2,0.4L20,65.4c-7.3-3.9-13.5-13.7-13.8-22c-0.1-3.2,0.7-5.8,2.3-7.4c1.2-1.1,2.7-1.7,4.3-1.6h0.7
+                               c0.2,0,0.5-0.1,0.6-0.2c0.2-0.2,0.2-0.4,0.2-0.7c-0.1-0.6-0.2-1.1-0.2-1.7c-0.1-2,0.5-3.5,1.6-4.2c1.1-0.6,2.3-0.6,3.5-0.1
+                               c-0.9,1.9-1.4,4.1-1.3,6.2c0,9,6.3,20,14.2,24.6l39,22.4C70.9,83,69.9,85.1,68.1,86.5L68.1,86.5z M59,55.9
+                               c-3.3-10.8-11.4-21.1-20.1-25.7c-5.6-3-10.8-3.3-14.8-1c-0.8-0.8-1.8-1.6-2.8-2.2c0.5-0.6,1.1-1.1,1.8-1.5l0,0l0.1-0.1l4.2-2.4
+                               c0.2-0.1,0.4-0.4,0.4-0.6c0-2,0.6-3.5,1.8-4.2s2.7-0.5,4.4,0.4c1.2,0.8,2.3,1.8,3.2,2.9l0.9,1L39,22c3.6-2.1,8.4-1.6,13.5,1.4
+                               c8.3,4.8,15.7,15.2,18.5,25.8l0.1,0.5l0.4,0.3c6.9,4.4,12.2,14,12.2,21.9c0.1,3.7-0.9,6.5-3,8c-1.9,1.3-4.5,1.5-7.4,0.4l0,0
+                               l-0.7-0.4c0-0.4,0-0.9,0-1.3C72.3,70.2,66.4,60.3,59,55.9z"></path>
+                            <rect fill="none" width="100" height="100"></rect>
+                            </svg>
+                    </div>
+
+                    <h3>Cloud</h3>
+                    <p>Your code, any cloud—we’ve got you covered. Connect and scale your services, whatever your platform.</p>
+                </div>
+
+                <div class="container1_contents">
+                    <div class="wrap_card_img">
+                        <svg class="icon-webapps" aria-hidden="true" focusable="false" data-icon="icon-webapps" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                            <path fill="currentColor" d="M33.44,13.35l-4.28,2.47L17.8,9.28l0,25.2,5.64,3.25,0,16.29-7.56-7.58V69.18l6-5.83.33-.28h2.09a16.4,16.4,0,0,0,6.55,8.29l35,20.22a7.18,7.18,0,0,0,3.55,1.06,4.41,4.41,0,0,0,2.25-.58h0l9.22-5.34c1.57-.91,2.44-2.76,2.45-5.21l.08-39.36ZM66.67,43.2l-41-23.65,3.45-2,37.51,21.6ZM25,20.85,66.67,45l0,15.94-41.73-24Zm8.48-5.77L81.15,42.6l-7.72,4.5-5.26-3V38.3L30.66,16.69ZM19.27,33.61l0-21.74,8.37,4.82-4.19,2.43,0,16.88Zm5.64,5L68.14,63.5l0-17.67,4.47,2.59v4.73l-.08,26.58h0l0,7.09c0,1.87-.6,3.24-1.69,3.88h0l-.12,0-.09,0h0l-.18.08h0l-.13,0-.1,0h0L70,91h0a.89.89,0,0,1-.25,0v0l-.22,0h-.28v0H69v0l-.22,0-.1,0v0l-.24,0h0l-.27-.08-.1,0v0l-.23-.07v0l-.31-.12-.11-.05v0l-.21-.09v0c-.21-.1-.43-.21-.66-.34v0h0L31.54,70a14.73,14.73,0,0,1-5.66-6.93H32.4l-7.54-7.55Z"></path>
+                            <path fill="currentColor" d="M30.51,28.55h0C29.12,27.74,28,28.39,28,30h0a5.52,5.52,0,0,0,2.51,4.34h0c1.39.81,2.52.17,2.53-1.43A5.53,5.53,0,0,0,30.51,28.55Z"></path>
+                            <path fill="currentColor" d="M39.14,33.53h0c-1.39-.81-2.52-.16-2.52,1.44a5.49,5.49,0,0,0,2.5,4.34c1.4.81,2.53.17,2.53-1.43h0A5.52,5.52,0,0,0,39.14,33.53Z"></path>
+                            <rect fill="none" width="100" height="100"></rect>
+                            </svg>
+                    </div>
+
+                    <h3>Web apps</h3>
+                    <p>Frameworks for fast, secure, and responsive web applications connected to any data store.</p>
+                </div>
+            </div>
+
+            <div class="main_contents_middle_1_container2">
+
+                <div class="container1_contents container1_contents2">
+                    <div class="wrap_card_img">
+
+                        <svg class="icon-serverless" aria-hidden="true" focusable="false" data-icon="icon-serverless" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                            <path fill="currentColor" d="M77.2,52.3c-0.4-0.2-0.9-0.1-1.1,0.3c0,0,0,0,0,0L59.8,80.1c-0.2,0.4-0.1,0.9,0.3,1.1c0.1,0.1,0.3,0.1,0.4,0.1
+                               c0.3,0,0.6-0.2,0.7-0.4l16.2-27.5C77.7,53,77.6,52.5,77.2,52.3C77.2,52.3,77.2,52.3,77.2,52.3z"></path>
+                            <path fill="currentColor" d="M71.4,74.9c-0.4-0.2-0.9-0.1-1.1,0.3c0,0,0,0,0,0l-6.8,11.6c-0.2,0.4-0.1,0.9,0.3,1.1C63.9,88,64,88,64.2,88
+                               c0.3,0,0.6-0.2,0.7-0.4L71.7,76C71.9,75.6,71.8,75.1,71.4,74.9z"></path>
+                            <path fill="currentColor" d="M77.2,36.7c0.4-0.2,0.5-0.7,0.3-1.1c-0.1-0.1-0.2-0.2-0.3-0.3l-10-5.8l4.3-14.9l0,0c0.2-0.1,0.3-0.3,0.3-0.6
+                               c0-0.3-0.2-0.6-0.4-0.7L56.6,4.8c-0.3-0.1-0.6-0.1-0.8,0L34.4,17.1c0,0,0,0-0.1,0.1c-0.1,0.1-0.1,0.1-0.2,0.2c0,0,0,0.1-0.1,0.1
+                               c0,0,0,0.1-0.1,0.1L22.5,62.5c-0.1,0.4,0.1,0.7,0.4,0.9l9.3,5.4l-5.5,16.8c-0.1,0.4,0,0.8,0.4,1l14.8,8.6c0.1,0.1,0.3,0.1,0.4,0.1
+                               c0.1,0,0.2,0,0.3-0.1c0.2-0.1,0.3-0.2,0.4-0.4l0,0l34.2-58C77.1,36.9,77.2,36.8,77.2,36.7z M56.2,6.5l13.2,7.7L49.7,25.5l-13.2-7.7
+                               L56.2,6.5z M24.3,61.7l11-42.6l0.5,0.3l12.9,7.5l-6.3,24.6l-4.8,18.4l-0.1,0.2L33,67.4l-8.8-5.1L24.3,61.7z M45.3,87.5l9.5-28.7
+                               c0-0.1,0-0.2,0-0.3c0-0.3-0.1-0.5-0.3-0.7c-0.3-0.2-0.7-0.2-1,0l0,0l-14,11.3l0,0l4.4-16.9l3.9-15.2l0.3-0.8l0.2-1l0.3-1.1l1.8-7
+                               l19.1-11l-3.7,12.5l-0.2,0.8l-0.2,0.8l-3.8,12.9L61.3,44l-0.2,0.5c0,0.1,0,0.2,0,0.3c0,0.2,0.1,0.4,0.3,0.6c0.3,0.2,0.6,0.2,0.9,0.1
+                               l11.9-6.8L45.3,87.5z"></path>
+                            <rect fill="none" width="100" height="100"></rect>
+                            </svg>
+                    </div>
+                    <h3>Serverless</h3>
+                    <p>The ultimate flexibility. Scale up on demand and scale to zero when there’s no demand.</p>
+                </div>
+
+                <div class="container1_contents container1_contents2">
+                    <div class="wrap_card_img">
+                        <svg class="icon-streams" aria-hidden="true" focusable="false" data-icon="icon-streams" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                            <path fill="currentColor" d="M73.8,15.9c-5.4-3.1-10.5-3.6-14.3-1.4c-0.2,0.1-0.4,0.3-0.6,0.4L21,37.4l-0.2,0.1c-0.1,0-0.1,0.1-0.2,0.1
+                               l-0.4,0.2l0,0c-3.5,2.3-5.4,6.7-5.4,12.6c0,6.3,2.2,13.2,5.8,19.4h-8.5V88h18.2v-6.6c1.2,1,2.6,1.9,4,2.7c2.7,1.7,5.8,2.6,9,2.7
+                               c1.9,0,3.7-0.4,5.3-1.4l0,0l39-23.1v-0.1c3.7-2.3,5.7-6.8,5.7-12.8C93.3,37.2,84.6,22.1,73.8,15.9z M28.8,80.1v6.4H13.6V71.3h15.2
+                               L28.8,80.1L28.8,80.1z M44.6,65.6v8h-8v-8H44.6z M40,42.4v-3.8h11.3v11.3h-4.7C44.7,47.1,42.5,44.6,40,42.4z M44.9,49.9H40v-5.5
+                               C41.8,46.1,43.4,47.9,44.9,49.9L44.9,49.9z M26.4,57.8v-6.5h6.5v6.5H26.4z M52.5,81.4c1.4-2.7,2.2-5.8,2.1-8.9
+                               c0-6.9-2.7-14.6-6.9-21.2h5.1V37.1H38.5v4.1c-1.1-0.8-2.2-1.6-3.4-2.3c-2.7-1.7-5.9-2.6-9.1-2.7l29.5-17.5c-1.4,2.7-2.1,5.7-2,8.8
+                               c0,7.9,3.5,16.8,8.8,23.9h-2.8v6.5H66v-2.2c2.1,2.1,4.4,4,6.9,5.5c2.7,1.7,5.8,2.6,9,2.7h0.2L52.5,81.4z M91.8,49.5
+                               c0,5.6-1.9,9.7-5.2,11.6s-8,1.5-12.8-1.4c-2.9-1.7-5.5-3.8-7.7-6.3v-2.1h-1.8c-5.5-7-9.2-16-9.2-23.9c0-5.2,1.7-9.1,4.6-11.2
+                               l1.2-0.7c1.2-0.6,2.6-0.9,4-0.9c2.9,0.1,5.7,1,8.2,2.5C83.4,23.1,91.8,37.7,91.8,49.5z"></path>
+                            <rect fill="currentColor" x="38.1" y="67.1" width="5" height="5"></rect>
+                            <rect fill="currentColor" x="3.3" y="61.9" width="6.5" height="6.5"></rect>
+                            <path fill="currentColor" d="M62.5,37.2h8v-8h-8L62.5,37.2z M64,30.7h5v5h-5V30.7z"></path>
+                            <rect fill="currentColor" x="92.8" y="25" width="3.2" height="3.2"></rect>
+                            <rect fill="currentColor" x="77.6" y="38.3" width="3.2" height="3.2"></rect>
+                            <rect fill="currentColor" x="86.1" y="42.3" width="3.2" height="3.2"></rect>
+                            <rect fill="currentColor" x="74.3" y="47.4" width="3.2" height="3.2"></rect>
+                            <rect fill="none" width="100" height="100"></rect>
+                            </svg>
+                    </div>
+                    <h3>Event Driven</h3>
+                    <p>Integrate with your enterprise. React to business events. Act on your streaming data in realtime.</p>
+                </div>
+
+                <div class="container1_contents container1_contents2">
+                    <div class="wrap_card_img">
+                        <svg class="icon-batch" aria-hidden="true" focusable="false" data-icon="icon-batch" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                            <path fill="currentColor" d="M88.1,27.8L53.2,7.7c-0.2-0.1-0.5-0.1-0.8,0c-0.2,0.1-0.4,0.4-0.4,0.7V17l-7.5-4.3c-0.2-0.1-0.5-0.1-0.8,0
+                               c-0.2,0.1-0.4,0.4-0.4,0.6V22l-7.5-4.4c-0.2-0.1-0.5-0.1-0.8,0c-0.2,0.1-0.4,0.4-0.4,0.6l-0.1,31h-2.6c-0.4,0-0.7,0.3-0.8,0.8v2.4
+                               h-0.1c-0.8,0.1-1.6,0.3-2.3,0.5c-0.5,0.1-0.9,0.2-1.4,0.4l-3.4-2c-0.2-0.1-0.5-0.1-0.8,0l-6.5,3.8c-0.2,0.1-0.4,0.4-0.4,0.7V60h-2.7
+                               c-0.4,0-0.8,0.3-0.8,0.8v11.8v5.4c0,0.4,0.3,0.7,0.7,0.8c0,0,0,0,0,0h2.7v3.9c0,0.3,0.1,0.5,0.4,0.7l6.6,3.8
+                               c0.1,0.1,0.2,0.1,0.4,0.1c0.1,0,0.3,0,0.4-0.1l0,0l3.4-2l0.9,0.3c0.6,0.2,1.3,0.3,1.9,0.5c0.3,0.1,0.7,0.1,1,0.2v2.4
+                               c0,0.4,0.3,0.8,0.7,0.8h9.3c0.4,0,0.7-0.3,0.8-0.7c0,0,0,0,0,0V86h0.1c0.4-0.1,0.8-0.2,1.3-0.3l0.4-0.1c0.7-0.2,1.3-0.3,1.9-0.5l0,0
+                               l3.4,1.9c0.1,0.1,0.2,0.1,0.4,0.1c0.1,0,0.3,0,0.4-0.1l0,0l5-2.9l14.7,8.5c0.2,0.1,0.5,0.1,0.7,0c0.2-0.1,0.4-0.4,0.4-0.7v-8.7
+                               l7.5,4.3c0.1,0.1,0.2,0.1,0.4,0.1c0.1,0,0.3,0,0.4-0.1c0.2-0.1,0.4-0.4,0.4-0.7v-8.7l7.5,4.3c0.1,0.1,0.2,0.1,0.4,0.1
+                               c0.1,0,0.3,0,0.4-0.1c0.2-0.1,0.4-0.4,0.4-0.7l0.2-53.4C88.5,28.3,88.3,28,88.1,27.8z M86.9,80.6l-7.1-4.1l0.1-43
+                               c0-0.3-0.1-0.5-0.4-0.7l-25.9-15V9.6L87,28.9L86.9,80.6z M78.2,77.3v8.2L71,81.5v-8.2v-1.7l0.1-17.4c0.1-0.2,0.1-0.5,0-0.7
+                               L58.3,31.2v-0.1c0-0.3-0.1-0.5-0.4-0.7l-4.4-2.5l-0.7-0.4L52,27l-7.1-4.1v-8.3l7.1,4.1l0.8,0.4l0.8,0.4l24.8,14.3l-0.1,41.7
+                               L78.2,77.3L78.2,77.3z M69.5,82.3v8.3l-12.9-7.4l0,0c0.2-0.1,0.4-0.4,0.4-0.7v-3.9h2.7c0.4,0,0.7-0.3,0.8-0.8v-2.5v-8.2v-1.7v-4.7
+                               c0-0.4-0.3-0.7-0.8-0.7h-0.1L57,60v-4c0-0.3-0.1-0.5-0.4-0.7l-3.2-1.8L52.7,53L52,52.6l-1.9-1.1c-0.2-0.1-0.5-0.1-0.8,0l-1.6,0.9
+                               l-1.8,1c-0.4-0.1-0.7-0.2-1.1-0.3l-0.8-0.2l-0.8-0.2c-0.4-0.1-0.8-0.2-1.2-0.2v-2.4c0-0.4-0.3-0.7-0.8-0.8h-5.2l0.1-29.7l7.2,4.1
+                               l0.8,0.4l0.8,0.4l7.1,4.1l0.8,0.4l0.8,0.4l3.1,1.8v14.7v0.3c0,0.3,0.1,0.5,0.4,0.7l12.7,7.3l-0.1,16.2v1.7v8.3L69.5,82.3L69.5,82.3z
+                                M53.7,83.2L50.5,85V75l1.3-0.8l0.8-0.4l0.7-0.4h0.1l0.4-0.2l0.8-0.4l0.8-0.4l0.4-0.2v10l-0.4,0.2l-0.7,0.4L53.7,83.2z M19,61.5
+                               c0.3,0,0.6-0.2,0.7-0.5c0.4-0.9,1-1.8,1.8-2.5c0.3-0.3,0.3-0.8,0-1c-0.1-0.1-0.1-0.1-0.2-0.1l-2.5-1.5l4.9-2.8l3.3,1.9
+                               c0.2,0.1,0.4,0.1,0.6,0.1c0.6-0.2,1.2-0.4,1.8-0.5s1.2-0.3,1.9-0.4c0.3,0,0.6-0.1,0.9-0.2c0.4-0.1,0.6-0.4,0.6-0.7v-2.2h7.5v2.2
+                               c0,0.4,0.3,0.7,0.6,0.7c0.8,0.1,1.5,0.3,2.2,0.4l0.8,0.2l0.8,0.2c0.3,0.1,0.6,0.2,0.9,0.3c0.1,0,0.2,0,0.3,0c0.1,0,0.2,0,0.3-0.1
+                               l2-1.2l1.4-0.7l2.3,1.3l0.8,0.4l0.8,0.4l1.1,0.7l-1.1,0.7l-0.8,0.4l-0.6,0.4c0,0-0.1,0.1-0.1,0.1c-0.1,0.1-0.2,0.3-0.2,0.5
+                               c0,0.2,0.1,0.5,0.2,0.6l0,0c0.3,0.3,0.5,0.5,0.8,0.8c0.3,0.3,0.5,0.7,0.7,1.1c0.1,0.2,0.2,0.4,0.3,0.6c0.1,0.3,0.4,0.4,0.7,0.4h4.4
+                               v3v0.8h-4.4c-0.3,0-0.6,0.2-0.7,0.4c-0.4,1-1,1.9-1.8,2.6c-0.2,0.2-0.2,0.4-0.2,0.6c0,0.2,0.2,0.4,0.4,0.6l1.3,0.8l1.2,0.7l0,0
+                               l-1,0.6l-0.8,0.4l0,0l-0.7,0.4l-2.4,1.4l0,0l-3.1-1.8l-0.2-0.1l0,0c-0.1,0-0.2-0.1-0.3-0.1c-0.1,0-0.2,0-0.3,0l0,0h-0.1h-0.1
+                               c-1.4,0.5-2.9,0.8-4.4,1.1c-0.4,0-0.6,0.4-0.6,0.7v2.2h-7.6l0,0v-2.2c0-0.3-0.2-0.6-0.5-0.7h-0.1c-0.6-0.1-1.1-0.2-1.6-0.3h-0.1
+                               c-0.5-0.1-1-0.2-1.6-0.4L28.5,72c-0.2-0.1-0.5-0.1-0.7-0.2l0,0c-0.2-0.1-0.4,0-0.6,0.1L27,72l-3.1,1.8l0,0L19,70.9l2.5-1.4
+                               c0.2-0.1,0.3-0.3,0.4-0.6c0-0.2-0.1-0.5-0.2-0.6c-0.8-0.7-1.4-1.6-1.8-2.5c-0.1-0.3-0.4-0.4-0.7-0.4h-4.4v-3.7L19,61.5L19,61.5z
+                                M32.9,80.8v-3.4h7.8v3.4v4.8v2h-7.8L32.9,80.8z M18,78.6v-6.6l2.3,1.3l0.8,0.4l2,1.2v0.2V85L18,82.1V78.6z"></path>
+                            <path fill="currentColor" d="M29.9,67.8c1.5,0.8,3.1,1.3,4.7,1.5c0.2,0,0.5,0.1,0.8,0.1h0.8c0.2,0,0.5,0,0.7,0c2.4,0,4.8-0.5,6.9-1.7
+                               l0.3-0.2c0.2-0.1,0.5-0.3,0.7-0.5c0.2-0.2,0.4-0.3,0.6-0.5c0.9-0.8,1.4-2,1.5-3.2c-0.1-1.4-0.8-2.8-1.9-3.6
+                               c-0.2-0.2-0.5-0.4-0.8-0.5c-0.1-0.1-0.3-0.2-0.4-0.3s-0.2-0.1-0.3-0.2c-2.2-1.1-4.7-1.6-7.2-1.5h-0.8l-0.8,0.1
+                               c-1.7,0.2-3.3,0.7-4.8,1.5c-2,1.1-3.1,2.7-3,4.4S27.9,66.6,29.9,67.8z"></path>
+                            <rect fill="none" width="100" height="100"></rect>
+                            </svg>
+                    </div>
+                    <h3>Batch</h3>
+                    <p>Automated tasks. Offline processing of data at a time to suit you.</p>
+                </div>
+
+            </div>
+
+        </div> 
+
+
+            <div class="main_contents_middle_2">
+                <div class="code_block">
+                    <code>
+                        <span class="code_blue">@SpringBootApplication</span>
+                        <br>
+                        <span class="code_blue">@RestController</span>
+                        <br>
+                        <br>
+                        <span class="code_green1">puclic</span>
+                        <span class="code_white"> class DemoApplication {</span>
+                        <br>
+                        <div class="code_indent">
+                            <br>
+                            <span class="code_blue">
+                                @GetMapping
+                            </span>
+                            <span class="code_white">(</span><span class="code_green2">"/helloworld"</span><span class="code_white">)</span>
+                            <br>
+                            <span class="code_green1">public</span>
+                            <span class="code_white">String hello() {</span>
+                            <br>
+                            <div class="code_ani">
+                                <span class="code_white">&nbsp;&nbsp;&nbsp;return </span>
+                                <span class="code_green2">"Hello World!"</span><span class="code_white">;</span>
+                                <br>
+                                
+                            </div>
+                            <span class="code_white">}</span>
+                            <br>
+                        </div>
+                        <span class="code_white">}</span>
+                    </code>
+                </div>
+                <div class="code_block_aside">
+                    <h2>Level up your Java™ code</h2>
+
+                    <p>With <a href="#" class="link_animate">Spring Boot</a> in your app, just a few lines of code is all you need to start building services like a boss.</p>
+
+                    <p>
+                        New to Spring? Try our simple <a href="#" class="link_animate">quickstart guide.</a> 
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="main_contents_bottom">
+
+                <img class="main_contents_bottom_img" src="img/main_contents_bottom_img.svg" alt="">
+
+                <div class="main_contents_bottom_para">
+                    Originally [Netflix's Java] libraries and frameworks were built in-house. I'm very proud to say, as of early 2019, we've moved our platform almost entirely over to Spring Boot.”
+                </div>
+
+                <div class="main_contents_bottom_para2">
+                    <img class="main_contents_bottom_img2" src="img/main_contents_bottom_img2.jpg" alt="">
+
+                    <div>
+                        <span class="TAYLOR">
+                            TAYLOR WICKSELL, SENIOR SOFTWARE ENGINEER, NETFLIX
+                        </span>
+                        
+                        <br>
+
+                        <a  class="link_animate"  href="https://www.youtube.com/watch?v=mln3_o6qlBo&ab_channel=VMwareTanzu" >Watch now</a>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ------footer_영역------ -->
+    <footer>
+
+        <div class="footer_top">
+            <div class='container'>
+                
+                <div class="third">
+                    <h2 class="txt_left footer_top_h2">Get ahead</h2>
+                    <p class="txt_left footer_top_p">VMware offers training and certification to turbo-charge your progress.</p>
+                    <div class="txt_left"><a href="https://spring.io/training" class="link_animate">Learn more</a></div>
+                </div>
+
+                <div class="third">
+                    <h2 class="txt_left footer_top_h2">Get support</h2>
+                    <p class="txt_left footer_top_p">Spring Runtime offers support and binaries for OpenJDK™, Spring, and Apache Tomcat® in one simple subscription.</p>
+                    <div class="txt_left"><a href="https://spring.io/support" class="link_animate">Learn more</a></div>
+                </div>
+
+
+                <div class="third">
+                    <h2 class="txt_left footer_top_h2">Upcoming events</h2>
+                    <p class="txt_left footer_top_p">Check out all the upcoming events in the Spring community.</p>
+                    <div class="txt_left"><a href="https://spring.io/events" class="link_animate">View all</a></div>
+                </div>
+                
+
+            </div>                
+            <img class="circle_grid" src="img/footer-circles-dc4b03d4edc1f3b7b42a45bdcce411c8.svg" alt="">
+            <div class="green_circle"></div>
+        </div>
+
+
+        <div class="footer_bottom">
+
+            <div id="footer_bottom-top">
+                <div id="footer-over" class="mx-auto">
+                    <div class="container flex jc-between mx-auto">
+                        <div class="left">
+                            <div class="flex jc-between">
+                                <div class="footer-column">
+                                    <p><strong><a href="/why-spring">Why Spring</a></strong></p>
+                                    <ul>
+                                        <li><a href="/microservices">Microservices</a></li>
+                                        <li><a href="/reactive">Reactive</a></li>
+                                        <li><a href="/event-driven">Event Driven</a></li>
+                                        <li><a href="/cloud">Cloud</a></li>
+                                        <li><a href="/web-applications">Web Applications</a></li>
+                                        <li><a href="/serverless">Serverless</a></li>
+                                        <li><a href="/batch">Batch</a></li>
+                                    </ul>
+                                    <br>
+                                </div>
+                                <div class="footer-column">
+                                    <p><strong><a href="/learn">Learn</a></strong></p>
+                                    <ul>
+                                        <li><a href="/quickstart">Quickstart</a></li>
+                                        <li><a href="/guides">Guides</a></li>
+                                        <li><a href="/blog">Blog</a></li>
+                                    </ul>
+                                </div>
+                                <div class="footer-column">
+                                    <p><strong><a href="/community">Community</a></strong></p>
+                                    <ul>
+                                        <li><a href="/events">Events</a></li>
+                                        <li><a href="/team">Team</a></li>
+                                    </ul>
+                                </div>
+                                <div class="footer-column">
+                                    <p><strong><a href="/projects">Projects</a></strong></p>
+                                    <p><strong><a href="/training">Training</a></strong></p>
+                                    <p><strong><a href="/support">Support</a></strong></p>
+                                    <p><strong><a href="/thank-you">Thank You</a></strong></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <h2 class="h3 mb-2 antialiased hide">Get the Spring newsletter
+
+
+                                <form id="mktoForm_4723" novalidate="novalidate"
+                                    class="mktoForm mktoHasWidth mktoLayoutLeft"
+                                    style="font-family: Helvetica, Arial, sans-serif; font-size: 13px; color: rgb(51, 51, 51); width: 419px;">
+
+                                   
+                                    <div class="mktoFormRow">
+                                        <div class="mktoFieldDescriptor mktoFormCol" style="margin-bottom: 10px;">
+                                            <div class="mktoOffset" style="width: 10px;"></div>
+                                            <div class="mktoFieldWrap mktoRequiredField"><label for="Email"
+                                                    id="LblEmail" class="mktoLabel mktoHasWidth" style="width: 0px;">
+
+                                                </label>
+                                                <div class="mktoGutter mktoHasWidth" style="width: 10px;"></div><input
+                                                    id="Email" name="Email" placeholder="Email Address" maxlength="255"
+                                                    aria-labelledby="LblEmail InstructEmail" type="email"
+                                                    class="mktoField mktoEmailField mktoHasWidth mktoRequired"
+                                                    aria-required="true" style="width: 150px;"><span id="InstructEmail"
+                                                    tabindex="-1" class="mktoInstruction"></span>
+                                                <div class="mktoClear"></div>
+                                            </div>
+                                            <div class="mktoClear"></div>
+                                        </div>
+                                        <div class="mktoClear"></div>
+                                    </div>
+                                    <div class="mktoFormRow">
+                                        <div class="mktoFieldDescriptor mktoFormCol" style="margin-bottom: 10px;">
+                                            <div class="mktoOffset" style="width: 10px;"></div>
+                                            <div class="mktoFieldWrap mktoRequiredField"><label for="Email_Consent__c"
+                                                    id="LblEmail_Consent__c" class="mktoLabel mktoHasWidth"
+                                                    style="width: 0px;">
+
+                                                </label>
+                                                <div class="mktoButtonRow"><span class="mktoButtonWrap mktoSimple"
+                                                        style="margin-left: 120px;"><button type="submit"
+                                                            class="mktoButton">Subscribe</button></span></div><input
+                                                    type="hidden" name="formid" class="mktoField mktoFieldDescriptor"
+                                                    value="4723"><input type="hidden" name="munchkinId"
+                                                    class="mktoField mktoFieldDescriptor" value="625-IUJ-009">
+                                                <div class="mktoGutter mktoHasWidth" style="width: 10px;"></div>
+                                                <div class="mktoLogicalField mktoCheckboxList mktoHasWidth mktoRequired"
+                                                    style="width: 280px;"><input name="Email_Consent__c"
+                                                        id="mktoCheckbox_121736_0" type="checkbox" value="true"
+                                                        aria-required="true"
+                                                        aria-labelledby="LblEmail_Consent__c LblmktoCheckbox_121736_0 InstructEmail_Consent__c"
+                                                        class="mktoField"><label for="mktoCheckbox_121736_0"
+                                                        id="LblmktoCheckbox_121736_0">Yes, I would like to be contacted
+                                                        by
+                                                        The Spring Team and VMware for newsletters, promotions and
+                                                        events</label></div><span id="InstructEmail_Consent__c"
+                                                    tabindex="-1" class="mktoInstruction"></span>
+                                                <div class="mktoClear"></div>
+                                            </div>
+                                            <div class="mktoClear"></div>
+                                        </div>
+                                        <div class="mktoClear"></div>
+                                    </div>
+
+                                </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer_bottom_bottom">
+                <div class="flexcontainer">
+                    <div class="copyright">
+                        <img id="springlogo-foot" src="img/spring_logo_bottom_bottom.svg" alt="Spring">
+
+                        <p class="footer_left">
+                            © 2022 <a href="#">VMware</a>, Inc. or its affiliates. <a href="#">Terms of Use</a> • <a href="#">Privacy</a> • <a href="#">Trademark Guidelines</a> • <a href="#">Your California Privacy Rights</a> • <a href="#">쿠키 설정</a>
+                        </p>
+                        <br>
+                        <p class="footer_left">
+                            Apache®, Apache Tomcat®, Apache Kafka®, Apache Cassandra™, and Apache Geode™ are trademarks or registered trademarks of the Apache Software Foundation in the United States and/or other countries. Java™, Java™ SE, Java™ EE, and OpenJDK™ are trademarks of Oracle and/or its affiliates. Kubernetes® is a registered trademark of the Linux Foundation in the United States and other countries. Linux® is the registered trademark of Linus Torvalds in the United States and other countries. Windows® and Microsoft® Azure are registered trademarks of Microsoft Corporation. “AWS” and “Amazon Web Services” are trademarks or registered trademarks of Amazon.com Inc. or its affiliates. All other trademarks and copyrights are property of their respective owners and are only mentioned for informative purposes. Other names may be trademarks of their respective owners.
+                        </p>     
+                </div>
+
+                <!-- <div class="social_container">
+                    <a href="https://www.youtube.com/" class="social_link">
+                        <img src="img/ytube.png" alt="" class="social_icon">
+                    </a>
+
+                    <a href="https://github.com/" class="social_link">
+                        <img src="img/git.png" alt="" class="social_icon">
+                    </a>
+
+                    <a href="https://twitter.com/?lang=ko" class="social_link">
+                        <img src="img/twit.png" alt="" class="social_icon">
+                    </a>
+                </div> -->
+            </div>
+        </div>
+
+    </footer>
+    <!-- 토글버튼 다크모드 -->
+    <script>
+        togle1.onclick = function () {
+
+            if (togle1.checked == true) {
+                document.getElementById("body").style.backgroundColor = 'black';
+                document.getElementById("inner_nav_tabmenu_wrap_btn").style.color = "white";
+                document.getElementById("tabmenu_btn5").style.color = "white";
+                document.getElementById("tabmenu_btn4").style.color = "white";
+
+            }
+            else if (togle1.checked == false) {
+                document.getElementById("body").style.backgroundColor = 'white';
+                document.getElementById("inner_nav_tabmenu_wrap_btn").style.color = "black";
+                document.getElementById("tabmenu_btn5").style.color = "black";
+                document.getElementById("tabmenu_btn4").style.color = "black";
+            }
+        }
+    </script>
+
+    <!-- Tab-Menu에 대한 Script -->
+    <script>
+        // 버튼1에 대한 함수 
+        invisible_btn1.onmouseover = function () {
+            document.getElementById("drop_menu_btn1").style.visibility = 'visible';
+            document.getElementById("drop_menu_btn1").style.transition = '0.5s';
+            document.getElementById("drop_menu_btn1").style.opacity = '1';
+        };
+
+        invisible_btn1.onmouseout = function () {
+            document.getElementById("drop_menu_btn1").style.transition = '0.0s';
+            document.getElementById("drop_menu_btn1").style.visibility = 'hidden';
+            document.getElementById("drop_menu_btn1").style.opacity = '0';
+        }
+
+        drop_menu_btn1.onmouseover = function () {
+            document.getElementById("drop_menu_btn1").style.transition = '0.0s';
+            document.getElementById("drop_menu_btn1").style.visibility = 'visible';
+            document.getElementById("drop_menu_btn1").style.opacity = '1';
+        }
+
+        drop_menu_btn1.onmouseout = function () {
+            document.getElementById("drop_menu_btn1").style.transition = '0.0s';
+            document.getElementById("drop_menu_btn1").style.visibility = 'hidden';
+            document.getElementById("drop_menu_btn1").style.opacity = '0';
+        }
+
+
+        // 버튼2에 대한 함수  
+        invisible_btn2.onmouseover = function () {
+            document.getElementById("drop_menu_btn2").style.visibility = 'visible';
+            document.getElementById("drop_menu_btn2").style.transition = '0.5s';
+            document.getElementById("drop_menu_btn2").style.opacity = '1';
+        };
+
+        invisible_btn2.onmouseout = function () {
+            document.getElementById("drop_menu_btn2").style.transition = '0.0s';
+            document.getElementById("drop_menu_btn2").style.visibility = 'hidden';
+            document.getElementById("drop_menu_btn2").style.opacity = '0';
+        };
+
+        drop_menu_btn2.onmouseover = function () {
+            document.getElementById("drop_menu_btn2").style.transition = '0.0s';
+            document.getElementById("drop_menu_btn2").style.visibility = 'visible';
+            document.getElementById("drop_menu_btn2").style.opacity = '1';
+        }
+        drop_menu_btn2.onmouseout = function () {
+            document.getElementById("drop_menu_btn2").style.transition = '0.0s';
+            document.getElementById("drop_menu_btn2").style.visibility = 'hidden';
+            document.getElementById("drop_menu_btn2").style.opacity = '0';
+        }
+
+        // 버튼3에 대한 함수    
+        invisible_btn3.onmouseover = function () {
+            document.getElementById("drop_menu_btn3").style.visibility = 'visible';
+            document.getElementById("drop_menu_btn3").style.transition = '0.5s';
+            document.getElementById("drop_menu_btn3").style.opacity = '1';
+        };
+
+        invisible_btn3.onmouseout = function () {
+            document.getElementById("drop_menu_btn3").style.transition = '0.0s';
+            document.getElementById("drop_menu_btn3").style.visibility = 'hidden';
+            document.getElementById("drop_menu_btn3").style.opacity = '0';
+        };
+
+        drop_menu_btn3.onmouseover = function () {
+            document.getElementById("drop_menu_btn3").style.transition = '0.0s';
+            document.getElementById("drop_menu_btn3").style.visibility = 'visible';
+            document.getElementById("drop_menu_btn3").style.opacity = '1';
+        }
+
+        drop_menu_btn3.onmouseout = function () {
+            document.getElementById("drop_menu_btn3").style.transition = '0.0s';
+            document.getElementById("drop_menu_btn3").style.visibility = 'hidden';
+            document.getElementById("drop_menu_btn3").style.opacity = '0';
+        }
+
+        // 버튼6에 대한 함수
+        invisible_btn6.onmouseover = function () {
+            document.getElementById("drop_menu_btn6").style.visibility = 'visible';
+            document.getElementById("drop_menu_btn6").style.transition = '0.5s';
+            document.getElementById("drop_menu_btn6").style.opacity = '1';
+        };
+
+        invisible_btn6.onmouseout = function () {
+            document.getElementById("drop_menu_btn6").style.transition = '0.0s';
+            document.getElementById("drop_menu_btn6").style.visibility = 'hidden';
+            document.getElementById("drop_menu_btn6").style.opacity = '0';
+        };
+
+        drop_menu_btn6.onmouseover = function () {
+            document.getElementById("drop_menu_btn6").style.transition = '0.0s';
+            document.getElementById("drop_menu_btn6").style.visibility = 'visible';
+            document.getElementById("drop_menu_btn6").style.opacity = '1';
+        };
+
+        drop_menu_btn6.onmouseout = function () {
+            document.getElementById("drop_menu_btn6").style.transition = '0.0s';
+            document.getElementById("drop_menu_btn6").style.visibility = 'hidden';
+            document.getElementById("drop_menu_btn6").style.opacity = '0';
+        };
+
+        // 메뉴 버튼 링크 호버링 시, 색상 바뀌는 함수
+        invisible_btn4.onmouseover = function () {
+            let btn4 = document.getElementById("tabmenu_btn4").style;
+            btn4.transition = "0.3s";
+            btn4.color = "rgb(109, 179, 63)";
+        };
+
+        invisible_btn4.onmouseout = function () {
+            var btn4 = document.getElementById("tabmenu_btn4").style;
+            btn4.transition = "0.0s";
+
+            if (togle1.checked == true) {
+                btn4.color = "white";
+            } else {
+                btn4.color = "#191e1e";
+            }
+
+        };
+
+        invisible_btn5.onmouseover = function () {
+            let btn4 = document.getElementById("tabmenu_btn5").style;
+            btn4.transition = "0.3s";
+            btn4.color = "rgb(109, 179, 63)";
+        };
+
+        invisible_btn5.onmouseout = function () {
+            var btn4 = document.getElementById("tabmenu_btn5").style;
+            btn4.transition = "0.0s";
+            if (togle1.checked == true) {
+                btn4.color = "white";
+            } else {
+                btn4.color = "#191e1e";
+            }
+        };
+
+    </script>
+    
+</body>
+
+</html>
+
