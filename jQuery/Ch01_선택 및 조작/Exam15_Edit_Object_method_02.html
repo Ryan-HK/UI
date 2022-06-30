@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+    <script>
+        $( () => {
+            
+            console.clear();
+
+            // 1. clone() : 선택한 요소를 복사한다.
+            var copyObj = $(".box1").children().clone();
+
+            // 2. remove() : 선택한 요소를 삭제한다. (박스 자체를 삭제해버린다)
+            $(".box2").remove();
+
+            // 3. empty() 선택한 요소의 하위 내용들을 삭제한다.
+            // -> 하위 자손들만 비워버린다.
+            $(".box3").empty();
+
+            // 4. append("선택요소") 선택요소를 지정한 요소 하위에 붙여놓는다. 
+            $(".box3").append(copyObj);
+
+        })
+
+    </script>
+
+</head>
+<body>
+    <div class="box1">
+        <p>내용1 <a href="#">LINK</a></p>
+        <p>내용2</p>
+    </div>
+    <div class="box2">
+        <p>내용3</p>
+        <p>내용4</p>
+    </div>
+    <div class="box3">
+        <p>내용5</p>
+        <p>내용6</p>
+    </div>
+</body>
+</body>
+</html>

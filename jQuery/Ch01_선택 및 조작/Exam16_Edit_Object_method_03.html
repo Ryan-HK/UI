@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+    <script>
+        $(function () {
+
+            // replaceWith(), replaceAll()
+            
+            // -> 선택한 요소를 새 요소로 바꾼다.
+            // -> <p> </p> 기본 DOM의 태그들을 인식한다.
+            // -> 추가로 속성값도 아래와 같이 추가가 가능하다.
+            // 보통 class="hello" 식으로 사용하지만, 이 메소드를 이용하여, 속성을 추가하려고 하면 ""을 제외시키고 추가해주어야 제대로 작동한다.
+
+            $("h2").replaceWith("<h3 id=hello>replace method</h3>");
+
+            $("<p class=hello2>Change</p>").replaceAll("div");
+        })
+    </script>
+
+
+</head>
+<body>
+    <section class="box1">
+        <h2>제목1</h2>
+
+        <div>내용1</div>
+        <div>내용2</div>
+    </section>
+
+    <section class="box2">
+        <h2>제목2</h2>
+
+        <div>내용3</div>
+        <div>내용4</div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+    <script>
+        $( () => {
+            
+            // 1. ("선택요소).after("새로운 요소") : 선택한 요소 동생으로 새로운 요소를 추가한다.
+            //    <선택자>             <새로운요소>
+            $("#wrap p:eq(2)").after("<p>After</p>");
+
+            //2. ("새로운요소").insertAfter("선택자") = 선택요소 뒤에 새로운 요소를 추가한다.
+            //    <새로운 요소>                       <선택자>
+            $("<p>insertAfter</p>").insertAfter("#wrap p:eq(1)");
+
+            //3. ("선택요소").before("새로운요소")
+            //    <선택자>             <새로운요소>
+            $("#wrap p:eq(1)").before("<p>Before</p>")
+
+            //4. ("새로운요소").insertBefore("선택요소")
+            //    <새로운 요소>                       <선택자>
+            $("<p>insertBefore</p>").insertBefore("#wrap p:eq(0)");
+
+            //5. ("새로운요소").adppendTo("선택요소") : 새로운 요소를 선택한 위치 맨 마지막에 추가
+            // ("새로운 요소").appendTo("선택 요소")
+            $("<li>appendTo</li>").appendTo("#listZone");
+
+            //6. ("선택자").prepend("새요소") : 새 요소를 선택한 위치 맨 마지막에에 추가
+            // <선택자>                  <새요소>
+            $("#listZone").prepend("<li>prepend</li>");
+
+        })
+
+    </script>
+
+</head>
+<body>
+    <div id="wrap">
+        <p>내용1</p>
+        <p>내용2</p>
+        <p>내용3</p>
+    </div>
+<!-- -------------------------------------------- -->
+    <h1>appendTo(), prepend()</h1>
+
+    <ul id="listZone">
+        <li>리스트</li>
+    </ul>
+</body>
+</html>

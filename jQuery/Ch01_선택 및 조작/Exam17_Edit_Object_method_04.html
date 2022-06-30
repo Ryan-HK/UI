@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+    <script>
+        $(function () {
+
+            // unwrap() : 지정한 요소를 감싸고 있는 태그를 없애준다.
+            $("strong").unwrap();
+
+            // wrap("감쌀려고 하는 태그") : 선택한 요소를 '각자' 감싼다.
+            $(".ct1").wrap("<div id=wrap1>");
+
+            // wrap("감쌀려고 하는 태그") : 선택한 요소를 '합쳐서' 감싼다.    
+            $(".ct2").wrapAll("<div>");
+
+            // wrapInner("새 요소") : 선택한 요소의 '내용'을 새 요소로 감싼다.
+            $("li").wrapInner("<h3>");
+        });
+
+    </script>
+
+    <style>
+        div {
+            background-color: aqua;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 id="tit_1">
+        <strong>객체 조작 및 생성</strong>
+    </h1>
+
+    <p class="ct1">내용1</p>
+    <p class="ct1">내용2</p>
+    <p class="ct2">내용3</p>
+    <p class="ct2">내용4</p>
+
+    <ul>
+        <li>내용3</li>
+        <li>내용4</li>
+    </ul>
+</body>
+</html>
