@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+    <script>
+        $(function () {
+            console.clear();
+
+            //width 값을 반환하거나, 변환한다.
+            var width = $("#p1").width();
+
+            //height 값을 반환하거나, 변환한다.
+            var height = $("#p1").height();
+
+            //padding + width를 포함한 값을 얻거나, 변환한다.
+            var innerWidth = $("#p1").innerWidth();
+            var innerHeight = $("#p1").innerHeight();
+
+            //border + paddint + width/height 값을 얻거나, 변환한다.
+            var outerWidth = $("#p1").outerWidth();
+            var outerHeight = $("#p1").outerHeight();
+
+
+            // offset() : 선택한 요소가 viewport 좌측/상단 원점으로 위치를 계산해준다.
+            // offset().top, offset().left
+
+
+            // position() : 선택한 요소가 relative된 박스 좌측/상단 원점 기준으로 위치를 계산해준다.
+            // position().top, position().left
+
+            // $(window).scrollTop() : 브라우저의 수직스크롤 이동 너비 값을 구한다.
+        })
+    </script>
+
+<style>
+    *{
+        padding: 0;
+    }
+
+    #p1, #p2 {
+        width: 100px;
+        height: 50px;
+        padding: 20px;
+        border: 5px solid #000;
+        background-color: #ff0;
+    }
+</style>
+
+</head>
+<body>
+
+    <div id="p1">
+    </div>
+
+    <div id="p2">
+    </div>
+    
+</body>
+</html>

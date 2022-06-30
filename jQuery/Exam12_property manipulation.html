@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+    <style>
+
+        .aqua {
+            background-color: #0ff;
+        }
+
+        .red {
+            background-color: #f00;
+        }
+
+        .green {
+            background-color: #0f0;
+        }
+
+        .yellow {
+            background-color: #ff0;
+        }
+
+    </style>
+
+    <script>
+
+        $(function () {
+            var result_1 = $("#sec_1").html();
+
+            console.log(result_1);
+
+            // 1. html() : 선택한 요소를 찾아서, 요소안의 내용을 바꿔준다.
+            // 이때 태그를 사용할 경우, 태그로 인식이 된다.
+            // text()와 비교가 되는 부분이다.
+            $("#sec_1 p").html("<a href=\"#\">Text1</a>");
+
+            // ---
+
+
+            // 2. text() : 
+            // 마찬가지로, 선택한 요소를 찾아서, 요소안의 내용을 바꿔주는 함수이다.
+            // 그러나, html() 메소드와는 달리, 모두 문자열로 인식이 된다.
+            var result_2 = $("#sec_2").text();
+            console.log(result_2);
+            $("#sec_2 h2").text("text()");
+
+            // 3. attr() 지정한 속성값을 얻을 수 있다.
+            var srcVal = $("#sec_3 img").attr("src");
+
+
+            // 4. 더 나아가서, 새로운 속성 값을들 추가 혹은 기존 속성값을 변경할 수 있다.
+            $("#sec_3 img").attr({
+                width: 200,
+                // replace("a", "b") : a를 찾아서 b로 바꾼다.
+                src: srcVal.replace("684", "685"),
+
+                // 만약 이렇게 속성값을 넣었는데? 아직 없던 새로운 속성이였다면, 자동으로 속성값을 추가해준다.
+                // 
+                newAttr: "새로운 속성"
+            })
+
+            // 5. addClass : Class를 추가 해준다.
+            // 만약 'aqua'라는 class가 없었다면 추가해준다는 의미이다.
+            $("#p1").addClass("aqua");
+
+            // 6. removeClass : Class를 삭제해준다.
+            $("p2").removeClass("red");
+
+            // 7. toggleClass : 클래스를 추가/삭제를 번갈아가면서 해준다.
+            // 만약 Class가 존재하고있었다면? -> Class를 삭제!
+            // Class가 없었다면 -> Class를 추가!
+            $("#p3").toggleClass("green");
+            $("#p4").toggleClass("green");
+
+            // 8. hasClass : 선택한 요소가 해당 클래스를 가지고 있다면 true를 반환
+            // 없다면 flase를 반환한다.
+            $("#p6").text( $("#p5").hasClass("yellow"));
+
+            // 9. attr()과 prop() 의 차이
+            // attr() : HTML DOCUMENT의 attribute(속성)을 가져온다.
+            // 즉 DOM이 구성 된 당시의 이미 지정 되었던 값을 가져온다.
+            // prop() : JavaScript에 의해, 동적으로 바뀐 property(속성 값) 을 가져온다.
+            $("#user_id").val("안녕");
+            var result_2 = $("#user_id").prop("defaultValue");
+            var result_3 = $("#user_id").attr("value");
+            var result_4 = $("#user_id").prop("value"); 
+
+            console.log(result_2);
+            console.log(result_3);
+            console.log(result_4);
+        })
+
+    </script>
+
+
+</head>
+<body>
+    
+    <h1><strong>html()과 text()</strong></h1>
+
+    <section id="sec_1">
+        <h2><em>html()</em></h2>
+        <p>내용1</p>
+    </section>
+
+    <section id="sec_2">
+        <h2><em>텍스트</em></h2>
+        <p>내용2</p>
+    </section>
+
+    <!-- ---------------------------------------------------- -->
+
+    <h1><strong>attr() 지정한 속성 값을 얻는다. (변경도 가능)</strong></h1>
+
+    <section id="sec_3">
+        <h2>이미지 속성</h2>
+        <p><img src="https://picsum.photos/id/684/300/300" alt="바위" border="2"></p>
+    </section>
+
+    <!-- ---------------------------------------------------- -->
+    <h1><strong>addClass(), removeClass(), toggleClass(), hasClass()</strong></h1>
+
+    <p id="p1">내용1</p>
+    <p id="p2" class="red">내용2</p>
+    <p id="p3">내용3</p>
+    <p id="p4" class="green">내용4</p>
+    <p id="p5" class="yellow">내용5</p>
+    <p id="p6"></p>
+
+    <!-- ---------------------------------------------------- -->
+
+    <h1><strong>prop(), attr() 비교!!</strong></h1>
+
+    <form action="#" id="form_1">
+        <p>
+            <label for="user_name">이름</label>
+            <input type="text" name="user_name" id="user_name" value="">
+        </p>
+
+        <p>
+            <label for="user_id">아이디</label>
+            <input type="text" name="user_id" id="user_id" value="hello">
+        </p>
+    </form>
+
+</body>
+</html>

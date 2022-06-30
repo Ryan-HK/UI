@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+
+    <script>
+
+        $(function () {
+            // 1. find(선택자) : 지정된 요소노드를 DOM Tree에서 찾아서 선택
+            $("#inner_1").find(".txt1").css({
+                backgroundColor: "#ff0"
+            });
+
+            // 2. filter(선택자) : 지정 된 요소노드만 필터링
+            $("#inner_1 p").filter(".txt2").css({
+                backgroundColor: "#0ff"
+            });
+
+            // 3. filter(익명함수) : 개발자가 직접 지정한 기준에 부합하는 요소노드만 필터링
+            $("#inner_2 p").filter(function (idx, obj){
+                console.log(idx);
+                return idx%2 == 0;
+            }).css({
+                backgroundColor: "#0f0"
+            });
+        })
+
+    </script>
+
+
+</head>
+<body>
+    
+    <div id="outer_wrap">
+        <h1>콘텐츠 탐색 선택자</h1>
+
+        <section id="inner_1">
+            <h2>find(), filter()</h2>
+            <p class="txt1">내용1</p>
+            <p class="txt2">내용2</p>
+
+            <div>
+                <div class="txt1">내용3</div>
+                <div class="txt2">내용4</div>
+            </div> 
+        </section>
+
+        <section id="inner_2">
+            <h2>filter(function)</h2>
+            <p>index 0</p>
+            <p>index 1</p>
+            <p>index 2</p>
+            <p>index 3</p>
+        </section>
+
+    </div>
+
+</body>
+</html>
