@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+    <script>      
+        $(function () {
+            // 단독 이벤트 등록 방식
+            let cnt = 0;
+
+            $(".btn1").click(function (){
+                cnt++;
+
+                if(cnt%2 == 0){
+                    $(".btn1").parent().next().css({
+                    color: "#000"
+                });
+                } else {
+                    $(".btn1").parent().next().css({
+                    color: "#f00"
+                });
+                }
+            });
+
+            // 다중(그룹) 이벤트 등록 메소드
+            $(".btn2").on({
+                "mouseover focus" : function(e) {
+                    console.log("onmouseover or onfocus......")
+                    console.log(e);
+
+                    $(".btn2").parent().next().css({color: "#0F0"})
+                    $(".btn1").click();
+                },
+
+                "mouseout blue" : function(e) {
+                    console.log("onmouseout or onblur......");
+                    console.log(e);
+                    
+                    $(".btn2").parent().next().css({color:"#000"})
+                }
+            });
+
+            // Event Triggering (****)
+            // 강제로 이벤트를 발생 시킨다.
+            $(".btn1").click();
+            $(".btn2").trigger("click");
+
+            // Event Listener OFF (****)
+            // 더 이상 btn1은 click시, 이벤트핸들러가 동작하지 않는다.
+            $(".btn1").off("click");
+        });
+    </script>
+
+</head>
+<body>
+    <p><button class="btn1">버튼1</button></p>
+    <p>내용1</p>
+    <p><button class="btn2">버튼2</button></p>
+    <p>내용2</p>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+    <script>
+        $(function () {
+            // mouseout은 범위를 기준으로 하지 않고, 요소에 정확하게 마우스포인터가 올라왔는지 여부를 확인한다.
+            $("#box_1").on("mouseout", function () {
+                $("#box_1").css({backgroundColor: "yellow"})
+            });
+
+            // 반면에 mouseleave는 하위 요소를 제외한 '해당범위'에 마우스가 올라왔는지 여부를 확인하는 것이다.
+            $("#box_2").on("mouseleave", function () {
+                $("#box_2").css({backgroundColor: "pink"});
+            });
+
+            //마찬가지로, mouseover와 mouseenter 또한, 요소를 기준이냐 아니면 범위를 기준이냐로 생각하면 된다.
+        })
+    </script>
+
+    <style>
+        * {
+            border: 1px solid purple;
+        }
+    </style>
+</head>
+<body>
+    <h1>mouseout</h1>
+
+    <div id="box_1">
+        <p><a href="#">내용1</a></p>
+        <p><a href="#">내용2</a></p>
+        <p><a href="#">내용3</a></p>
+    </div>
+
+    <h1>mouseleave</h1>
+
+    <div id="box_2">
+        <p><a href="#">내용4</a></p>
+        <p><a href="#">내용5</a></p>
+        <p><a href="#">내용6</a></p>
+    </div>
+</body>
+</html>

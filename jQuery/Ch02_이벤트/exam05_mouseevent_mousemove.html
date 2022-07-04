@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+    <script>
+        $(function () {
+            $(document).on("mousemove", function(e){
+                console.log("mousemove.....")
+                console.log("this :",this);
+                console.log("$(this) :",$(this));
+                console.log("매개변수 e",e);
+
+                //스크롤 X, Y축의 이동한 거리를 계산하여, 마우스 포인터의
+                //X축, Y축 좌표를 리턴한다.
+                $(".posX").text(e.pageX);
+                $(".posY").text(e.pageY);
+
+                $(".clientX").text(e.clientX);
+                $(".clientY").text(e.clientY);
+            })
+        })
+    </script>
+
+</head>
+<body>
+    <h1>mousemove</h1>
+    <p>pageX: <span class="posX">0</span>px</p>
+    <p>pageY: <span class="posY">0</span>px</p>
+
+    <p>clientX: <span class="clientX">0</span>px</p>
+    <p>clientY: <span class="clientY">0</span>px</p>
+</body>
+</html>

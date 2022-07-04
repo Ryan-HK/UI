@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+
+    <script>
+        $(function () {
+            $(".btn1").on({
+                "mouseover" : function () {
+                    $(".txt1").css({"background-color": "yellow"});
+                },
+
+                "mouseout" : function () {
+                    $(".txt1").css({background: "none"});
+                }
+            });
+
+            $(".btn2").hover(
+                // 1. 선택한 요소에 마우스포인터가 올라 갈 때
+                function() {
+                    $(".txt2").css({backgroundColor: "aqua"});
+                },
+
+                 // 2. 선택한 요소에 마우스포인터가 벗어날 때
+                function() {
+                    $(".txt2").css({background: "none"});
+                }
+            );
+        });
+    </script>
+</head>
+<body>
+    <p>
+        <button class="btn1">Mouse Over/Mouse Out</button>
+        <p class="txt1">내용1</p>
+    </p>
+    <p>
+        <button class="btn2">Hover</button>
+        <p class="txt2">내용2</p>
+    </p>
+</body>
+</html>

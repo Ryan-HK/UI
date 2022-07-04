@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+    <script>
+        $( () => {
+            $(".btn1").on("click", function(e){
+                // event를 발생했을 때, 기본처리 될 동작을 막는 메소드이다.
+                // 여기서는 'click'했을 때,
+                e.preventDefault();
+
+                $(".txt1").css({"background-color": "#ff0"});
+            }); // click
+
+            $(".btn2").on("click", function(e){
+                $(".txt2").css({backgroundColor: "#0ff"});
+
+                //eventhandler내에서 return false는 preventDefault는
+                //메소드와 동일한 효과를 낸다.
+                return false;
+            });
+
+            $(".btn3").on("dblclick", function () {
+                $(".txt3").css({backgroundColor: "#0f0"});
+            });
+        })
+    </script>
+</head>
+<body>
+    <p><a href="http://www.naver.com/" class="btn1">버튼1</a></p>
+    <p class="txt1">네이버</p>
+
+    <p><a href="http://www.daum.net/" class="btn2">버튼2</a></p>
+    <p class="txt2">다음</p>
+
+    <p><button class="btn3">버튼3</button></p>
+    <p class="txt3">내용3</p>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+    <script>
+        $(() => {
+            $("#user_id_1, #user_pw_1").on("focus", function () {
+                $(this).css({backgroundColor: "pink"});
+            });
+
+            $("#user_id_1, #user_pw_1").on("blur", function () {
+                $(this).css({backgroundColor: "#fff"});
+            });
+
+            $("#form_2").on("focusin", function () {
+                $(this).css({backgroundColor: "pink"});
+            });
+
+            $("#form_2").on("focusout", function () {
+                $(this).css({backgroundColor: "#fff"});
+            });
+        })
+    </script>
+
+</head>
+<body>
+        <h1>focus / blur</h1>
+    <form action="">
+        <p>
+            <label for="user_id_1">ID</label>
+            <input type="text" name="user_id_1" id="user_id_1">
+        </p>
+        <p>
+            <label for="user_pw_1">PW</label>
+            <input type="password" name="user_pw_1" id="user_pw_1">
+        </p>
+
+    </form>
+
+    <h1>focusin / blurout</h1>
+    <form action="" id="form_2">
+        <p>
+            <label for="user_id_2">ID</label>
+            <input type="text" name="user_id_2" id="user_id_2">
+        </p>
+        <p>
+            <label for="user_pw_2">PW</label>
+            <input type="password" name="user_pw_2" id="user_pw_2">
+        </p>
+    </form>
+</body>
+</html>
