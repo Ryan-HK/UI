@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+    <script>
+        $(function () {
+            console.clear();
+
+            $.ajax({
+                // 1. 로컬/원격 URL 지정
+                url: "xml/persons.xml",
+
+                // 2. 우리가 서버에 요청해서 받는 문서의 타입
+                dataType: "xml",
+
+                success: function(data) {
+                    console.clear();
+                    console.group("success");
+                    // xml응답 성공 시, 받은 매개변수의 정체는?
+                    // xml 문서 그 자체이다. (document)
+                    console.log("data", data);
+                    
+                    //받아온 XML문서에서 person 태그를 모두 찾아라
+                    let persons = $(data).find("person");
+
+                    if(persons.length > 0){
+                        let tb = $("<table border=1>");
+
+                        $.each(persons, function(i, person){
+                            console.log(`i:${i}, o:`,person);
+
+                            let id = $(person).find("id").text();
+                            let first_name = $(person).find("first_name").text();
+                            let last_name = $(person).find("last_name").text();
+                            let email = $(person).find("email").text();
+                            let gender = $(person).find("gender").text();
+
+                            let row = $("<tr>").append(
+                                $("<td>").text(id),
+                                $("<td>").text(first_name),
+                                $("<td>").text(last_name),
+                                $("<td>").text(email),
+                                $("<td>").text(gender)
+                            );
+
+                            tb.append(row);
+                        });
+
+                        $(".wrap").append(tb);
+                    };
+                    
+                },  
+                
+
+                // 4. 비동기 요청에 대한 응답이 error로 왔을 때
+                //  자동으로 callback되는 메소드
+                error: function (XHR) {
+                    console.group("error");
+
+                    // XMLHttpRequest 객체 - 비동기 호출의 핵심
+                    console.log("\t+XHR :", XHR),
+
+                        // XHR 상태코드값을 출력하는 readyState
+                        console.log("\t+readyState :", XHR.readyState);
+
+                    // 서버로 부터 받은 HTTP 상태코드
+                    // 200 : OK
+                    // 404 : NOT FOUND
+                    // 202 : 결과값이 없음
+                    console.log("\t+status", XHR.status);
+
+                    // 웹서버의 응답메시지 (String 형태)
+                    console.log("\t+statusText", XHR.statusText);
+
+                    // 웹서버의 응답 상태 코드
+                    console.log("\t+statusCode()", XHR.statusCode());
+
+                    console.groupEnd();
+                }
+            });
+        });
+
+    </script>
+
+</head>
+
+<body>
+    <div class="wrap"></div>
+</body>
+
+</html>

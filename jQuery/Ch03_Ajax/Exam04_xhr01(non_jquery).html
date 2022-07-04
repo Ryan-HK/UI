@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        window.onload = function () {
+            // XHR을 이용한 동기식 요청처리
+
+            //----------------------------------------------//
+            // Step.1 XMLHttpRequest 객체 생성
+            //----------------------------------------------//
+            let xhr = new XMLHttpRequest();
+
+            console.log("1. xhr:", xhr);
+            console.log("\t+readyState :", xhr.readyState);
+
+            //----------------------------------------------//
+            // Step.2 서버로 보낼 Ajax 요청의 형식을 지정
+            // XMLHttpRequest.open()
+            //----------------------------------------------//
+
+            xhr.open("GET", "json/MOCK_DATA.json", false);
+            console.log("2. xhr :", xhr);
+            console.log("\t+readyState :", xhr.readyState);
+
+            //----------------------------------------------//
+            // Step.3 서버에 요청
+            //----------------------------------------------//
+            xhr.send();
+            console.log("3. xhr :", xhr);
+            console.log("\t+readyState :", xhr.readyState);
+            //----------------------------------------------//
+            // Step.4 XHR로 보낸 요청과, 그 응답데이터를 사용
+            // 현재 문서의 <body>태그의 컨텐츠로 지정
+            //----------------------------------------------//
+            document.body.innerHTML = xhr.responseText;
+        };     
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

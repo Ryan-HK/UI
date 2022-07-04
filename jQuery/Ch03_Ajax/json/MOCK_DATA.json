@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "first_name": "Herby",
+        "last_name": "Saiz",
+        "email": "hsaiz0@vinaora.com",
+        "gender": "Agender"
+    },
+    {
+        "id": 2,
+        "first_name": "Wadsworth",
+        "last_name": "Hanbury",
+        "email": "whanbury1@msn.com",
+        "gender": "Male"
+    },
+    {
+        "id": 3,
+        "first_name": "Gardener",
+        "last_name": "Yakunikov",
+        "email": "gyakunikov2@jalbum.net",
+        "gender": "Male"
+    },
+    {
+        "id": 4,
+        "first_name": "Devlin",
+        "last_name": "Cassy",
+        "email": "dcassy3@europa.eu",
+        "gender": "Male"
+    },
+    {
+        "id": 5,
+        "first_name": "Webster",
+        "last_name": "Black",
+        "email": "wblack4@sbwire.com",
+        "gender": "Male"
+    },
+    {
+        "id": 6,
+        "first_name": "Vito",
+        "last_name": "Kyrkeman",
+        "email": "vkyrkeman5@canalblog.com",
+        "gender": "Male"
+    },
+    {
+        "id": 7,
+        "first_name": "Isaiah",
+        "last_name": "Haseley",
+        "email": "ihaseley6@newyorker.com",
+        "gender": "Male"
+    },
+    {
+        "id": 8,
+        "first_name": "Dickie",
+        "last_name": "Waterhous",
+        "email": "dwaterhous7@hao123.com",
+        "gender": "Non-binary"
+    },
+    {
+        "id": 9,
+        "first_name": "Sib",
+        "last_name": "Alu",
+        "email": "salu8@google.co.uk",
+        "gender": "Non-binary"
+    },
+    {
+        "id": 10,
+        "first_name": "Harriott",
+        "last_name": "Peret",
+        "email": "hperet9@seattletimes.com",
+        "gender": "Female"
+    }
+]

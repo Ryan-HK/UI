@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
+
+    <script>
+        $(function () {
+            console.clear();
+
+            $.ajax({
+                // 1. 로컬/원격 URL 지정
+                url: "json/MOCK_DATA.json",
+
+                // 2. 우리가 서버에 요청해서 받는 문서의 타입
+                dataType: "json",
+
+                // 3. 비동기 요청에 대한 응답이 성공정 일 시,
+                //  자동으로 callback되는 메소드
+                //  success되면 json문자열 배열로 매개변수 전달
+
+                success: function (data) {
+                    console.group("succes");
+                    console.log("매개변수 data :", data);
+
+                    if (data.length > 0) {
+                        // 새로운 table 태그 생성
+                        let tb = $("<table border=1>");
+
+                        // 생성된 table에 header 작성
+                        let th = $("<tr>").append(
+                            $("<th>").text("id"),
+                            $("<th>").text("first_name"),
+                            $("<th>").text("last_name"),
+                            $("<th>").text("email"),
+                            $("<th>").text("gender")
+                        );
+
+                        tb.append(th);
+
+                        // for-in문을 사용하여, 전송받은 json 문자열의
+                        // 객체의 프로퍼티(property)를 순회한다.
+                        for (let i in data) {
+                            let id = data[i].id;
+                            let first_name = data[i].first_name;
+                            let last_name = data[i].last_name;
+                            let email = data[i].email;
+                            let gender = data[i].gender;
+
+                            let row = $("<tr>").append(
+                                $("<td>").text(id),
+                                $("<td>").text(first_name),
+                                $("<td>").text(last_name),
+                                $("<td>").text(email),
+                                $("<td>").text(gender)
+                            );
+
+                            tb.append(row);
+                        }; // for-in문
+
+                        //HTML문서 선택 요소에 앞서 받아온 데이터를 append
+                        $(".wrap").append(tb);
+
+                    }; // if
+
+                    console.groupEnd();
+                },
+
+                // 4. 비동기 요청에 대한 응답이 error로 왔을 때
+                //  자동으로 callback되는 메소드
+                error: function (XHR) {
+                    console.group("error");
+
+                    // XMLHttpRequest 객체 - 비동기 호출의 핵심
+                    console.log("\t+XHR :", XHR),
+
+                        // XHR 상태코드값을 출력하는 readyState
+                        console.log("\t+readyState :", XHR.readyState);
+
+                    // 서버로 부터 받은 HTTP 상태코드
+                    // 200 : OK
+                    // 404 : NOT FOUND
+                    // 202 : 결과값이 없음
+                    console.log("\t+status", XHR.status);
+
+                    // 웹서버의 응답메시지 (String 형태)
+                    console.log("\t+statusText", XHR.statusText);
+
+                    // 웹서버의 응답 상태 코드
+                    console.log("\t+statusCode()", XHR.statusCode());
+
+                    console.groupEnd();
+                }
+            });
+        });
+
+    </script>
+
+</head>
+
+<body>
+    <div class="wrap"></div>
+</body>
+
+</html>
