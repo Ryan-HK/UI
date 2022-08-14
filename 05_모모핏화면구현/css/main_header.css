@@ -1,0 +1,170 @@
+/* header부 전체 설정 */
+
+header {
+    display: flex;
+    flex-direction: column;
+    width: 1050px;
+
+    /* border: 5px solid red; */
+}
+
+/* 최상단 메뉴바  */
+.header_wrap_top {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.h_top_item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* border: 1px solid red; */
+}
+
+.box_message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 최상단 메뉴바 - 공백div태그 */
+.space {
+    background-color: rgb(217,217,217);
+    margin: 0 9px;
+    width: 1px;
+    height: 12px;;
+}
+
+/* header - logo */
+/* header - logo */
+
+.box_logo {
+    margin: 10px;
+}
+
+/* header - nav */
+/* header - nav */
+
+.header_bottom {
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    box-shadow: 0px 4px 8px -3px rgba(0,0,0,0.2);
+    position:-webkit-sticky;        
+    position:sticky;
+    top:0;
+    background-color: rgb(255,255,255);
+
+}
+
+.header_wrap_nav {
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: space-between;
+    width: 1050px;
+}
+
+.nav_box_img {
+    width: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav_box_menu {
+    display: flex;
+    justify-content: space-evenly;
+    /* border: 1px solid green; */
+    width: 700px;
+}
+
+/* 메뉴바 드랍메뉴*/
+.dropdown{
+position : relative;
+display : inline-block;
+}
+
+/* 메뉴바 버튼 */
+.dropbtn{
+border : 0px solid white;
+background-color: white;
+color : rgb(37, 37, 37);
+padding : 12px;
+width :100px;
+text-align: left;
+cursor : pointer;
+}
+
+/* 메뉴바 버튼 hover시 색상변경 */
+.dropbtn:hover {
+    color: rgb(52,152,219);
+    text-decoration: underline;
+}
+
+/* 드랍메뉴 컨텐츠 */
+.dropdown-content {
+display : none;
+position : absolute;
+z-index : 1; /*다른 요소들보다 앞에 배치*/
+background-color: rgb(255,255,255);
+border: 1px solid rgb(217, 217, 217);
+/* box-shadow: 2px 4px 8px -3px rgba(0,0,0,0.5); */
+min-width : 150px;
+border-radius: 5px;
+
+}
+
+.dropdown-content a{
+display : block;
+text-decoration : none;
+color : rgb(37, 37, 37);
+padding : 12px 20px;
+}
+
+.dropdown-content a:hover{
+background-color : #ececec
+}
+
+.dropdown:hover .dropdown-content {
+display: block;
+}
+
+/* nav의 검색창 */
+.nav_box_search {
+    /* border: 1px solid green; */
+    display: flex;
+    align-items: center;
+}
+
+.search_box {
+    height: 40px;
+    border: 1px solid rgb(52,152,219);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.label_search_submit {
+    cursor: pointer;
+}
+
+.search_text {
+    border: none;
+}
+
+.search_text::placeholder {
+    color: rgb(217,217,217);
+    font-size: 14px;
+}
+
+.search_text:focus {
+    outline: none;
+}
+
+#search_submit {
+    display: none;
+}

@@ -1,0 +1,29 @@
+/* 전체페이지 기본설정 */
+* {
+    margin: 0;
+    padding: 0;
+
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* main화면부 전체 설정 */
+.page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+/* 링크 관련 */
+.link1 {
+    text-decoration: none;
+    text-decoration-line: none;
+    color: #333333;
+}
