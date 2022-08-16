@@ -56,7 +56,7 @@ header {
     position:sticky;
     top:0;
     background-color: rgb(255,255,255);
-
+    z-index: 1;
 }
 
 .header_wrap_nav {
@@ -98,7 +98,7 @@ cursor : pointer;
 }
 
 /* 메뉴바 버튼 hover시 색상변경 */
-.dropbtn:hover {
+.dropbtn:hover span {
     color: rgb(52,152,219);
     text-decoration: underline;
 }
