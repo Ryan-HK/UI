@@ -1,0 +1,199 @@
+        /* section */ /* section */
+        /* section */ /* section */
+
+        section {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+
+            /* width: 100vw; */
+        }
+
+
+        .section_inner {
+            display: flex;
+            flex-direction: column;
+
+            align-items: center;
+            margin: 0 auto;
+
+        }
+
+        /* banner 속성 */
+
+
+        .section_banner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            /* width: 100vw; */
+
+            /* background-color: red; */
+            margin: 0 auto;
+        }
+
+
+        .wrap_banner_img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* width: 1050px; */
+            width: 100vw;
+            /* overflow: visible; */
+            /* min-height: 370px; */
+            min-width: 1050px;
+        }
+
+        .box_banner_img div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* width: 100%; */
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .box_banner_img div img {
+            /* max-width: 100%; */
+        }
+
+        .section_wrap {
+            display: flex;
+            justify-content: space-between;
+            width: 1050px;
+            /* height: 1000px; */
+            /* background-color: yellow; */
+        }
+
+
+
+        /* 메인 - Best 모임 카드섹션 */
+        .section_group {
+            margin-top: 100px;
+
+            width: 1050px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .group_title a {
+            text-decoration: none;
+            color: black;
+        }
+
+        /* 메인 - 오늘의 모임 카드섹션 */
+        .section_latest_group {
+            margin-top: 75px;
+        }
+
+        .wrap_group {
+            /* border: 5px solid green; */
+
+            max-width: 1150px;
+            display: flex;
+            align-content: center;
+            justify-content: space-evenly;
+
+        }
+
+
+        .wrap_group_inner {
+            width: 1050px;
+            height: 243px;
+            /* border: 1px solid purple; */
+            
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            position: relative;
+        }
+
+        .group_box{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            max-width: 225px;
+            height: 230px;
+            border: 1px solid rgb(242, 242, 242);
+            box-shadow: 4px 4px 4px 1px rgba(0,0,0,0.1);
+            margin: 11px 11px 8px 12px;   
+        }
+
+        .group_box_inner{
+            width: 223px;
+            height: 130px;
+            
+            background-color: antiquewhite;
+        }
+
+        .group_img {
+            width:100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .group_box_text {
+            max-width: 225px;
+            height: 100px;
+            /* background-color: aquamarine; */
+        }
+
+        /* 메인 - Best 모임 - 슬라이드 버튼 */
+        .left_butten{
+            display: flex;
+            align-items: center;
+            font-size: 30px;
+            color: rgb(20 167 255);
+            margin-right: 1px;    
+            cursor: pointer;
+        }
+
+        .right_butten{
+            display: flex;
+            align-items: center;
+            font-size: 30px;
+            color: rgb(20 167 255);
+            /* margin-left: -1px; */
+            cursor: pointer;
+        }
+
+        /* 메인 - Best 모임 - 슬라이드 버튼 */
+        .left_butten1{
+            display: none;
+            align-items: center;
+            font-size: 50px;
+            color: rgb(235, 235, 235);
+            position: absolute;
+            left: 30px;
+            cursor: pointer;
+            z-index: 1;
+
+        }
+
+        .right_butten1{
+            display: none;
+            align-items: center;
+            font-size: 50px;
+            color: rgb(235, 235, 235);
+            position: absolute;
+            right: 30px;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        .section_banner:hover .left_butten1 {
+            display: flex;
+        }
+
+        .section_banner:hover .right_butten1 {
+            display: flex;
+        }
+        

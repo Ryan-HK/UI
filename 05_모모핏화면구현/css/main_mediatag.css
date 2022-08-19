@@ -1,0 +1,25 @@
+@media (max-width: 1050px) {
+    body {
+        overflow-x:visible;
+    }
+
+    section {
+        width: 100%;
+    }
+
+    header {
+        width: 1050px;
+        margin: 0 auto;
+    }
+
+    .header_bottom {
+        width: 1050px;
+        margin: 0 auto;
+        flex-shrink: 0;
+    }
+
+    .section_banner {
+        width: 1050px;
+    }
+
+}

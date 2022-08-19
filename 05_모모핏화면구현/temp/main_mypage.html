@@ -12,47 +12,35 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
 
-    <!-- jQuery 슬릭 라이브러리 -->
-    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
-
-
-    <!-- Swiper 슬라이드 라이브러리 -->
-    <!-- <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script> -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
-
     <!-- 구글 폰트 적용 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 
-    <!-- fontawesome -->
-    <script src="https://kit.fontawesome.com/7d82554876.js" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/556efa47d7.js" crossorigin="anonymous"></script>
-
-    <!-- 전 페이지 공통 설정 -->
     <!-- CSS : font 설정 -->
     <link rel="stylesheet" href="css/font.css">
     <!-- CSS : main_header 설정 -->
     <link rel="stylesheet" href="css/main_header.css">
     <!-- CSS : main 전체 페이지 설정 -->
     <link rel="stylesheet" href="css/main_page.css">
-    <!-- CSS : main 미디어 태그 -->
-    <link rel="stylesheet" href="css/main_mediatag.css">
-    <!-- CSS : main footer 설정 -->
-    <link rel="stylesheet" href="css/main_footer.css">
+    <!-- CSS : 마이페이지 LEFT - 사이드바 -->
+    <link rel="stylesheet" href="css/mypage_section_side.css">
 
-    <!-- 메인페이지 필수 CSS -->
-    <link rel="stylesheet" href="css/main_section_card.css">
-    <link rel="stylesheet" href="css/main_section_board.css">
+    <!-- CSS : main 미디어 태그 -->
+    <link rel="stylesheet" href="css/main_media.css">
 
     <style>
+        /* section */ /* section */
+        /* section */ /* section */
+
+
+        .s_box_content {
+            width: 800px;
+
+            background-color: green;
+        }
         
-
     </style>
-
 </head>
 
 <body>
@@ -163,41 +151,70 @@
 
         <!-- 메인 컨텐츠부 -->
         <section>
-            <div class="section_inner">
+            
+            <div class="section_wrap">
+                <div class="s_box_side">
+                    <div class="side_top">
+                        <div class="side_title">
+                            <span class="font-28-700">마이페이지</span>
+                        </div>
+                        <div class="side_profil">
+                            
+                        </div>
+                    </div>
+                    
+                    <ul class="side_manu">
+                        <li class="manu_btn">
+                            <a href="#" class="link1 font-16-500">&nbsp;나의모임
+                                <span class="space-2">>&nbsp;</span>
+                            </a>
+                        </li>
 
+                        <li class="manu_btn">
+                            <a href="#" class="link1 font-16-500">&nbsp;기본정보수정
+                                <span class="space-2">>&nbsp;</span>
+                            </a>
+                        </li>
+
+                        <li class="manu_btn">
+                            <a href="#" class="link1 font-16-500">&nbsp;쪽지
+                                <span class="space-2">>&nbsp;</span>
+                            </a>
+                        </li>
+
+                        <li class="manu_btn">
+                            <a href="#" class="link1 font-16-500">&nbsp;내 글
+                                <span class="space-2">>&nbsp;</span>
+                            </a>
+                        </li>
+
+                        <li class="manu_btn">
+                            <a href="#" class="link1 font-16-500">&nbsp;내 댓글
+                                <span class="space-2">>&nbsp;</span>
+                            </a>
+                        </li>
+
+                        <li class="manu_btn">
+                            <a href="" class="link1 font-16-500">
+                                &nbsp;문의 / 신고내역
+                            <span class="space-2">>&nbsp;</span></a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="s_box_content">
+
+                </div>  
             </div>
+
         </section>
 
         <!-- 하단 Footer -->
-        <footer>
-            <div class="footer_inner">
-                <div class="footer_logo_box">
-                    <div><img src="img/logo_momofit.png" height="60"></div>
-                    <div><img src="img/kh_logo.jpg" height="16"><span class="font-12-300">&nbsp;&nbsp;Copyrightⓒ2022 내손을자바 All rights reserved.</span></div>
-                </div>
-
-                <div class="footer_content_box">
-                    <div class="footer_content"><a href="#" class="font-14-300">모임보기</a></div>
-                    <div class="footer_content"><a href="#" class="font-14-300">공지글</a></div>
-                    <div class="footer_content"><a href="#" class="font-14-300">이용약관</a></div>
-                    <div class="footer_content"><a href="#" class="font-14-300">자유게시판</a></div>
-                    <div class="footer_content"><a href="#" class="font-14-300">문의</a></div>
-                    <div class="footer_content"><a href="#" class="font-14-300">개인정보수집약관</a></div>
-                    <div class="footer_content"><a href="#" class="font-14-300">운동Tip</a></div>
-                    <div class="footer_content"><a href="#" class="font-14-300">신고</a></div>
-                    <div class="footer_content"><a href="#" class="font-14-300">위치정보수집약관</a></div>
-                    <div class="footer_content"><a href="#" class="font-14-300">운동인증</a></div>
-                    <div class="footer_content"><a href="#" class="font-14-300">FAQ</a></div>
-                </div>
-            </div>
-        </footer>
+        <footer></footer>
     </div>
 
 
-    <!-- 메인화면 섹션 자바스크립트` -->
-    <script src="js/main_section.js"></script>
-
-    <!-- 메인화면 자바스크립트 (공통) -->
+    <!-- 메인화면 자바스크립트 -->
     <script src="js/main.js"></script>
 
     <!-- 부트스트랩 자바스크립트 -->

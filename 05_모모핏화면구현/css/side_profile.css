@@ -1,0 +1,192 @@
+/* 체크 전 (사이드바 접힌 상태) */
+input[id="side_profile_icon"] {
+    display: none;
+}
+
+input[id="side_profile_icon"] + label {
+    z-index: 10;
+    display:block;  position: fixed;
+    margin: 0; width:60px; height: 50px;
+
+    /* 기본 위치 : 맨 오른쪽 가운데 위치하게 */
+    right: 0; top: calc(50% - 25px); 
+    opacity: 70%;
+    transition: all .35s;
+    cursor: pointer;
+    /* transform: scaleX(-1); */
+}
+
+
+/* 체크 후 (사이드바 열린 상태) */
+input[id="side_profile_icon"]:checked + label {
+    z-index: 10;
+    /* 체크됐을 때 버튼도 같이 움직이게 */
+    right: 300px;
+    opacity: 100%;
+}
+
+div[class="side_profile_1"] {
+    width:300px; height: 100%; background: #fff;
+    position: fixed; top:0; right: -300px; z-index: 10;
+    transition: all .35s;
+    text-align: center;
+}
+
+input[id="side_profile_icon"]:checked + label + div {
+    
+    right:0;
+    box-shadow: -5px 0px 8px 3px rgb(0 0 0 / 10%);
+    z-index: 10;
+}
+
+
+/* input[id="side_profile_icon"] + label span {
+    display:block; position: absolute; 
+    width:100%; height: 5px; 
+    border-radius: 30px; background: #000;
+    transition: all .35s;
+} */
+
+/* input[id="side_profile_icon"] + label span:nth-child(1) {top:0;}
+input[id="side_profile_icon"] + label span:nth-child(2) {top:50%; transform: translateY(-50%);}
+input[id="side_profile_icon"] + label span:nth-child(3) {bottom:0;} */
+/* input[id="side_profile_icon"]:checked + label span {background: #fff;}
+input[id="side_profile_icon"]:checked + label span:nth-child(1) {
+    top:50%; transform: translateY(-50%); rotate: (45deg);
+}
+input[id="side_profile_icon"]:checked + label span:nth-child(2) { opacity: 0;}
+input[id="side_profile_icon"]:checked + label span:nth-child(3) {
+    bottom:50%; transform: translateY(50%); rotate: (-45deg);
+} */
+
+
+
+/* 우측 상단 알림벨 */
+.side_profile_1_bell {
+
+    margin-top: 10px;
+    margin-right: 10px;
+    text-align: right; 
+}
+
+
+/* 프로필 사진에 어떤 크기의 사진을 넣어도 동일한 모양으로 유지하기 위한 설정 */
+.side_profile_1_person {
+    width: 170px;
+    height: 170px;
+    margin-top: 10%;
+    margin-left: 20%;
+    overflow: hidden;
+    position: relative;
+}
+
+.side_profile_1_person > img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.side_profile_1_text {
+    margin-top: 10px;
+}
+
+/* 닉네임 */
+.side_profile_nickname {
+    
+    font-size: 20px;
+    font-weight: bold;   
+}
+
+/* 성별 */
+.side_profile_gender {
+    color: rgb(0, 213, 255);
+    font-size: 18px;
+    font-weight: bold;  
+}
+
+/* 지역 */
+.side_profile_1_loc {
+    font-size: 18px;
+    font-weight: bold;  
+}
+
+/* 지역 인증 */
+.side_profile_loc_check {
+    font-size: 13px;
+    font-weight: bold;  
+    color: rgb(73, 72, 72);
+}
+
+/* 관심운동 */
+.side_profile_1_sports {
+    text-align: left;
+    margin-left: 25%;
+}
+/* 관심운동 리스트에 대한 설정 */
+.side_profile_1_sports > ul> li {
+    list-style-type: square;
+    font-size: 15px;
+    font-weight: bold; 
+
+}
+
+/* 한줄소개 */
+.side_profile_1_intro {
+    font-size: 17px;
+    font-weight: bold; 
+    color:rgb(255, 98, 0)
+}
+
+
+/* 쪽지 버튼 */
+.side_profile_1_mess {
+    /* 글자 */
+    font-size: 15px;
+    color: white;
+    font-weight: bold;
+    /* 박스 */
+    background-color:#14A7FF;
+    border: none; 
+    border-radius: 6px;
+    line-height: 35px;
+    width: 80px;
+    /* 위치 */
+    margin-left:0px;
+    margin-top: 8px;
+
+}
+.side_profile_1_mess:hover {
+    background-color:#149ceb;
+}
+
+/* 채팅 버튼 */
+.side_profile_1_chat {
+    /* 글자 */
+    font-size: 15px;
+    color: white;
+    font-weight: bold;
+    /* 박스 */
+    background-color: #14A7FF;
+    border: none; 
+    border-radius: 6px;
+    line-height: 35px;
+    width: 80px;
+    /* 위치 */
+    margin-left:20px;
+    margin-top: 8px;
+}
+.side_profile_1_chat:hover {
+    background-color:#149ceb;
+}
+
+
+
+
+
+
+
+
+

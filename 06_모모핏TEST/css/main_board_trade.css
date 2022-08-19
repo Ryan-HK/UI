@@ -1,0 +1,107 @@
+
+/* section */ /* section */
+/* section */ /* section */
+
+section {
+    margin: 40px auto;
+}
+
+.section_wrap {
+    display: flex;
+    justify-content: space-between;
+    width: 1050px;
+    height: 2000px;
+    text-align: left;
+}
+
+.view{
+    width: 100%;
+}
+
+.board_name{
+    margin: 10px;            
+}
+
+.title {
+    margin: 10px;
+    border-top: 2px solid black;
+    padding-top: 10px;
+}
+
+.info{
+    border-bottom: 2px solid black;
+    margin: 10px;
+    padding-bottom: 10px;
+}
+
+.space1 {
+    background-color: rgb(217,217,217);
+    margin: 0 9px;
+    width: 1px;
+    height: 12px;
+    display: inline;
+}
+
+
+.content_wrap{
+    margin: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid black;            
+    min-height:20%;
+}
+
+.btn_row{
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn_color_blue{
+    background-color: rgb(20 167 255);
+}
+
+.float_right{
+    display: inline;
+    float: right;
+}
+
+.comment{
+    border-bottom: 1px solid gray;
+    display: grid;
+    grid-template-columns: 150px 1fr 150px 150px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.comment_wrap{
+    border-top: 1px solid gray;
+    padding-top: 10px;
+}
+
+.report{
+    padding-bottom: 10px;
+}
+
+/* 댓글창 z-index주면 동작을 안 함 */
+/* #recomment_write{
+    z-index: -1;
+} */
+
+/* #comment_write{
+    z-index: -1;
+} */
+
+
+/* 코멘트창 초기 none */
+.card {
+    display: none;
+}
+
+/* 버튼 display none; */
+#btn_comment {
+    display: none;
+}
+
+/* 버튼 대신 사용할 라벨 커서 적용 */
+.label_btn_comment {
+    cursor: pointer;
+}

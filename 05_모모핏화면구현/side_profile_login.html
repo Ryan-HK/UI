@@ -12,47 +12,37 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.0/jquery-migrate.min.js"></script>
 
-    <!-- jQuery 슬릭 라이브러리 -->
-    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
-
-
-    <!-- Swiper 슬라이드 라이브러리 -->
-    <!-- <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script> -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
-
     <!-- 구글 폰트 적용 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 
-    <!-- fontawesome -->
-    <script src="https://kit.fontawesome.com/7d82554876.js" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/556efa47d7.js" crossorigin="anonymous"></script>
-
-    <!-- 전 페이지 공통 설정 -->
     <!-- CSS : font 설정 -->
     <link rel="stylesheet" href="css/font.css">
     <!-- CSS : main_header 설정 -->
     <link rel="stylesheet" href="css/main_header.css">
     <!-- CSS : main 전체 페이지 설정 -->
     <link rel="stylesheet" href="css/main_page.css">
-    <!-- CSS : main 미디어 태그 -->
-    <link rel="stylesheet" href="css/main_mediatag.css">
-    <!-- CSS : main footer 설정 -->
-    <link rel="stylesheet" href="css/main_footer.css">
 
-    <!-- 메인페이지 필수 CSS -->
-    <link rel="stylesheet" href="css/main_section_card.css">
-    <link rel="stylesheet" href="css/main_section_board.css">
+    <link rel="stylesheet" href="./css/side_profile.css">
 
     <style>
+        /* section */ /* section */
+        /* section */ /* section */
+
+        section {
+            margin: 40px auto;
+        }
+
+        .section_wrap {
+            display: flex;
+            justify-content: space-between;
+            width: 1050px;
+            height: 2000px;
+            background-color: yellow;
+        }
         
-
     </style>
-
 </head>
 
 <body>
@@ -80,17 +70,14 @@
 
             <!-- 메인 로고 박스 -->
             <div class="header_wrap_logo">
-                <div></div>
                 <div class="box_logo">
                     <img src="img/logo_momofit.png" width="180">
                 </div>
-                <div></div>
             </div>
         </header>
 
         <!-- header-navbar box -->
         <div class="header_bottom">
-            <div></div>
             <div class="header_wrap_nav">
                 <div class="nav_box_img">
                     <!-- nav 홈버튼 (메인화면으로) -->
@@ -155,49 +142,76 @@
                     </form>
                 </div>
             </div>
-
-
-            <div></div>
         </div>  
+        
+        <!-- 사이드바 -->
+        
+        <input type="checkbox" id="side_profile_icon">
+        <label for="side_profile_icon">
+            <img src="./img/user.png" width="50px">
+            <!-- <img src="./img/icons8-pull-a-box-skin-type-2-96.png" width="80px"> -->
 
+        </label>
+        <div class="side_profile_1">
+
+            <div class="side_profile_1_bell">
+                <!-- <button class="btn btn-primary" type="button">
+                    쪽지 <span class="badge">4</span> -->
+                <img src="./img/bell.png"  width="40px" id="bell_img">
+            </div><br>
+            
+            <div class="side_profile_1_person">
+                <img src="./img/side_profile_1.png">
+            </div>
+
+            <div class="side_profile_1_text">
+                <span class="side_profile_nickname">헬짱</span>
+                <img src="./img/female-2404482.png" width="20px" alt="">
+                <!-- <img src="./img/male-272547.png" width="20px"alt=""> -->
+                <!-- <span class="side_profile_gender">여</span> -->
+            </div><br>
+
+            <div class="side_profile_1_loc">
+                서울시 강남구 <br>
+                <span class="side_profile_loc_check">지역인증완료
+                    <img src="./img/free-icon-checkbox.png" width="15px">
+                </span>
+            </div><br>
+
+            <div class="side_profile_1_sports">
+                <ul>
+                    <li>헬&nbsp;스</li>
+                    <li>등&nbsp;산</li>
+                    <li>농&nbsp;구</li>
+                </ul>
+            </div>
+
+            <div class="side_profile_1_intro">
+                <p>같이 즐겁게 운동해요 ^^</p>
+            </div>
+
+            <!-- 쪽지/채팅 버튼 -->
+            <button type="button" class="side_profile_1_mess">쪽지 전송</button>
+            <button type="button" class="side_profile_1_chat">채팅</button>
+        </div>
 
         <!-- 메인 컨텐츠부 -->
         <section>
-            <div class="section_inner">
 
+            <div class="section_wrap">
+                <div class="s_box_board">
+                    
+                </div>
             </div>
+
         </section>
 
         <!-- 하단 Footer -->
-        <footer>
-            <div class="footer_inner">
-                <div class="footer_logo_box">
-                    <div><img src="img/logo_momofit.png" height="60"></div>
-                    <div><img src="img/kh_logo.jpg" height="16"><span class="font-12-300">&nbsp;&nbsp;Copyrightⓒ2022 내손을자바 All rights reserved.</span></div>
-                </div>
-
-                <div class="footer_content_box">
-                    <div class="footer_content"><a href="#" class="font-14-300">모임보기</a></div>
-                    <div class="footer_content"><a href="#" class="font-14-300">공지글</a></div>
-                    <div class="footer_content"><a href="#" class="font-14-300">이용약관</a></div>
-                    <div class="footer_content"><a href="#" class="font-14-300">자유게시판</a></div>
-                    <div class="footer_content"><a href="#" class="font-14-300">문의</a></div>
-                    <div class="footer_content"><a href="#" class="font-14-300">개인정보수집약관</a></div>
-                    <div class="footer_content"><a href="#" class="font-14-300">운동Tip</a></div>
-                    <div class="footer_content"><a href="#" class="font-14-300">신고</a></div>
-                    <div class="footer_content"><a href="#" class="font-14-300">위치정보수집약관</a></div>
-                    <div class="footer_content"><a href="#" class="font-14-300">운동인증</a></div>
-                    <div class="footer_content"><a href="#" class="font-14-300">FAQ</a></div>
-                </div>
-            </div>
-        </footer>
+        <footer></footer>
     </div>
 
 
-    <!-- 메인화면 섹션 자바스크립트` -->
-    <script src="js/main_section.js"></script>
-
-    <!-- 메인화면 자바스크립트 (공통) -->
+    <!-- 메인화면 자바스크립트 -->
     <script src="js/main.js"></script>
 
     <!-- 부트스트랩 자바스크립트 -->

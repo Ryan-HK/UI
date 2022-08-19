@@ -23,18 +23,21 @@
     <link rel="stylesheet" href="css/main_header.css">
     <!-- CSS : main 전체 페이지 설정 -->
     <link rel="stylesheet" href="css/main_page.css">
-    <!-- CSS : 마이페이지 LEFT - 사이드바 -->
-    <link rel="stylesheet" href="css/main_section_side.css">
 
     <style>
         /* section */ /* section */
         /* section */ /* section */
 
+        section {
+            margin: 40px auto;
+        }
 
-        .s_box_content {
-            width: 800px;
-
-            background-color: green;
+        .section_wrap {
+            display: flex;
+            justify-content: space-between;
+            width: 1050px;
+            height: 2000px;
+            background-color: yellow;
         }
         
     </style>
@@ -142,60 +145,11 @@
 
         <!-- 메인 컨텐츠부 -->
         <section>
-            
+
             <div class="section_wrap">
-                <div class="s_box_side">
-                    <div class="side_top">
-                        <div class="side_title">
-                            <span class="font-28-700">마이페이지</span>
-                        </div>
-                        <div class="side_profil">
-                            
-                        </div>
-                    </div>
+                <div class="s_box_board">
                     
-                    <ul class="side_manu">
-                        <li class="manu_btn">
-                            <a href="#" class="link1 font-16-500">&nbsp;나의모임
-                                <span class="space-2">>&nbsp;</span>
-                            </a>
-                        </li>
-
-                        <li class="manu_btn">
-                            <a href="#" class="link1 font-16-500">&nbsp;기본정보수정
-                                <span class="space-2">>&nbsp;</span>
-                            </a>
-                        </li>
-
-                        <li class="manu_btn">
-                            <a href="#" class="link1 font-16-500">&nbsp;쪽지
-                                <span class="space-2">>&nbsp;</span>
-                            </a>
-                        </li>
-
-                        <li class="manu_btn">
-                            <a href="#" class="link1 font-16-500">&nbsp;내 글
-                                <span class="space-2">>&nbsp;</span>
-                            </a>
-                        </li>
-
-                        <li class="manu_btn">
-                            <a href="#" class="link1 font-16-500">&nbsp;내 댓글
-                                <span class="space-2">>&nbsp;</span>
-                            </a>
-                        </li>
-
-                        <li class="manu_btn">
-                            <a href="" class="link1 font-16-500">
-                                &nbsp;문의 / 신고내역
-                            <span class="space-2">>&nbsp;</span></a>
-                        </li>
-                    </ul>
                 </div>
-
-                <div class="s_box_content">
-
-                </div>  
             </div>
 
         </section>
