@@ -49,10 +49,13 @@
     <!-- 마이페이지 필수 CSS -->
     <link rel="stylesheet" href="css/mypage_section_side.css">
         
-    <style>
-        
+    <style> 
 
     </style>
+
+    <script>
+
+    </script>
 
 </head>
 
@@ -223,7 +226,54 @@
                                 <span class="font-28-700">마이페이지</span>
                             </div>
                             <div class="side_profil">
+                                <!-- 사이드프로필-이미지 -->
+                                <div class="wrap_side_profil_img">
+                                    <div class="side_profil_img_box">
+                                        <!-- 여기에 이미지삽입 -->
+                                        <img src="img/side_profile_1.png">
+                                    </div>
+                                </div>
+                                <!-- 사이드프로필-닉네임변경 -->
+                                <div class="wrap_side_profil_nickname">
+                                    <!-- 한줄소개 form 태그 -->
+                                    <form action="#">
+                                        <label for="btn_edit_nickname"><img src="img/edit_btn_comment.png"><span class="font-16-500">닉네임</span></label>
+                                        <button type="button" id="btn_edit_nickname"></button>
+                                        <div>
+                                            <textarea name="" rows="1" disabled maxlength="10" class="side_profil_nickname font-16-500">헬짱</textarea>
+                                        </div>
+                                    </form>
+                                </div>
                                 
+                                <!-- 사이드프로필-주소 -->
+                                <div class="wrap_side_profil_address">
+                                    <div class="box_check_btn">
+                                        <img src="img/checked_btn.png">
+                                    </div>
+                                    <div class="side_profil_address font-16-500">서울시 강남구</div>
+                                </div>
+                                
+                                <div class="wrap_side_profil_certify">
+                                    <button class="btn_certify"><a href="#" class="font-16-500">인증하기</a></button>
+                                </div>
+
+                                <!-- 사이드프로필-취미 -->
+                                <div class="wrap_side_profil_hobby">
+                                    <ul>
+                                        <li class="font-14-500">농구</li>
+                                        <li class="font-14-500">야구</li>
+                                        <li class="font-14-500">등산</li>
+                                    </ul>
+                                </div>
+                                <!-- 사이드프로필-한줄소개 -->
+                                <div class="wrap_side_profil_comment">
+                                    <!-- 한줄소개 form 태그 -->
+                                    <form action="#">
+                                        <label for="btn_edit_comment"><img src="img/edit_btn_comment.png"><span class="font-16-500">한줄소개</span></label>
+                                        <button type="button" id="btn_edit_comment"></button>
+                                        <textarea name="" rows="1" disabled class="side_profil_comment font-14-400">한줄소개 입력</textarea>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                         
@@ -299,7 +349,7 @@
         </footer>
     </div>
 
-
+    <script src="js/mypage_left_side.js"></script>
     <!-- 메인화면 섹션 자바스크립트` -->
     <script src="js/main_section.js"></script>
 

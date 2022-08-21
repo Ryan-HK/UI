@@ -44,8 +44,9 @@ section {
 }
 
 .side_profil{
-    height: 400px;
-    background-color: aqua;
+    min-height: 400px;
+    border: 1px solid rgb(242, 242, 242);
+    /* background-color: aqua; */
 }
 
 .side_manu {
@@ -55,6 +56,8 @@ section {
     align-items: center;
 
     padding: 0;
+
+    margin-top: 20px;
 
 }
 
@@ -70,3 +73,199 @@ section {
     border: 1px solid rgb(242, 242, 242);
     padding: 12px 10px 12px;
 }
+
+/* 사이드프로필(LEFT) CSS 영역 */
+
+.side_profil {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+}
+
+.side_profil_img_box {
+    width: 180px;
+    height: 180px;
+    border-radius: 100px;
+    overflow: hidden;
+
+    /* border: 5px solid red; */
+
+    margin-top: 10px;   
+}
+
+/* 사이드프로필 이미지 박스에 크기 자동으로 맞추기 */
+.side_profil_img_box img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+
+/* 사이드프로필 닉네임변경 */
+.wrap_side_profil_nickname {
+    width: 180px;
+    
+    margin-top: 10px;
+    /* border: 1px solid green; */
+}
+
+.wrap_side_profil_nickname form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;   
+    align-items: flex-start;
+    /* border: 5px solid red;  */
+}
+
+#btn_edit_nickname {
+    display: none;
+}
+
+.wrap_side_profil_nickname img {
+    width: 20px;
+    margin-right: 5px;
+}
+
+.wrap_side_profil_nickname div {
+    width: 100%;
+}
+
+.wrap_side_profil_nickname label {
+    cursor: pointer;
+}
+
+
+/* nickname textarea 태그 */
+.side_profil_nickname {
+    margin-top: 5px;
+    resize: none;
+    border: none;
+
+    width: 100%;
+
+    background-color: white;
+    text-align: center;
+}
+
+
+
+
+
+/* 사이드프로필 주소 */
+.wrap_side_profil_address {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    width: 180px;
+    /* border: 5px solid purple; */
+}
+
+.box_check_btn {
+    width: 25px;
+}
+
+.wrap_side_profil_address img {
+    width: 25px;
+}
+
+.side_profil_address {
+    display: flex;
+    align-items: center;
+    width: 150px;
+    
+    /* border: 5px solid green; */
+    margin-left: 15px;
+}
+
+/* 주소 인증버튼 */
+.btn_certify {
+    margin-top: 5px;
+    background-color: rgb(20 167 255);
+    border: none;
+    border-radius: 5px;
+
+    width: 80px;
+    height: 30px;
+
+    color: white;
+}
+
+.btn_certify a {
+    color: white;
+    text-decoration: none;
+}
+
+
+
+/* 사이드프로필 - 취미 */
+.wrap_side_profil_hobby {
+    width: 180px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    /* border: 5px solid skyblue; */
+
+    margin-top: 10px;
+}
+
+.wrap_side_profil_hobby li {
+    list-style: disc;
+}
+
+/* 사이드프로필 - 한줄소개 */
+.wrap_side_profil_comment {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 180px;
+    /* border: 5px solid green; */
+    
+}
+
+.wrap_side_profil_comment form {
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+}
+
+.wrap_side_profil_comment textarea {
+    margin-top: 5px;
+
+    width: 180px;
+    resize: none;
+    overflow-y: hidden;
+    height: 25px;
+}
+
+.wrap_side_profil_comment label {
+    cursor: pointer;
+}
+
+.wrap_side_profil_comment textarea:disabled {
+    background-color: white;
+}
+
+.wrap_side_profil_comment img {
+    width: 20px;
+    margin-right: 5px;
+}
+
+.wrap_side_profil_comment button {
+    display: none;
+}
+
+.side_profil_comment {
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+.side_profil_comment:focus {
+    outline: 2px solid rgb(20 167 255);
+}
+
