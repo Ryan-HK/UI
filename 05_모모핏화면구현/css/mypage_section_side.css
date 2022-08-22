@@ -150,7 +150,9 @@ section {
     text-align: center;
 }
 
-
+.side_profil_nickname:focus {
+    outline: 2px solid rgb(20 167 255);
+}
 
 
 
@@ -269,3 +271,35 @@ section {
     outline: 2px solid rgb(20 167 255);
 }
 
+/* sweetalter2 전체적인 크기 비율로 조정 */
+.swal2-popup {
+    font-size: 0.8rem !important;
+}
+
+/* sweetalter2 confirm 버튼 커스터마이징 */
+.swal2-confirm-btn {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: 100px;
+    height: 30px;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+
+    background-color: rgb(20 167 255) !important;
+}
+
+/* sweetalter2 cancel 버튼 커스터마이징 */
+.swal2-cancel-btn {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: 100px;
+    height: 30px;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+
+    background-color: #e7527f !important;
+}
