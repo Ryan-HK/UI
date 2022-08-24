@@ -218,6 +218,7 @@ section {
 
 .wrap_side_profil_hobby li {
     list-style: disc;
+    text-align: left;
 }
 
 /* 사이드프로필 - 한줄소개 */

@@ -43,17 +43,34 @@
     <link rel="stylesheet" href="css/main_mediatag.css">
     <!-- CSS : main footer 설정 -->
     <link rel="stylesheet" href="css/main_footer.css">
-    <!-- CSS : 사이드 프로필 -->
-    <link rel="stylesheet" href="css/side_profile.css">
-    
-    <!-- 마이페이지 필수 CSS -->
-    <link rel="stylesheet" href="css/mypage_section_side.css">
-        
+
+    <!-- 메인페이지 필수 CSS -->
+    <link rel="stylesheet" href="css/main_section_card.css">
+    <link rel="stylesheet" href="css/main_section_board.css">
+
+
+    <!-- 게시판 글쓰기 CSS -->
+    <link rel="stylesheet" href="css/writing.css">
+
     <style>
+        
 
     </style>
 
     <script>
+        $(function () {
+
+            // 닉네임검색 팝업창 띄우기
+            $(".username_search").on('click', function(){
+                let popupUrl = 'popup_find_nickname.html';
+                let popupName = '닉네임 검색';
+                let popupSize = 'width=400, height=500, left=800, top=200';
+
+                window.open(popupUrl, popupName, popupSize);
+            })
+        })
+
+        
 
     </script>
 
@@ -164,161 +181,79 @@
             <div></div>
         </div>  
 
-        <!-- 사이드메뉴 -->
-        <input type="checkbox" id="side_profile_icon">
-        <label for="side_profile_icon">
-            <img src="./img/user.png" width="50px">
-            <!-- <img src="./img/icons8-pull-a-box-skin-type-2-96.png" width="80px"> -->
 
-        </label>
-        <div class="side_profile_1">
-
-            <div class="side_profile_1_bell">
-                <!-- <button class="btn btn-primary" type="button">
-                    쪽지 <span class="badge">4</span> -->
-                <img src="./img/bell.png"  width="40px" id="bell_img">
-            </div><br>
-            
-            <div class="side_profile_1_person">
-                <img src="./img/side_profile_1.png">
-            </div>
-
-            <div class="side_profile_1_text">
-                <span class="side_profile_nickname">헬짱</span>
-                <img src="./img/female-2404482.png" width="20px" alt="">
-                <!-- <img src="./img/male-272547.png" width="20px"alt=""> -->
-                <!-- <span class="side_profile_gender">여</span> -->
-            </div><br>
-
-            <div class="side_profile_1_loc">
-                서울시 강남구 <br>
-                <span class="side_profile_loc_check">지역인증완료
-                    <img src="./img/free-icon-checkbox.png" width="15px">
-                </span>
-            </div><br>
-
-            <div class="side_profile_1_sports">
-                <ul>
-                    <li>헬&nbsp;스</li>
-                    <li>등&nbsp;산</li>
-                    <li>농&nbsp;구</li>
-                </ul>
-            </div>
-
-            <div class="side_profile_1_intro">
-                <p>같이 즐겁게 운동해요 ^^</p>
-            </div>
-
-            <!-- 쪽지/채팅 버튼 -->
-            <button type="button" class="side_profile_1_mess">쪽지 전송</button>
-            <button type="button" class="side_profile_1_chat">채팅</button>
-        </div>
-
-
-        <!-- 메인 컨텐츠부 -->
         <!-- 메인 컨텐츠부 -->
         <section>
             <div class="section_inner">
-                <div class="section_wrap">
-                    <div class="s_box_side">
-                        <div class="side_top">
-                            <div class="side_title">
-                                <span class="font-28-700">마이페이지</span>
-                            </div>
-                            <div class="side_profil">
-                                <!-- 사이드프로필-이미지 -->
-                                <div class="wrap_side_profil_img">
-                                    <div class="side_profil_img_box">
-                                        <!-- 여기에 이미지삽입 -->
-                                        <img src="img/ggomung1.JPG">
-                                    </div>
-                                </div>
-                                <!-- 사이드프로필-닉네임변경 -->
-                                <div class="wrap_side_profil_nickname">
-                                    <!-- 한줄소개 form 태그 -->
-                                    <form action="#">
-                                        <label for="btn_edit_nickname"><img src="img/edit_btn_comment.png"><span class="font-16-500">닉네임</span></label>
-                                        <button type="button" id="btn_edit_nickname"></button>
-                                        <div>
-                                            <textarea name="" rows="1" disabled maxlength="10" class="side_profil_nickname font-16-500">꼬뭉이</textarea>
-                                        </div>
-                                    </form>
-                                </div>
-                                
-                                <!-- 사이드프로필-주소 -->
-                                <div class="wrap_side_profil_address">
-                                    <div class="box_check_btn">
-                                        <img src="img/checked_btn.png">
-                                    </div>
-                                    <div class="side_profil_address font-16-500">서울시 강남구</div>
-                                </div>
-                                
-                                <div class="wrap_side_profil_certify">
-                                    <button class="btn_certify"><a href="#" class="font-16-500">인증하기</a></button>
-                                </div>
+                <div class="writing">
+                    <div class="writing_head"><br>신고합니다</div>
+                    <hr>
+                    <!-- 게시글 작성 내용부분 -->
 
-                                <!-- 사이드프로필-취미 -->
-                                <div class="wrap_side_profil_hobby">
-                                    <ul>
-                                        <li class="font-14-500">밥먹기</li>
-                                        <li class="font-14-500">잠자기</li>
-                                        <li class="font-14-500">물어뜯기</li>
-                                    </ul>
-                                </div>
-                                <!-- 사이드프로필-한줄소개 -->
-                                <div class="wrap_side_profil_comment">
-                                    <!-- 한줄소개 form 태그 -->
-                                    <form action="#">
-                                        <label for="btn_edit_comment"><img src="img/edit_btn_comment.png"><span class="font-16-500">한줄소개</span></label>
-                                        <button type="button" id="btn_edit_comment"></button>
-                                        <textarea name="" rows="1" disabled class="side_profil_comment font-14-400">한줄소개 입력</textarea>
-                                    </form>
-                                </div>
-                            </div>
+                    <form class="writing_form" 
+                        action="http://localhost:8080/serverProgram" method="post">
+
+                        <div class="writing_content">
+
+                            <!-- 1. 신고유형 선택 -->
+                            유형&nbsp;&nbsp;&nbsp;&nbsp;
+                            <select id="select_report" required>
+                                <option value="">선택</option>
+                                <option value="욕설,비방,차별,혐오">욕설,비방,차별,혐오</option>
+                                <option value="광고글">광고글</option>
+                                <option value="음란">음란</option>
+                                <option value="기타">기타</option>
+                            </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                            <!-- 2-1. (중고거래 선택시) 팝니다/삽니다/나눔 선택 -->
+                            <select id="select_transaction" required>
+                                <option value="">선택</option>
+                                <option value="팝니다">팝니다</option>
+                                <option value="삽니다">삽니다</option>
+                                <option value="나눔">나눔</option>
+                            </select>
+                            
+                            <!-- 2-2. (문의 선택시) 공개/비공개 선택 -->
+                            <span id="access">
+                                <input type="radio" name="access" value="1"> 공개
+                                <input type="radio" name="access" value="2" checked> 비공개
+                            </span><br>
+
+                            <!-- 3. 제목 -->
+                            <br>제목&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="text" class="writing_title" required>
+                            <br><br>
+
+                            <!-- 4. 첨부파일 -->
+                            첨부&nbsp;&nbsp;&nbsp;
+                            <span class="filebox">
+                                <input class="upload_name" value="첨부파일" placeholder="첨부파일">
+
+                                <label class="input_file_button" for="input_file">
+                                    파일찾기
+                                </label>
+
+                                <input type="file" id="input_file" class="upload-hidden" accept='image/jpg,image/png,image/jpeg,image/gif' >
+                            </span>
+                            <br>
+
+                            <!-- 5. 대상 -->
+                            대상&nbsp;&nbsp;&nbsp;
+                            <input type="text" class="username" placeholder="닉네임">
+                            <input type="button" class="username_search" value="검색"></input>
+                            <br><br>
+
+                            <!-- 6. 내용 -->
+                            내용<br>
+                            <textarea class="report_textarea_content" required>제재 부탁드립니다...</textarea>
+
                         </div>
-                        
-                        <ul class="side_manu">
-                            <li class="manu_btn">
-                                <a href="#" class="link1 font-16-500">&nbsp;나의모임
-                                    <span class="space-2">>&nbsp;</span>
-                                </a>
-                            </li>
 
-                            <li class="manu_btn">
-                                <a href="#" class="link1 font-16-500">&nbsp;기본정보수정
-                                    <span class="space-2">>&nbsp;</span>
-                                </a>
-                            </li>
+                    <!-- 작성하기 버튼 -->
+                    <input type="submit" class="report_submit" value="신고하기"></input>
 
-                            <li class="manu_btn">
-                                <a href="#" class="link1 font-16-500">&nbsp;쪽지
-                                    <span class="space-2">>&nbsp;</span>
-                                </a>
-                            </li>
-
-                            <li class="manu_btn">
-                                <a href="#" class="link1 font-16-500">&nbsp;내 글
-                                    <span class="space-2">>&nbsp;</span>
-                                </a>
-                            </li>
-
-                            <li class="manu_btn">
-                                <a href="#" class="link1 font-16-500">&nbsp;내 댓글
-                                    <span class="space-2">>&nbsp;</span>
-                                </a>
-                            </li>
-
-                            <li class="manu_btn">
-                                <a href="" class="link1 font-16-500">
-                                    &nbsp;문의 / 신고내역
-                                <span class="space-2">>&nbsp;</span></a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="s_box_content">
-
-                    </div>  
+                    </form>
+                    
                 </div>
             </div>
         </section>
@@ -349,17 +284,12 @@
         </footer>
     </div>
 
-    <!-- 마이페이지 LEFT SIDE 메뉴 자바스크립트 -->
-    <script src="js/mypage_left_side.js"></script>
 
-    <!-- 메인화면 섹션 자바스크립트 -->
+    <!-- 메인화면 섹션 자바스크립트` -->
     <script src="js/main_section.js"></script>
 
     <!-- 메인화면 자바스크립트 (공통) -->
     <script src="js/main.js"></script>
-
-    <!-- sweetalert2 자바스크립트 -->
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- 부트스트랩 자바스크립트 -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

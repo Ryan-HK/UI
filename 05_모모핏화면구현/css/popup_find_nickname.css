@@ -1,0 +1,112 @@
+.find_nickname {
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    /* border: 5px solid red; */
+
+    padding: 10px 10px;
+}
+
+.wrap_find_nickname_title {
+    width: 100%;
+    text-align: center;
+
+
+
+    /* border: 5px solid blue; */
+}
+
+/* 닉네임 찾기 */
+.wrap_find_nickname_search {
+    width: 100%;
+    margin-top: 15px;
+
+    /* border: 5px solid blue; */
+}
+
+.wrap_find_nickname_search form{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    flex-wrap: nowrap;
+    width: 100%;
+
+}
+
+.wrap_find_nickname_search button {
+    /* 글자 */
+    color: white;
+    /* 박스 */
+    background-color: #14A7FF;
+    border: none; 
+    border-radius: 5px;
+    height: 40px;
+    /* 위치 */
+    width: 80px;
+}
+
+.wrap_find_nickname_search input {
+    width: 280px;
+    height: 40px;
+    border: 0;
+    border-radius: 5px;
+    outline: #ebebeb 1px solid;
+    background-color: #f5f5f5;
+
+    padding-left: 10px;
+}
+
+/* 검색한 닉네임 출력 창 */
+.wrap_find_nickname_content {
+    width: 100%;
+    margin-top: 15px;
+    
+    min-height: 280px;
+
+    /* border: 5px solid blue; */
+
+    background-color: #f5f5f5;
+    border-radius: 5px;
+}
+
+.find_nickname_content {
+    /* background-color: #bcbdb8fb; */
+    padding-left: 5px;
+
+    margin : 5px;
+}
+
+.find_nickname_content input, label {
+    cursor: pointer;
+}
+
+/* 부모창으로 데이터 이동 버튼 */
+.wrap_find_nickname_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+
+    /* border: 5px solid blue; */
+}
+
+.find_nickname_btn {
+    /* 글자 */
+    color: white;
+    /* 박스 */
+    background-color: #14A7FF;
+    border: none; 
+    border-radius: 5px;
+    height: 40px;
+    /* 위치 */
+    width: 80px;
+
+    margin-top: 30px;
+}
