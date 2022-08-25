@@ -8,13 +8,9 @@
     box-sizing: border-box;
 }
 
-body {overflow-x:hidden}
-
 body {
     margin: 0 auto;
     text-align: center;
-
-    /* width: 100vw; */
 }
 
 /* main화면부 전체 설정 */
@@ -23,7 +19,6 @@ body {
     flex-direction: column;
     align-items: center;
     margin-top: 10px;
-    width: 100%;
 }
 
 /* 링크 관련 */

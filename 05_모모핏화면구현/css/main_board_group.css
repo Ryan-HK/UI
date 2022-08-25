@@ -1,0 +1,253 @@
+
+/* section */ /* section */
+/* section */ /* section */
+
+section {
+    margin: 40px auto;
+}
+
+.section_wrap {
+    display: flex;
+    justify-content: space-between;
+    width: 1050px;
+    height: 2000px;
+    text-align: left;
+}
+
+.view{
+    width: 100%;    
+}
+
+.board_name{
+    margin: 10px;            
+}
+
+.title {
+    margin: 10px;
+    border-top: 2px solid black;
+    padding-top: 10px;
+}
+
+/* 게시글 정보 라인 */
+.info{
+    border-bottom: 2px solid black;
+    margin: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.space1 {
+    background-color: rgb(217,217,217);
+    margin: 0 9px;
+    width: 1px;
+    height: 12px;
+    display: inline;
+}
+
+/* 게시글 수정 삭제 */
+.edit_delete a{
+    text-decoration: none;
+    color: black;
+}
+
+
+.content_wrap{
+    margin: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid black;            
+    min-height:20%;
+}
+
+.btn_row{
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn_color_blue{
+    background-color: rgb(20 167 255);
+}
+
+.float_right{
+    display: inline;
+    float: right;
+}
+
+.comment_wrap{
+    border-top: 1px solid gray;
+    padding-top: 10px;
+}
+
+.comment{
+    border-bottom: 1px solid gray;
+    display: grid;
+    grid-template-columns: 150px 1fr 100px 100px 80px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.report{
+    padding-bottom: 10px;
+}
+
+#recomment_write{
+    display: none;
+    height: 132px;
+}
+
+.cursor_pointer{
+    cursor: pointer;
+}
+
+/* 좋아요 */
+.like_div{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.like_btn{
+    cursor: pointer;
+    /* position: relative; */
+}
+
+#like_cnt{
+    margin-top: 10px;
+    /* border: 1px solid black; */
+}
+
+/* 본문 flex로 위치 조정 */
+.content_wrap_1{
+    display: flex;
+    flex-direction: row;
+}
+
+.content_wrap_2{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+
+/*  본문 메인이미지 파트 */
+.content_img{
+    padding-bottom: 10px;
+}
+
+.content_img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+
+/* 본문 모임장 파트 */
+.content_group_leader{
+    text-align: center;
+    width: 30%;
+}
+
+
+/* 본문 소개글 파트 */
+.content_intro{
+
+}
+
+
+/* 프로필 사진에 어떤 크기의 사진을 넣어도 동일한 모양으로 유지하기 위한 설정 */
+.side_profile_1_person {
+    width: 170px;
+    height: 170px;
+    margin-top: 10%;
+    margin-left: 20%;
+    overflow: hidden;
+    position: relative;
+    
+}
+
+.side_profile_1_person > img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 1px solid rgb(237, 237, 237);
+}
+
+.side_profile_1_text {
+    margin-top: 10px;
+}
+
+
+/* 닉네임 */
+.side_profile_nickname {
+    
+    font-size: 20px;
+    font-weight: bold;   
+}
+
+/* 성별 */
+.side_profile_gender {
+    color: rgb(0, 213, 255);
+    font-size: 18px;
+    font-weight: bold;  
+}
+
+/* 지역 */
+.side_profile_1_loc {
+    font-size: 18px;
+    font-weight: bold;  
+}
+
+/* 지역 인증 */
+.side_profile_loc_check {
+    font-size: 13px;
+    font-weight: bold;  
+    color: rgb(73, 72, 72);
+}
+
+/* 관심운동 */
+.side_profile_1_sports {
+    text-align: left;
+    margin-left: 25%;
+}
+/* 관심운동 리스트에 대한 설정 */
+.side_profile_1_sports > ul> li {
+    list-style-type: square;
+    font-size: 15px;
+    /* font-weight: bold;  */
+
+}
+
+/* 한줄소개 */
+.side_profile_1_intro {
+    font-size: 17px;
+    font-weight: bold; 
+    color:black;
+    border: 0;
+    /* border-radius: 15px; */
+    outline: none;
+    padding-left: 10px;
+    /* background-color: #f5f5f5; */
+}
+
+
+/* 답글 수정하기에 대한 CSS */
+
+/* 수정하기 버튼 */
+.comment_modify_btn {
+    border: none;
+    background-color: white;
+}
+
+/* 답글 TEXT창 */
+.comment_input_text {
+    background-color: white;
+    border: none;
+}
+
+.comment_input_text:focus {
+    outline: none;
+}

@@ -1,0 +1,240 @@
+@CHARSET "UTF-8";
+
+/* 전체 폰트 설정 */
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Fascinate&family=Josefin+Sans:ital,wght@1,700&family=Lobster&family=Open+Sans:wght@300&family=Pacifico&display=swap');
+
+
+/* 마이페이지의 각 페이지 제목(ex.내글)에 적용 */
+.mypage-content-title {
+    text-align: left;
+    margin-left: 30px;
+    margin-top:100px;
+}
+
+/* 마이페이지 내의 모든 table에 적용 */
+.mypage-table {
+    width:750px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* 페이지 제목 밑의 바닥 선 */
+.mypage-border{
+	border-bottom: 2px solid lightgray;
+	width:750px;
+	text-align: center;
+	margin: 0 auto;
+	height:10px;
+}
+
+/* 마이페이지 내의 모든 thead의 tr에 적용 */
+.mypage-thead-tr {
+    border-top: 3px solid rgb(0, 0, 0);
+    border-bottom: 2px solid rgb(129, 129, 129);
+    height: 50px;
+}
+
+/* 마이페이지 내의 모든 tbody의 tr에 적용 */
+.mypage-tbody-tr {
+    height: 50px;
+}
+
+/* 마이페이지 내의 모든 tr 바닥 선 */
+.mypage-tr-border {
+	border-bottom: 1px solid rgb(180, 180, 180);
+}
+
+/* 게시판의 글 제목에 적용 */
+.mypage-table-title {
+    width:60%;
+    text-align:left;
+}
+
+/* QNA 게시판에만 적용 : 게시판의 글 제목에 적용 */
+.mypage-table-title-qna {
+    width:40%;
+}
+
+/* 게시판에서 글 내용에 적용 */
+.mypage-title-content {
+	margin-left: 50px;
+	float: left;        	
+}
+
+/* 게시판에서 게시글에 달린 댓글 개수 표시 */
+.mypage-comm-cnt {  
+	margin-left: 5px;
+    height: 23px;
+    border: 1px solid rgb(180, 180, 180);
+    color: red;
+    border-radius: 30%;
+    float: left;
+    padding: 0 5px;
+}
+
+/* 내 댓글 게시판에서 원글 제목에 적용 */
+.mypage-origin-board-title { 
+	color: rgb(129, 129, 129);
+}
+
+/* 내 쪽지의 select-option에 적용 */
+#mypage_save_message {
+	float: left;
+	margin: 0 25px;
+	border-radius: 4px;
+}
+
+/* 내 쪽지의 보낸 쪽지 게시판에 적용 */
+.mypage-send-table {
+	display:none;
+}
+
+/* 마이페이지 내의 버튼에 공통 적용되는 속성 */
+.mypage-btn {
+ 	border: none;
+	border-radius: 10px;
+	padding: 5px 12px;
+	margin: 0 30px 10px 0;
+	background-color: gray;
+	color:white;      		
+	float:right;
+	cursor : pointer;
+}
+
+/* 마이페이지 내의 체크박스에 공통 적용되는 속성 */
+.mypage-checkbox {
+	margin-left: 10px;
+	float: left;        	
+}
+
+/* 내 댓글에 적용되는 속성 */
+.mypage-comment {
+	float: left;
+	margin-left: 30px;	
+}
+
+/* 진행중인 모임 박스에 적용 */
+.mypage-group-ing{
+	border: 1px solid rgb(180, 180, 180);
+	width:750px;
+	height:200px;
+	margin: 20px auto;
+	border-radius:20px;
+	text-align: center;
+}
+
+/* 종료된 모임 박스에 적용 */
+.mypage-group-end { 
+	border: 1px solid rgb(180, 180, 180);
+	width:750px;
+	height:200px;
+	margin: 20px auto;
+	background-color:#C0C0C0;
+	display: none;
+	border-radius:20px;
+	text-align: center;
+
+}
+
+/* 내 모임에서 진행중, 종료된 모임 구분하는 버튼 속성 */
+.mypage-group-btn{
+	border: none;
+	background-color: gray;
+	color:white;      		
+	cursor : pointer;
+	margin: 0px 20px;
+	padding: 10px;
+	border-radius: 20px;
+}
+
+/* 내 모임에서 채팅, 나가기, 수정 이미지 등을 감싸주는 div에 적용 */
+.mypage-group-func-wrapper {
+	float: right;
+	margin-right: 20px;
+	
+}
+
+/* 내 모임에서 채팅, 나가기 버튼에 적용 */
+.mypage-group-func-btn {
+	padding: 10px;
+	margin-top: 80px;
+	margin-right: 10px;
+	color: white;
+	border: none;
+	border-radius: 4%;	
+}
+
+/* 내 모임에서 진행중인 모임의 대문 사진에 적용 */
+.mypage-group-ing-photo {
+	width: 170px;
+	height: 165px;
+	float: left;
+	margin: 15px 25px;
+}
+
+/* 내 모임에서 종료된 모임의 대문 사진에 적용 */
+.mypage-group-end-photo {
+	width: 170px;
+	height: 165px;
+	float: left;
+	margin: 15px 25px;
+	filter: grayscale(100%);
+}
+
+/* 내가 만든 모임 왕관 뱃지에 적용 */
+.mypage-crown-photo {
+	width: 50px;
+	margin-bottom: 10px;
+}
+
+/* 내 모임에서 종료된 모임에 붙는 closed 표시 */
+.mypage-closed-photo {
+	width: 50px;
+	margin-bottom: 10px;
+}
+
+/* 내 모임에서 모임 수정 이미지 */
+.mypage-group-edit-photo {
+	width:30px;
+	margin-top:15px;
+	margin-left:100px;
+	
+}
+
+/* 마이페이지에서 hidden이 필요한 속성에 적용 */
+.mypage-hidden-class {
+	visibility: hidden;
+}
+
+/* 내 모임 정보에 적용*/
+.mypage-group-info{
+	float:left;
+	text-align: left;
+	margin-top: 50px;
+}
+
+/* 내 모임 정보 내의 p 태그에 적용*/
+.mypage-group-p{
+	line-height: 50%;
+}
+
+/* 하늘색 버튼에 적용 */
+.mypage-blue-btn {
+	background-color: rgb(20 167 255);
+}
+
+/* 연회색 버튼에 적용 */
+.mypage-lightgray-btn {
+	background-color: rgb(180, 180, 180);
+}
+
+/* 회색 버튼에 적용 */
+.mypage-gray-btn {
+	background-color: gray;
+}
+
+/* a태그 스타일 제거 */
+.mypage-link {
+	text-decoration:none;
+	color:black;
+}

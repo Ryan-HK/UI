@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -18,16 +19,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 
     <!-- CSS : font 설정 -->
-    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="/css/font.css">
     <!-- CSS : main_header 설정 -->
-    <link rel="stylesheet" href="css/main_header.css">
+    <link rel="stylesheet" href="/css/main_header.css">
     <!-- CSS : main 전체 페이지 설정 -->
-    <link rel="stylesheet" href="css/main_page.css">
+    <link rel="stylesheet" href="/css/main_page.css">
     <!-- CSS : 마이페이지 LEFT - 사이드바 -->
-    <link rel="stylesheet" href="css/mypage_section_side.css">
-
-    <!-- CSS : main 미디어 태그 -->
-    <link rel="stylesheet" href="css/main_media.css">
+    <link rel="stylesheet" href="/css/main_section_side.css">
+    <!-- CSS : 마이페이지 - 내글 / 내댓글 / 쪽지 / 문의신고 -->
+    <link rel="stylesheet" href="/css/mypage.css">
 
     <style>
         /* section */ /* section */
@@ -36,11 +36,10 @@
 
         .s_box_content {
             width: 800px;
-
-            background-color: green;
         }
         
     </style>
+
 </head>
 
 <body>
@@ -68,17 +67,14 @@
 
             <!-- 메인 로고 박스 -->
             <div class="header_wrap_logo">
-                <div></div>
                 <div class="box_logo">
                     <img src="img/logo_momofit.png" width="180">
                 </div>
-                <div></div>
             </div>
         </header>
 
         <!-- header-navbar box -->
         <div class="header_bottom">
-            <div></div>
             <div class="header_wrap_nav">
                 <div class="nav_box_img">
                     <!-- nav 홈버튼 (메인화면으로) -->
@@ -143,15 +139,12 @@
                     </form>
                 </div>
             </div>
-
-
-            <div></div>
         </div>  
 
 
         <!-- 메인 컨텐츠부 -->
         <section>
-            
+
             <div class="section_wrap">
                 <div class="s_box_side">
                     <div class="side_top">
@@ -165,37 +158,37 @@
                     
                     <ul class="side_manu">
                         <li class="manu_btn">
-                            <a href="#" class="link1 font-16-500">&nbsp;나의모임
+                            <a href="#" class="link1 font-14-500">&nbsp;나의모임
                                 <span class="space-2">>&nbsp;</span>
                             </a>
                         </li>
 
                         <li class="manu_btn">
-                            <a href="#" class="link1 font-16-500">&nbsp;기본정보수정
+                            <a href="#" class="link1 font-14-500">&nbsp;기본정보수정
                                 <span class="space-2">>&nbsp;</span>
                             </a>
                         </li>
 
                         <li class="manu_btn">
-                            <a href="#" class="link1 font-16-500">&nbsp;쪽지
+                            <a href="#" class="link1 font-14-500">&nbsp;쪽지
                                 <span class="space-2">>&nbsp;</span>
                             </a>
                         </li>
 
                         <li class="manu_btn">
-                            <a href="#" class="link1 font-16-500">&nbsp;내 글
+                            <a href="#" class="link1 font-14-500">&nbsp;내 글
                                 <span class="space-2">>&nbsp;</span>
                             </a>
                         </li>
 
                         <li class="manu_btn">
-                            <a href="#" class="link1 font-16-500">&nbsp;내 댓글
+                            <a href="#" class="link1 font-14-500">&nbsp;내 댓글
                                 <span class="space-2">>&nbsp;</span>
                             </a>
                         </li>
 
                         <li class="manu_btn">
-                            <a href="" class="link1 font-16-500">
+                            <a href="" class="link1 font-14-500">
                                 &nbsp;문의 / 신고내역
                             <span class="space-2">>&nbsp;</span></a>
                         </li>
@@ -203,8 +196,130 @@
                 </div>
 
                 <div class="s_box_content">
-                    
-                </div>  
+                    <!-- 각 페이지 제목 -->
+                    <div class="mypage-content-title font-24-700">쪽지</div>
+                    <div class="mypage-border"></div><br>
+					
+                    <!-- 보낸쪽지/받은쪽지를 선택할 수 있는 select-option 태그 -->
+					<div class="font-18-500">
+						<select name="mypage_save_message" id="mypage_save_message">
+						    <option value="send">보낸쪽지</option>
+						    <option value="receive" selected="selected">받은쪽지</option>
+						</select>
+					    <button class="mypage-btn"> 
+                            <span class="dropbtn_icon">삭제</span>
+                        </button>	
+               			<button class="mypage-btn mypage-blue-btn" > 
+                            <span class="dropbtn_icon">쓰기</span>
+                        </button>
+					</div>
+				
+                    <!-- 보낸 쪽지 게시판 테이블 -->
+                    <table class="mypage-table mypage-send-table font-14-500">
+                        <!-- 게시판 헤더 -->
+                        <thead class="mypage-thead-tr">
+                            <tr>
+                                <th>
+                                    <div class="mypage-checkbox"><input type="checkbox" name="mesaage-check" onclick='selectAll(this)'/></div>
+                                    보낸 쪽지
+                                </div>  
+                                </th>
+                                <th>작성일</th>
+                                <th>추천</th>
+                                <th>조회</th>
+                            </tr>
+                        </thead>
+                        <!-- 게시판 바디 -->
+                        <tbody>
+                            <tr class="mypage-tbody-tr mypage-tr-border">
+                                <td class="mypage-table-title">
+                                    <div>
+                                    <div class="mypage-checkbox"><input type="checkbox" name="mesaage-check"/></div>
+                                        <div class="mypage-title-content"><a href="#" class="mypage-link">내가 보낸 쪽지 입니다</a></div>
+                                    </div>
+                                </td>
+                                <td>22.01.12</td>
+                                <td>0</td>
+                                <td>64626</td>
+                            </tr>
+                            <tr class="mypage-tbody-tr mypage-tr-border">
+                                <td class="mypage-table-title">
+                                    <div>
+                                    <div class="mypage-checkbox"><input type="checkbox" name="mesaage-check"/></div>
+                                        <div class="mypage-title-content"><a href="#" class="mypage-link">내가 보낸 쪽지 입니다</a></div>
+                                    </div>
+                                </td>
+                                <td>22.01.12</td>
+                                <td>0</td>
+                                <td>64626</td>
+                            </tr>
+                            <tr class="mypage-tbody-tr mypage-tr-border">
+                                <td class="mypage-table-title">
+                                    <div>
+                                    <div class="mypage-checkbox"><input type="checkbox" name="mesaage-check"/></div>
+                                        <div class="mypage-title-content"><a href="#" class="mypage-link">내가 보낸 쪽지 입니다</a></div>
+                                    </div>
+                                </td>
+                                <td>22.01.12</td>
+                                <td>0</td>
+                                <td>64626</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!-- 받은 쪽지 게시판 테이블 -->
+                    <table class="mypage-table mypage-receive-table font-14-500">
+                        <!-- 게시판 헤더 -->
+                        <thead class="mypage-thead-tr">
+                            <tr>
+                                <th>
+                                    <div class="mypage-checkbox"><input type="checkbox" name="mesaage-check" onclick='selectAll(this)'/></div>
+                                    받은 쪽지
+                                </th>
+                                <th>작성일</th>
+                                <th>추천</th>
+                                <th>조회</th>
+                            </tr>
+                        </thead>
+                        <!-- 게시판 바디 -->
+                        <tbody>
+                            <tr class="mypage-tbody-tr mypage-tr-border">
+                                <td class="mypage-table-title">
+                                    <div>
+                                        <div class="mypage-checkbox"><input type="checkbox" name="mesaage-check"></div>
+                                        <div class="mypage-title-content"><a href="#" class="mypage-link">내가 받은 쪽지 입니다</a></div>
+                                    </div>
+                                </td>
+                                <td>22.01.12</td>
+                                <td>0</td>
+                                <td>64626</td>
+                            </tr>
+                            <tr class="mypage-tbody-tr mypage-tr-border">
+                                <td class="mypage-table-title">
+                                    <div>
+                                        <div class="mypage-checkbox"><input type="checkbox" name="mesaage-check"></div>
+                                        <div class="mypage-title-content"><a href="#" class="mypage-link">내가 받은 쪽지 입니다</a></div>
+                                    </div>
+                                </td>
+                                <td>22.01.12</td>
+                                <td>0</td>
+                                <td>64626</td>
+                            </tr>
+                            <tr class="mypage-tbody-tr mypage-tr-border">
+                                <td class="mypage-table-title">
+                                    <div>
+                                        <div class="mypage-checkbox"><input type="checkbox" name="mesaage-check"></div>
+                                        <div class="mypage-title-content"><a href="#" class="mypage-link">내가 받은 쪽지 입니다</a></div>
+                                    </div>
+                                </td>
+                                <td>22.01.12</td>
+                                <td>0</td>
+                                <td>64626</td>
+                            </tr>
+                        </tbody>
+                    </table>                   
+
+                </div>
             </div>
 
         </section>
@@ -216,7 +331,8 @@
 
     <!-- 메인화면 자바스크립트 -->
     <script src="js/main.js"></script>
-
+    <!-- 마이페이지 자바스크립트 -->
+    <script src="js/mypage_message.js"></script>
     <!-- 부트스트랩 자바스크립트 -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>

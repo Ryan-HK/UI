@@ -3,10 +3,6 @@
 header {
     display: flex;
     flex-direction: column;
-
-    /* align-items: center; */
-    justify-self: space-between;
-
     width: 1050px;
 
     /* border: 5px solid red; */
@@ -42,13 +38,6 @@ header {
 
 /* header - logo */
 /* header - logo */
-.header_wrap_logo {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    /* border: 5px solid red; */
-}
 
 .box_logo {
     margin: 10px;
@@ -60,14 +49,14 @@ header {
 .header_bottom {
     /* border: 1px solid red; */
     display: flex;
-    justify-content: space-between;
-    width: 100vw;
+    justify-content: center;
+    width: 100%;
     box-shadow: 0px 4px 8px -3px rgba(0,0,0,0.2);
     position:-webkit-sticky;        
     position:sticky;
     top:0;
     background-color: rgb(255,255,255);
-    z-index: 2;
+
 }
 
 .header_wrap_nav {
@@ -109,7 +98,7 @@ cursor : pointer;
 }
 
 /* 메뉴바 버튼 hover시 색상변경 */
-.dropbtn:hover span {
+.dropbtn:hover {
     color: rgb(52,152,219);
     text-decoration: underline;
 }

@@ -1,8 +1,5 @@
 section {
     margin: 40px auto;
-    display: flex;
-    flex-direction: column;
-    justify-self: center;
 }
 
 .section_wrap {
